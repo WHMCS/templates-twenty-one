@@ -2,24 +2,40 @@
     <div class="home-domain-search bg-white">
         <div class="container">
             <div class="p-5 clearfix">
-                <h2 class="text-center">Secure your domain name</h2>
+                <h2 class="text-center">{lang key="secureYourDomainShort"}</h2>
                 <input type="hidden" name="transfer" />
                 <div class="input-group-wrapper">
                     <div class="input-group">
                         <input type="text" class="form-control" name="domain" placeholder="{lang key="exampledomain"}" autocapitalize="none">
-                        <span class="input-group-append">
+                        <span class="input-group-append d-none d-sm-block">
                             {if $registerdomainenabled}
                                 <button type="submit" class="btn btn-primary{$captcha->getButtonClass($captchaForm)}" id="btnDomainSearch">
                                     {lang key="search"}
                                 </button>
                             {/if}
                             {if $transferdomainenabled}
-                                <button type="submit" id="btnTransfer" class="btn btn-success{$captcha->getButtonClass($captchaForm)}">
+                                <button type="submit" id="btnTransfer" data-domain-action="transfer" class="btn btn-success{$captcha->getButtonClass($captchaForm)}">
                                     {lang key="domainstransfer"}
                                 </button>
                             {/if}
                         </span>
                     </div>
+                </div>
+                <div class="row d-sm-none">
+                    {if $registerdomainenabled}
+                        <div class="col-6">
+                            <button type="submit" class="btn btn-primary{$captcha->getButtonClass($captchaForm)} btn-block" id="btnDomainSearch2">
+                                {lang key="search"}
+                            </button>
+                        </div>
+                    {/if}
+                    {if $transferdomainenabled}
+                        <div class="col-6">
+                            <button type="submit" id="btnTransfer2" data-domain-action="transfer" class="btn btn-success{$captcha->getButtonClass($captchaForm)} btn-block">
+                                {lang key="domainstransfer"}
+                            </button>
+                        </div>
+                    {/if}
                 </div>
                 {include file="$template/includes/captcha.tpl"}
 

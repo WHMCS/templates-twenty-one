@@ -3,6 +3,8 @@
 
         <h3 class="card-title">{lang key='twofactorauth'}</h3>
 
+        {include file="$template/includes/flashmessage.tpl" align="center"}
+
         {if $newbackupcode}
             {include file="$template/includes/alert.tpl" type="success" msg="{lang key='twofabackupcodereset'}" textcenter=true}
         {elseif $incorrect}

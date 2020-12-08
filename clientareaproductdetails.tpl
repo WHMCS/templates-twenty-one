@@ -80,6 +80,11 @@
                                 {$recurringamount}
                             {/if}
 
+                            {if $quantitySupported && $quantity > 1}
+                                <h4>{lang key='quantity'}</h4>
+                                {$quantity}
+                            {/if}
+
                             <h4>{lang key='orderbillingcycle'}</h4>
                             {$billingcycle}
 

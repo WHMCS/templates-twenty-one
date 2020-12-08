@@ -139,7 +139,7 @@
                             <div class="col-sm-8">
                                 <select name="country" id="inputCountry" class="custom-select">
                                     {foreach $clientcountries as $thisCountryCode => $thisCountryName}
-                                        <option value="{$thisCountryName}" {if $thisCountryCode eq $country}selected="selected"{/if}>{$thisCountryName}</option>
+                                        <option value="{$thisCountryCode}" {if $thisCountryCode eq $country}selected="selected"{/if}>{$thisCountryName}</option>
                                     {/foreach}
                                 </select>
                             </div>

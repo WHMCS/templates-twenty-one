@@ -48,8 +48,11 @@
 {if $prevpage || $nextpage}
     <nav aria-label="Announcements navigation">
         <ul class="pagination">
-            <li class="page-item{if !$prevpage} disabled{/if}"><a class="page-link" href="{routePath('announcement-index-paged', $prevpage, $view)}">{lang key='previouspage'}</a></li>
-            <li class="page-item{if !$nextpage} disabled{/if}"><a class="page-link" href="{routePath('announcement-index-paged', $nextpage, $view)}">{lang key='nextpage'}</a></li>
+            {foreach $pagination as $item}
+                <li class="page-item{if $item.disabled} disabled{/if}{if $item.active} active{/if}">
+                    <a class="page-link" href="{$item.link}">{$item.text}</a>
+                </li>
+            {/foreach}
         </ul>
     </nav>
 {/if}

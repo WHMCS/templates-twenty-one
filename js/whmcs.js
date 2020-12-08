@@ -734,7 +734,7 @@ jQuery(document).ready(function() {
 
     var frmDomainHomepage = jQuery('#frmDomainHomepage');
 
-    jQuery(frmDomainHomepage).find('#btnTransfer').click(function () {
+    jQuery(frmDomainHomepage).find('button[data-domain-action="transfer"]').click(function () {
         jQuery(frmDomainHomepage).find('input[name="transfer"]').val('1');
     });
 

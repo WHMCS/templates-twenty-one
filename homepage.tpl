@@ -1,46 +1,51 @@
-<h2 class="text-center m-4">Browse our Products/Services</h2>
+{if !empty($productGroups) || $registerdomainenabled || $transferdomainenabled}
+    <h2 class="text-center m-4">Browse our Products/Services</h2>
 
-<div class="card-columns home">
-    {foreach $productGroups as $productGroup}
+    <div class="card-columns home">
+        {foreach $productGroups as $productGroup}
 
-        <div class="card mb-3">
-            <div class="card-body p-lg-4 p-xl-5 text-center">
-                <h3 class="card-title pricing-card-title">
-                    {$productGroup->name}
-                </h3>
-                <p>{$productGroup->tagline}</p>
-                <a href="{$productGroup->getRoutePath()}" class="btn btn-block btn-outline-primary">
-                    {lang key='browseProducts'}
-                </a>
+            <div class="card mb-3">
+                <div class="card-body p-lg-4 p-xl-5 text-center">
+                    <h3 class="card-title pricing-card-title">
+                        {$productGroup->name}
+                    </h3>
+                    <p>{$productGroup->tagline}</p>
+                    <a href="{$productGroup->getRoutePath()}" class="btn btn-block btn-outline-primary">
+                        {lang key='browseProducts'}
+                    </a>
+                </div>
             </div>
-        </div>
 
-    {/foreach}
+        {/foreach}
 
-    <div class="card mb-3">
-        <div class="card-body p-lg-4 p-xl-5 text-center">
-            <h3 class="card-title pricing-card-title">
-                {lang key='orderregisterdomain'}
-            </h3>
-            <p>{lang key='secureYourDomain'}</p>
-            <a href="cart.php?a=add&domain=register" class="btn btn-block btn-outline-primary">
-                {lang key='navdomainsearch'}
-            </a>
-        </div>
+        {if $registerdomainenabled}
+            <div class="card mb-3">
+                <div class="card-body p-lg-4 p-xl-5 text-center">
+                    <h3 class="card-title pricing-card-title">
+                        {lang key='orderregisterdomain'}
+                    </h3>
+                    <p>{lang key='secureYourDomain'}</p>
+                    <a href="cart.php?a=add&domain=register" class="btn btn-block btn-outline-primary">
+                        {lang key='navdomainsearch'}
+                    </a>
+                </div>
+            </div>
+        {/if}
+        {if $transferdomainenabled}
+            <div class="card mb-3">
+                <div class="card-body p-lg-4 p-xl-5 text-center">
+                    <h3 class="card-title pricing-card-title">
+                        {lang key='transferYourDomain'}
+                    </h3>
+                    <p>{lang key='transferExtend'}</p>
+                    <a href="cart.php?a=add&domain=transfer" class="btn btn-block btn-outline-primary">
+                        {lang key='transferYourDomain'}
+                    </a>
+                </div>
+            </div>
+        {/if}
     </div>
-
-    <div class="card mb-3">
-        <div class="card-body p-lg-4 p-xl-5 text-center">
-            <h3 class="card-title pricing-card-title">
-                {lang key='transferYourDomain'}
-            </h3>
-            <p>{lang key='transferExtend'}</p>
-            <a href="cart.php?a=add&domain=transfer" class="btn btn-block btn-outline-primary">
-                {lang key='transferYourDomain'}
-            </a>
-        </div>
-    </div>
-</div>
+{/if}
 
 <h2 class="text-center m-4">{lang key='howCanWeHelp'}</h2>
 
