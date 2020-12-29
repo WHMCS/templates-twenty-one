@@ -10163,6 +10163,7 @@ header.header .toolbar .nav-link {
   border: 1px solid #e5e5e5;
   color: #e5e5e5;
   position: relative;
+  font-size: 0.9em;
 }
 
 header.header .toolbar .nav-link .badge {
@@ -10455,6 +10456,47 @@ h6:hover .show-on-hover {
 
 .form-check-inline {
   display: initial;
+}
+
+@media (max-width: 991.98px) {
+  .licensing-verification h3 {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .licensing-verification h3 {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .licensing-verification h2 {
+    font-size: 1.7em;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .licensing-verification h2 {
+    font-size: 1.2em;
+  }
+}
+
+.licensing-verification .secondary-input-submit {
+  display: none;
+}
+
+@media (max-width: 767.98px) {
+  .licensing-verification .input-group .input-group-append {
+    display: none;
+  }
+  .licensing-verification .input-group input {
+    border-radius: 0 6px 6px 0 !important;
+  }
+  .licensing-verification .secondary-input-submit {
+    display: block;
+    padding-top: 0.5em;
+  }
 }
 
 .btn-default {
@@ -11173,12 +11215,12 @@ fieldset[disabled] .btn-default.focus {
   border: 0;
 }
 
-@media (max-width: 767px) {
-  .tiles .tile:nth-child(2) {
+@media (max-width: 1199.98px) {
+  .tiles div:nth-child(2) > .tile {
     border: 0;
   }
-  .tiles .tile:nth-child(1),
-  .tiles .tile:nth-child(2) {
+  .tiles div:nth-child(1) > .tile,
+  .tiles div:nth-child(2) > .tile {
     border-bottom: 1px solid #ccc;
   }
 }
@@ -11755,8 +11797,13 @@ div.md-editor.active {
 
 @media (min-width: 1200px) {
   .promo-banner ul li {
-    float: left;
     width: 50%;
+  }
+  .promo-banner ul li.left {
+    float: left;
+  }
+  .promo-banner ul li.right {
+    float: right;
   }
 }
 

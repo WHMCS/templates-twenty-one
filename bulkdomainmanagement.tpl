@@ -244,3 +244,7 @@
 <a href="clientarea.php?action=domains" class="btn btn-default">
     {lang key='clientareabacklink'}
 </a>
+
+<script type="text/javascript">
+    var disableInternalTabSelection = true;
+</script>

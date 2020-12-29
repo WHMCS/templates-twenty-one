@@ -61,3 +61,10 @@
 <a href="javascript:history.go(-1)" class="btn btn-default px-4">
     {lang key='clientareabacklink'}
 </a>
+
+{if $kbcurrentcat.editLink}
+    <a href="{$kbcurrentcat.editLink}" class="btn btn-default px-4 float-right">
+        <i class="fas fa-pencil-alt fa-fw"></i>
+        {lang key='edit'}
+    </a>
+{/if}

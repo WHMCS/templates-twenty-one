@@ -7,6 +7,17 @@
 
 jQuery(document).ready(function() {
 
+    // when the page loads
+    autoCollapse('#nav', 30);
+
+    // when the window is resized
+    jQuery(window).on('resize', function () {
+        if (jQuery('button[data-target="#mainNavbar"], button[data-toggle="collapse"]').is(':visible')) {
+            return;
+        }
+        autoCollapse('#nav', 30);
+    });
+
     // Item selector
     jQuery('.item-selector .item').click(function(e) {
         e.preventDefault();
@@ -96,18 +107,29 @@ jQuery(document).ready(function() {
     }
 
     // Internal page tab selection handling via location hash
-    if (jQuery(location).attr('hash').substr(1) !== "") {
-        var activeTab = jQuery(location).attr('hash');
-        jQuery(".tab-pane").removeClass('active');
-        jQuery(activeTab).removeClass('fade').addClass('active');
-        jQuery(".list-group-tab-nav a").removeClass('active');
-        jQuery('a[href="' + activeTab + '"]').addClass('active');
-        setTimeout(function() {
-            // Browsers automatically scroll on page load with a fragment.
-            // This scrolls back to the top right after page complete, but
-            // just before render (no perceptible scroll).
-            window.scrollTo(0, 0);
-        }, 1);
+    var internalSelectionDisabled = false;
+    if (
+        typeof(disableInternalTabSelection) !== 'undefined'
+        &&
+        disableInternalTabSelection
+    ) {
+        internalSelectionDisabled = true;
+    }
+
+    if (!internalSelectionDisabled) {
+        if (jQuery(location).attr('hash').substr(1) !== "") {
+            var activeTab = jQuery(location).attr('hash');
+            jQuery(".tab-pane").removeClass('active');
+            jQuery(activeTab).removeClass('fade').addClass('active');
+            jQuery(".list-group-tab-nav a").removeClass('active');
+            jQuery('a[href="' + activeTab + '"]').addClass('active');
+            setTimeout(function() {
+                // Browsers automatically scroll on page load with a fragment.
+                // This scrolls back to the top right after page complete, but
+                // just before render (no perceptible scroll).
+                window.scrollTo(0, 0);
+            }, 1);
+        }
     }
 
     // Enable Switches for Checkboxes
@@ -1187,4 +1209,53 @@ function addTwitterWidgetObserverWhenNodeAvailable() {
         .append("<style>.timeline-Tweet-text { font-size: 18px !important; line-height: 25px !important; margin-bottom: 0px !important; }</style>");
     removeRetweets();
     observerTwitterWidget.observe(targetTimelineTweets, observerConfig);
+}
+
+var autoCollapse = function (menu, maxHeight) {
+
+    var continueLoop = true,
+        nav = jQuery(menu),
+        navHeight = nav.innerHeight();
+    if (navHeight >= maxHeight) {
+
+        jQuery(menu + ' .collapsable-dropdown').removeClass('d-none');
+        jQuery(".navbar-nav").removeClass('w-auto').addClass("w-100");
+
+        while (navHeight > maxHeight && continueLoop) {
+            //  add child to dropdown
+            var children = nav.children(menu + ' li:not(:last-child):not(".no-collapse")'),
+                count = children.length;
+            if (!count) {
+                continueLoop = false;
+            } else {
+                children.data('original-classes', children.attr('class'));
+                var child = jQuery(children[count - 1]);
+                child.removeClass().addClass('dropdown-item');
+                child.prependTo(menu + ' .collapsable-dropdown-menu');
+            }
+            navHeight = nav.innerHeight();
+        }
+        jQuery(".navbar-nav").addClass("w-auto").removeClass('w-100');
+
+    } else {
+
+        var collapsed = jQuery(menu + ' .collapsable-dropdown-menu').children(menu + ' li');
+
+        if (collapsed.length === 0) {
+            jQuery(menu + ' .collapsable-dropdown').addClass('d-none');
+        }
+
+        while (navHeight < maxHeight && (nav.children(menu + ' li').length > 0) && collapsed.length > 0) {
+            //  remove child from dropdown
+            collapsed = jQuery(menu + ' .collapsable-dropdown-menu').children('li');
+            var child = jQuery(collapsed[0]);
+            child.removeClass().addClass(child.data('original-classes'));
+            child.insertBefore(nav.children(menu + ' li:last-child'));
+            navHeight = nav.innerHeight();
+        }
+
+        if (navHeight > maxHeight) {
+            autoCollapse(menu, maxHeight);
+        }
+    }
 }

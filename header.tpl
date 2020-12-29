@@ -101,14 +101,14 @@
                 <ul class="navbar-nav toolbar">
                     <li class="nav-item ml-3">
                         <a class="btn nav-link cart-btn" href="cart.php?a=view">
-                            <i class="far fa-shopping-cart"></i>
+                            <i class="far fa-shopping-cart fa-fw"></i>
                             <span class="badge badge-info">{$cartitemcount}</span>
                             <span class="sr-only">{lang key="carttitle"}</span>
                         </a>
                     </li>
                     <li class="nav-item ml-3 d-xl-none">
                         <button class="btn nav-link" type="button" data-toggle="collapse" data-target="#mainNavbar">
-                            <span class="fas fa-bars"></span>
+                            <span class="fas fa-bars fa-fw"></span>
                         </button>
                     </li>
                 </ul>
@@ -127,7 +127,7 @@
                             <input class="form-control prepended-form-control" type="text" name="search" placeholder="{lang key="searchOurKnowledgebase"}...">
                         </div>
                     </form>
-                    <ul class="navbar-nav mr-auto">
+                    <ul id="nav" class="navbar-nav mr-auto">
                         {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
                     </ul>
                     <ul class="navbar-nav ml-auto">

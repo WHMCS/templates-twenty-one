@@ -22,8 +22,11 @@
 
             {if $promotion->hasFeatures()}
                 <ul>
-                    {foreach $promotion->getFeatures() as $feature}
-                        <li><i class="far fa-check-circle"></i> {$feature}</li>
+                    {assign "promotionFeatures" $promotion->getFeatures()}
+                    {foreach $promotionFeatures as $key=>$feature}
+                        <li class="{if $key < ($promotionFeatures|@count / 2)}left{else}right{/if}">
+                            <i class="far fa-check-circle"></i> {$feature}
+                        </li>
                     {/foreach}
                 </ul>
             {/if}

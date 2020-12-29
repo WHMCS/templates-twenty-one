@@ -2,7 +2,7 @@
 
 <div class="tiles mb-4">
     <div class="row no-gutters">
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-xl-3">
             <a href="clientarea.php?action=services" class="tile">
                 <i class="fas fa-cube"></i>
                 <div class="stat">{$clientsstats.productsnumactive}</div>
@@ -11,7 +11,7 @@
             </a>
         </div>
         {if $clientsstats.numdomains || $registerdomainenabled || $transferdomainenabled}
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-xl-3">
                 <a href="clientarea.php?action=domains" class="tile">
                     <i class="fas fa-globe"></i>
                     <div class="stat">{$clientsstats.numactivedomains}</div>
@@ -20,7 +20,7 @@
                 </a>
             </div>
         {elseif $condlinks.affiliates && $clientsstats.isAffiliate}
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-xl-3">
                 <a href="affiliates.php" class="tile">
                     <i class="fas fa-shopping-cart"></i>
                     <div class="stat">{$clientsstats.numaffiliatesignups}</div>
@@ -29,7 +29,7 @@
                 </a>
             </div>
         {else}
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-xl-3">
                 <a href="clientarea.php?action=quotes" class="tile">
                     <i class="far fa-file-alt"></i>
                     <div class="stat">{$clientsstats.numquotes}</div>
@@ -38,7 +38,7 @@
                 </a>
             </div>
         {/if}
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-xl-3">
             <a href="supporttickets.php" class="tile">
                 <i class="fas fa-comments"></i>
                 <div class="stat">{$clientsstats.numactivetickets}</div>
@@ -46,7 +46,7 @@
                 <div class="highlight bg-color-red"></div>
             </a>
         </div>
-        <div class="col-6 col-lg-3">
+        <div class="col-6 col-xl-3">
             <a href="clientarea.php?action=invoices" class="tile">
                 <i class="fas fa-credit-card"></i>
                 <div class="stat">{$clientsstats.numunpaidinvoices}</div>
