@@ -61,9 +61,14 @@
         </div>
         <div class="list-group list-group-flush">
             {foreach $kbarticles as $kbarticle}
-                <a href="{routePath('knowledgebase-article-view', {$kbarticle.id}, {$kbarticle.urlfriendlytitle})}" class="list-group-item kb-article-item">
+                <a href="{routePath('knowledgebase-article-view', {$kbarticle.id}, {$kbarticle.urlfriendlytitle})}" class="list-group-item kb-article-item" data-id="{$kbarticle.id}">
                     <i class="fal fa-file-alt fa-fw text-black-50"></i>
                     {$kbarticle.title}
+                    {if $kbarticle.editLink}
+                        <button class="btn btn-sm btn-default show-on-card-hover" id="btnEditArticle-{$kbarticle.id}" data-url="{$kbarticle.editLink}" type="button">
+                            {lang key="edit"}
+                        </button>
+                    {/if}
                     <small>{$kbarticle.article|truncate:100:"..."}</small>
                 </a>
             {foreachelse}

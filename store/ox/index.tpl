@@ -123,7 +123,7 @@
                                         {if $inPreview}
                                             -
                                         {else}
-                                            {$plan->pricing()->first()->toFullString()}<small>/user</small>
+                                            {$plan->pricing()->first()->toFullString()}<small>/{{lang key="user"}|lower}</small>
                                         {/if}
                                     </div>
 

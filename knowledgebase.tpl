@@ -14,10 +14,15 @@
         {foreach $kbcats as $category}
             <div class="col-xl-6">
                 <div class="card kb-category mb-4">
-                    <a href="{routePath('knowledgebase-category-view', {$category.id}, {$category.urlfriendlyname})}" class="card-body">
+                    <a href="{routePath('knowledgebase-category-view', {$category.id}, {$category.urlfriendlyname})}" class="card-body" data-id="{$category.id}">
                         <span class="h5 m-0">
                             <i class="fal fa-folder fa-fw"></i>
                             {$category.name}
+                            {if $category.editLink}
+                                <button class="btn btn-sm btn-default show-on-card-hover" id="btnEditCategory-{$category.id}" data-url="{$category.editLink}" type="button">
+                                    {lang key="edit"}
+                                </button>
+                            {/if}
                             <span class="badge badge-info float-right">
                                 {lang key="knowledgebase.numArticle{if $category.numarticles != 1}s{/if}" num=$category.numarticles}
                             </span>
@@ -42,9 +47,14 @@
         </div>
         <div class="list-group list-group-flush">
             {foreach $kbmostviews as $kbarticle}
-                <a href="{routePath('knowledgebase-article-view', {$kbarticle.id}, {$kbarticle.urlfriendlytitle})}" class="list-group-item kb-article-item">
+                <a href="{routePath('knowledgebase-article-view', {$kbarticle.id}, {$kbarticle.urlfriendlytitle})}" class="list-group-item kb-article-item" data-id="{$kbarticle.id}">
                     <i class="fal fa-file-alt fa-fw text-black-50"></i>
                     {$kbarticle.title}
+                    {if $kbarticle.editLink}
+                        <button class="btn btn-sm btn-default show-on-card-hover" id="btnEditArticle-{$kbarticle.id}" data-url="{$kbarticle.editLink}" type="button">
+                            {lang key="edit"}
+                        </button>
+                    {/if}
                     <small>{$kbarticle.article|truncate:100:"..."}</small>
                 </a>
             {/foreach}

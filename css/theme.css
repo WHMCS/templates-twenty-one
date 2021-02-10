@@ -10095,10 +10095,6 @@ span.caret {
   background-color: #f1f1f1;
 }
 
-a {
-  color: #404040;
-}
-
 header.header {
   background-color: #fff;
 }
@@ -11586,6 +11582,9 @@ div.md-editor.active {
 
 .markdown-content blockquote {
   font-size: 1em;
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  border-left: 5px solid #eeeeee;
 }
 
 .markdown-content table {

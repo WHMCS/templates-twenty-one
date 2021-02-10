@@ -319,7 +319,7 @@
                         </p>
                     {else}
                         <p class="text-center">
-                            <button type="submit" class="btn btn-lg btn-success" name="reglock">
+                            <button type="submit" class="btn btn-lg btn-success" name="reglock" value="1" />
                                 {lang key='domainreglockenable'}
                             </button>
                         </p>

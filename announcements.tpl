@@ -33,7 +33,7 @@
                     </article>
 
                     <a href="{routePath('announcement-view', $announcement.id, $announcement.urlfriendlytitle)}" class="btn btn-default btn-sm">
-                        Continue reading
+                        {lang key="announcementscontinue"}
                         <i class="far fa-arrow-right"></i>
                     </a>
                 </div>

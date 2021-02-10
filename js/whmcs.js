@@ -417,6 +417,25 @@ jQuery(document).ready(function() {
         });
 
     /**
+     * If we are logged into the admin area and can edit a category and click edit,
+     * we need to stop the default and click the edit instead since its nested.
+     */
+    jQuery('a.card-body').click(function(e) {
+        if (e.target.id.includes('btnEditCategory')) {
+            e.preventDefault();
+            var editUrl = jQuery('#btnEditCategory-' + jQuery(this).data('id')).data('url');
+            window.location.href = editUrl;
+        }
+    });
+
+    jQuery('.kb-article-item').click(function(e) {
+        if (e.target.id.includes('btnEditArticle')) {
+            e.preventDefault();
+            var editUrl = jQuery('#btnEditArticle-' + jQuery(this).data('id')).data('url');
+            window.location.href = editUrl;
+        }
+    });
+    /**
      * Code will loop through each element that has the class markdown-editor and
      * enable the Markdown editor.
      */

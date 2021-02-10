@@ -1,5 +1,5 @@
 {if !empty($productGroups) || $registerdomainenabled || $transferdomainenabled}
-    <h2 class="text-center m-4">Browse our Products/Services</h2>
+    <h2 class="text-center m-4">{lang key='clientHomePanels.productsAndServices'}</h2>
 
     <div class="card-columns home">
         {foreach $productGroups as $productGroup}
@@ -111,14 +111,16 @@
             {lang key='homepage.manageServices'}
         </a>
     </div>
-    <div class="col-6 col-md-4 col-lg">
-        <a href="clientarea.php?action=domains" class="card-accent-midnight-blue">
-            <figure class="ico-container">
-                <i class="fal fa-globe"></i>
-            </figure>
-            {lang key='homepage.manageDomains'}
-        </a>
-    </div>
+    {if $registerdomainenabled || $transferdomainenabled || $numberOfDomains}
+        <div class="col-6 col-md-4 col-lg">
+            <a href="clientarea.php?action=domains" class="card-accent-midnight-blue">
+                <figure class="ico-container">
+                    <i class="fal fa-globe"></i>
+                </figure>
+                {lang key='homepage.manageDomains'}
+            </a>
+        </div>
+    {/if}
     <div class="col-6 col-md-4 offset-md-2 offset-lg-0 col-lg">
         <a href="supporttickets.php" class="card-accent-midnight-blue">
             <figure class="ico-container">

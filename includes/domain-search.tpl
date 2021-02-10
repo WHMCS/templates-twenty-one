@@ -56,7 +56,7 @@
                     </ul>
                 {/if}
 
-                <a href="{routePath('domain-pricing')}" class="btn btn-link btn-sm float-right">View all pricing</a>
+                <a href="{routePath('domain-pricing')}" class="btn btn-link btn-sm float-right">{lang key='viewAllPricing'}</a>
             </div>
         </div>
     </div>

@@ -2,7 +2,7 @@
     <div class="card-body extra-padding">
 
         <div class="mb-4">
-            <h6 class="h3">Contact Us</h6>
+            <h6 class="h3">{lang key='contactus'}</h6>
             <p class="text-muted mb-0">{lang key='readyforquestions'}</p>
         </div>
 

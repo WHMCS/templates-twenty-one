@@ -20,10 +20,17 @@
                         <i class="fas fa-pencil-alt fa-fw"></i>
                         {lang key='supportticketsreply'}
                     </button>
-                    <a href="#" class="btn btn-danger btn-sm">
-                        <i class="fas fa-times fa-fw"></i>
-                        {lang key='supportticketsclose'}
-                    </a>
+                    {if $closedticket}
+                        <button class="btn btn-danger btn-sm" disabled="disabled">
+                            <i class="fas fa-times fa-fw"></i>
+                            {lang key='supportticketsstatusclosed'}
+                        </button>
+                    {else}
+                        <button class="btn btn-danger btn-sm" onclick="window.location='?tid={$tid}&amp;c={$c}&amp;closeticket=true'">
+                            <i class="fas fa-times fa-fw"></i>
+                            {lang key='supportticketsclose'}
+                        </button>
+                    {/if}
                 </div>
             </h3>
 

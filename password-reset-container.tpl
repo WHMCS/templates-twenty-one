@@ -8,10 +8,6 @@
                     {include file="$template/includes/alert.tpl" type="success" msg=$successTitle textcenter=true}
                     <p>{$successMessage}</p>
                 {else}
-                    {if $errorMessage}
-                        {include file="$template/includes/alert.tpl" type="error" msg=$errorMessage textcenter=true}
-                    {/if}
-
                     {if $innerTemplate}
                         {include file="$template/password-reset-$innerTemplate.tpl"}
                     {/if}

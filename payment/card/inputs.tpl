@@ -43,7 +43,7 @@
 </div>
 {include file="$template/payment/billing-address.tpl"}
 {if $allowClientsToRemoveCards}
-    <div{if !$addingNewCard} class="w-hidden"{/if}
+    <div{if !$addingNewCard} class="w-hidden"{/if}>
         <div class="form-group cc-details row">
             <div class="offset-sm-4 col-sm-8 text-md-right">
                 <input type="hidden" name="nostore" value="1">

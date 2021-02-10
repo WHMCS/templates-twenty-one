@@ -48,7 +48,7 @@
                         <div class="ml-auto">
                             <div class="input-group active-client" role="group">
                                 <div class="input-group-prepend d-none d-md-inline">
-                                    <span class="input-group-text">Logged in as:</span>
+                                    <span class="input-group-text">{lang key='loggedInAs'}:</span>
                                 </div>
                                 <div class="btn-group">
                                     <a href="{$WEB_ROOT}/clientarea.php?action=details" class="btn btn-active-client">
@@ -100,7 +100,7 @@
 
                 <ul class="navbar-nav toolbar">
                     <li class="nav-item ml-3">
-                        <a class="btn nav-link cart-btn" href="cart.php?a=view">
+                        <a class="btn nav-link cart-btn" href="{$WEB_ROOT}/cart.php?a=view">
                             <i class="far fa-shopping-cart fa-fw"></i>
                             <span class="badge badge-info">{$cartitemcount}</span>
                             <span class="sr-only">{lang key="carttitle"}</span>
