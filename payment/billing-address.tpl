@@ -8,7 +8,7 @@
                         class="icheck-button"
                         name="billingcontact"
                         value="0"
-                        {if !$billingContact || $billingContact != $client->billingContactId} checked{/if}
+                        {if !$billingContact} checked{/if}
                 >
 
                 <strong class="name">{$client->fullName}</strong>
@@ -27,7 +27,7 @@
                             class="icheck-button"
                             name="billingcontact"
                             value="{$contact->id}"
-                            {if $billingContact == $contact->id || $contact->id == $client->billingContactId} checked{/if}
+                            {if $billingContact == $contact->id} checked{/if}
                     >
 
                     <strong class="name">{$contact->fullName}</strong>
@@ -48,14 +48,14 @@
                         class="icheck-button"
                         name="billingcontact"
                         value="new"
-                        {if $billingContact == 'new'} checked{/if}
+                        {if $billingContact === 'new'} checked{/if}
                 >
                 {lang key='paymentMethodsManage.addNewBillingAddress'}
             </label>
         </div>
     </div>
 </div>
-<div{if !$userDetailsValidationError && $billingcontact != 'new'} class="w-hidden"{/if}>
+<div{if !$userDetailsValidationError && $billingcontact !== 'new'} class="w-hidden"{/if}>
     <div id="newBillingAddress">
         <div class="form-group row cc-billing-address">
             <label for="inputFirstName" class="col-sm-4 text-md-right col-form-label">{lang key='clientareafirstname'}</label>

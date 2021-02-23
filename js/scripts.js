@@ -21708,19 +21708,12 @@ function showNewAccountInputFields() {
  */
 function hideNewCardInputFields() {
     hideNewBillingAddressFields();
-
-    jQuery(".cc-details").parent('div').slideUp();
-    jQuery("#billingAddressChoice").parent('div').slideUp();
-
-    var selectedCcInfo = jQuery('input[name="ccinfo"]:checked');
-
-    var selectedCcBillingContactId = jQuery(selectedCcInfo).data('billing-contact-id');
-
-    var selectedBillingContactData = jQuery('.billing-contact-info[data-billing-contact-id="' + selectedCcBillingContactId + '"]');
-
-    if (selectedBillingContactData.length) {
-        jQuery('.billing-contact-info').hide();
-        jQuery(selectedBillingContactData).show();
+    jQuery(".cc-details").slideUp();
+    jQuery("#billingAddressChoice").slideUp();
+    var contactId = jQuery('input[name="ccinfo"]:checked').data('billing-contact-id');
+    if (contactId != undefined) {
+        jQuery('#billingAddressChoice label.billing-contact-' + contactId)
+            .iCheck('check');
     }
 }
 
