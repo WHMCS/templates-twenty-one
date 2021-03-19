@@ -153,7 +153,7 @@
 
                 <div class="form-group text-center">
                     <input class="btn btn-primary" type="submit" name="save" value="{lang key='supportticketsticketsubmit'}" />
-                    <input class="btn btn-default" type="reset" value="{lang key='cancel'}" onclick="jQuery('#ticketReply').click()" />
+                    <input class="btn btn-default" type="reset" value="{lang key='cancel'}" onclick="jQuery('#btnTicketReply').click()" />
                 </div>
             </form>
 
