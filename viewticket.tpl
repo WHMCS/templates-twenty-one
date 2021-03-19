@@ -16,7 +16,7 @@
             <h3 class="card-title">
                 {lang key='supportticketsviewticket'} #{$tid}
                 <div class="ticket-actions float-sm-right mt-3 mt-sm-0">
-                    <button id="btnTicketReply" type="button" class="btn btn-default btn-sm" onclick="smoothScroll('#ticketReplyContainer')">
+                    <button id="ticketReply" type="button" class="btn btn-default btn-sm" onclick="smoothScroll('#ticketReplyContainer')">
                         <i class="fas fa-pencil-alt fa-fw"></i>
                         {lang key='supportticketsreply'}
                     </button>
@@ -153,7 +153,7 @@
 
                 <div class="form-group text-center">
                     <input class="btn btn-primary" type="submit" name="save" value="{lang key='supportticketsticketsubmit'}" />
-                    <input class="btn btn-default" type="reset" value="{lang key='cancel'}" onclick="jQuery('#btnTicketReply').click()" />
+                    <input class="btn btn-default" type="reset" value="{lang key='cancel'}" onclick="jQuery('#ticketReply').click()" />
                 </div>
             </form>
 
