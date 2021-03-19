@@ -7,7 +7,7 @@
     {include file="$template/includes/head.tpl"}
     {$headoutput}
 </head>
-<body class="primary-bg-color" data-phone-cc-input="{$phoneNumberInputStyle}">
+<body class="primary-bg-color{if $loggedin} loggedin{/if} {$templatefile} {$filename}" data-phone-cc-input="{$phoneNumberInputStyle}">
 
     {$headeroutput}
 
