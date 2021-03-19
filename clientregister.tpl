@@ -296,7 +296,7 @@
             {/if}
 
             <p align="center">
-                <input class="btn btn-large btn-primary{$captcha->getButtonClass($captchaForm)}" type="submit" value="{lang key='clientregistertitle'}"/>
+                <input class="btn btn-lg btn-primary{$captcha->getButtonClass($captchaForm)}" type="submit" value="{lang key='clientregistertitle'}"/>
             </p>
         </form>
     </div>
