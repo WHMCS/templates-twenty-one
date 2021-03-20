@@ -16,6 +16,9 @@
                 <div class="card kb-category mb-4">
                     <a href="{routePath('knowledgebase-category-view', {$category.id}, {$category.urlfriendlyname})}" class="card-body" data-id="{$category.id}">
                         <span class="h5 m-0">
+                            <span class="badge badge-info float-right">
+                                {lang key="knowledgebase.numArticle{if $category.numarticles != 1}s{/if}" num=$category.numarticles}
+                            </span>
                             <i class="fal fa-folder fa-fw"></i>
                             {$category.name}
                             {if $category.editLink}
@@ -23,9 +26,6 @@
                                     {lang key="edit"}
                                 </button>
                             {/if}
-                            <span class="badge badge-info float-right">
-                                {lang key="knowledgebase.numArticle{if $category.numarticles != 1}s{/if}" num=$category.numarticles}
-                            </span>
                         </span>
                         <p class="m-0 text-muted"><small>{$category.description}</small></p>
                     </a>
