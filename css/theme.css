@@ -10773,7 +10773,7 @@ fieldset[disabled] .btn-default.focus {
 }
 
 .status-expired,
-.status-transferred.away {
+.status-transferred-away {
   background-color: #004258;
 }
 
