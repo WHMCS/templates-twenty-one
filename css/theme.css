@@ -7468,7 +7468,6 @@ button.bg-dark:focus {
 }
 
 .position-sticky {
-  position: -webkit-sticky !important;
   position: sticky !important;
 }
 
@@ -7488,9 +7487,8 @@ button.bg-dark:focus {
   z-index: 1030;
 }
 
-@supports ((position: -webkit-sticky) or (position: sticky)) {
+@supports (position: sticky) {
   .sticky-top {
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -10746,7 +10744,7 @@ fieldset[disabled] .btn-default.focus {
   background-color: #d9534f;
 }
 
-.status-pending.transfer {
+.status-pending-transfer {
   background-color: #f0ad4e;
 }
 
@@ -10773,8 +10771,14 @@ fieldset[disabled] .btn-default.focus {
 }
 
 .status-expired,
-.status-transferred.away {
+.status-transferred-away {
   background-color: #004258;
+}
+
+.status-pending-registration,
+.status-redemption,
+.status-grace {
+  background-color: #ff6600;
 }
 
 .status-terminated {
@@ -10856,6 +10860,15 @@ fieldset[disabled] .btn-default.focus {
 
 .responsive-tabs-sm-connector {
   display: none;
+}
+
+.responsive-tabs-sm .nav-item a {
+  margin-right: 2px;
+}
+
+.responsive-tabs-sm .nav-item a:hover {
+  background-color: #f7f7f7;
+  border-bottom: 0;
 }
 
 @media (max-width: 767.98px) {
@@ -10953,8 +10966,9 @@ fieldset[disabled] .btn-default.focus {
   transform: rotate(180deg);
 }
 
-.sidebar .title {
-  font-weight: bold;
+.sidebar .card-sidebar .panel-title {
+  font-size: 16px;
+  margin: 0;
 }
 
 .sidebar .list-group {
@@ -10981,6 +10995,18 @@ fieldset[disabled] .btn-default.focus {
 
 .sidebar .list-group-item > i.far.fa-circle {
   color: #666;
+}
+
+.sidebar .validation-status-label {
+  font-size: initial;
+}
+
+.sidebar .validation-submit-div {
+  margin-top: 1em;
+}
+
+.sidebar .validation-status-container {
+  text-align: center;
 }
 
 .home-domain-search h2 {
@@ -11431,7 +11457,7 @@ fieldset[disabled] .btn-default.focus {
   text-align: right;
 }
 
-.email-verification {
+.verification-banner {
   margin: 0;
   padding: 10px;
   font-weight: 300;
@@ -11440,31 +11466,21 @@ fieldset[disabled] .btn-default.focus {
   color: #333;
 }
 
-.email-verification .text {
+.verification-banner .text {
   display: block;
   padding: 6px 0;
 }
 
-.email-verification .btn {
+.verification-banner .btn {
   margin: 3px 0;
   padding: 3px 10px;
-  background-color: #50525f;
-  border-color: #50525f;
-  color: #fff;
   font-style: normal;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-.email-verification .btn:active,
-.email-verification .btn[disabled]:hover {
-  background-color: #50525f;
-  border-color: #50525f;
-  color: #fff;
-}
-
-.email-verification .btn.close {
+.verification-banner .btn.close {
   margin-left: 10px;
   background-color: transparent;
   color: rgba(55, 55, 55, 0.5);
@@ -11472,12 +11488,13 @@ fieldset[disabled] .btn-default.focus {
   opacity: 1;
 }
 
-.email-verification .btn.close:hover {
+.verification-banner .btn.close:hover {
   color: rgba(55, 55, 55, 0.8);
 }
 
-.email-verification .fas,
-.email-verification .far {
+.verification-banner .fas,
+.verification-banner .fal,
+.verification-banner .far {
   color: #666;
   float: left;
   padding: 2px 10px 0 0;
@@ -11485,21 +11502,34 @@ fieldset[disabled] .btn-default.focus {
 }
 
 @media (min-width: 768px) {
-  .email-verification .text {
+  .verification-banner .text {
     padding-top: 9px;
     padding-bottom: 0;
   }
-  .email-verification .btn {
+  .verification-banner .btn {
     margin: 0;
     padding: 9px 25px;
   }
-  .email-verification .button {
+  .verification-banner .button {
     float: right;
   }
-  .email-verification .fas,
-  .email-verification .far {
+  .verification-banner .fas,
+  .verification-banner .fal,
+  .verification-banner .far {
     font-size: 36px;
   }
+}
+
+.verification-banner.email-verification .btn.btn-action,
+.verification-banner.email-verification .btn.btn-action:active,
+.verification-banner.email-verification .btn.btn-action[disabled]:hover {
+  background-color: #50525f;
+  border-color: #50525f;
+  color: #fff;
+}
+
+.verification-banner.user-validation i {
+  margin-left: 0.11em;
 }
 
 /**
@@ -11547,53 +11577,53 @@ div.md-editor.active {
  * Markdown Content Formatting
  * -------------------------
  */
-.markdown-content h1 {
+.md-preview h1, .markdown-content h1 {
   font-size: 1.6em;
   color: #333;
 }
 
-.markdown-content h2 {
+.md-preview h2, .markdown-content h2 {
   font-size: 1.4em;
   color: #333;
 }
 
-.markdown-content h3 {
+.md-preview h3, .markdown-content h3 {
   font-size: 1.2em;
   color: #333;
 }
 
-.markdown-content h4 {
+.md-preview h4, .markdown-content h4 {
   font-size: 1.1em;
   color: #333;
 }
 
-.markdown-content pre {
+.md-preview pre, .markdown-content pre {
   padding: 15px;
   background-color: #444;
   color: #f8f8f8;
   border: 0;
 }
 
-.markdown-content pre code {
+.md-preview pre code, .markdown-content pre code {
   white-space: pre;
   word-break: normal;
   word-wrap: normal;
 }
 
-.markdown-content blockquote {
+.md-preview blockquote, .markdown-content blockquote {
   font-size: 1em;
   padding: 10px 20px;
   margin: 0 0 20px;
   border-left: 5px solid #eeeeee;
 }
 
-.markdown-content table {
+.md-preview table, .markdown-content table {
   margin: 10px 0;
   background-color: #fff;
   border: 1px solid #ddd;
 }
 
-.markdown-content table > thead > tr > th {
+.md-preview table > thead > tr > th, .markdown-content table > thead > tr > th {
   padding: 4px 10px;
   background-color: #f8f8f8;
   border: 1px solid #ddd;
@@ -11601,7 +11631,7 @@ div.md-editor.active {
   text-align: center;
 }
 
-.markdown-content table > tbody > tr > td {
+.md-preview table > tbody > tr > td, .markdown-content table > tbody > tr > td {
   padding: 3px 8px;
   border: 1px solid #ddd;
 }
@@ -11942,6 +11972,14 @@ div.md-editor.active {
   background-color: #666;
 }
 
+.promo-banner.sitebuilder {
+  border-top: 3px solid #ff3377;
+}
+
+.promo-banner.sitebuilder .btn {
+  background-color: #ff3377;
+}
+
 .mc-panel-promo {
   font-size: 0.95em;
 }
@@ -11985,13 +12023,6 @@ div.md-editor.active {
 
 .panel-mc-sso small {
   display: block;
-}
-
-.compact-control-bar {
-  margin: 0;
-  padding: 5px;
-  background-color: #eee;
-  border-radius: 3px;
 }
 
 .social-signin-btns {
@@ -12408,7 +12439,7 @@ div.tweet span {
   vertical-align: top;
 }
 
-.view-ticket .attachment-list li a {
+.view-ticket .attachment-list li span {
   display: block;
   padding: 5px 5px 10px 5px;
   margin-bottom: 10px;
@@ -12416,7 +12447,7 @@ div.tweet span {
   border-radius: 3px;
 }
 
-.view-ticket .attachment-list li a figure {
+.view-ticket .attachment-list li figure {
   margin: 0 0 5px 0;
   background-color: #f6f6f6;
   line-height: 100px;
@@ -12873,6 +12904,7 @@ div.product-details-tab-container {
   padding: 20px;
   border: 1px solid #ddd;
   border-top: 0;
+  background-color: #fff;
 }
 
 .module-client-area {

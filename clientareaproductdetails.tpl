@@ -368,15 +368,17 @@
                     {if $lastupdate}
                         <div class="tab-pane fade text-center" role="tabpanel" id="resourceusage">
                             <div class="col-sm-10 offset-sm-1">
-                                <div class="col-sm-6">
-                                    <h4>{lang key='diskSpace'}</h4>
-                                    <input type="text" value="{$diskpercent|substr:0:-1}" class="dial-usage" data-width="100" data-height="100" data-min="0" data-readOnly="true" />
-                                    <p>{$diskusage}MB / {$disklimit}MB</p>
-                                </div>
-                                <div class="col-sm-6">
-                                    <h4>{lang key='bandwidth'}</h4>
-                                    <input type="text" value="{$bwpercent|substr:0:-1}" class="dial-usage" data-width="100" data-height="100" data-min="0" data-readOnly="true" />
-                                    <p>{$bwusage}MB / {$bwlimit}MB</p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <h4>{lang key='diskSpace'}</h4>
+                                        <input type="text" value="{$diskpercent|substr:0:-1}" class="dial-usage" data-width="100" data-height="100" data-min="0" data-readOnly="true" />
+                                        <p>{$diskusage}MB / {$disklimit}MB</p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <h4>{lang key='bandwidth'}</h4>
+                                        <input type="text" value="{$bwpercent|substr:0:-1}" class="dial-usage" data-width="100" data-height="100" data-min="0" data-readOnly="true" />
+                                        <p>{$bwusage}MB / {$bwlimit}MB</p>
+                                    </div>
                                 </div>
                             </div>
                             <div class="clearfix">

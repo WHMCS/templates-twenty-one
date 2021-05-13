@@ -16,7 +16,7 @@
       <div class="container">
         <span class="navbar-brand"></span>
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#nav-landing-page" aria-expanded="false">
-          <span class="sr-only">{lang key="store.toggleNav"}</span>
+          <span class="sr-only">{lang key="toggleNav"}</span>
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav-landing-page">

@@ -21,7 +21,7 @@
                                 <i class="far fa-flag"></i>
                                 {if count($clientAlerts) > 0}
                                     {count($clientAlerts)}
-                                    <span class="d-none d-sm-inline">Notifications</span>
+                                    <span class="d-none d-sm-inline">{lang key='notifications'}</span>
                                 {else}
                                     <span class="d-sm-none">0</span>
                                     <span class="d-none d-sm-inline">{lang key='nonotifications'}</span>
@@ -146,6 +146,7 @@
         </div>
     </nav>
 
+    {include file="$template/includes/validateuser.tpl"}
     {include file="$template/includes/verifyemail.tpl"}
 
     {if $templatefile == 'homepage'}

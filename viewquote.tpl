@@ -110,7 +110,7 @@
                 {include file="$template/includes/panel.tpl" type="warning" headerTitle="{lang key='quoteproposal'}" bodyContent=$proposal}
             {/if}
 
-            <div class="card bg-default">
+            <div class="card bg-default mb-3">
                 <div class="card-header">
                     <h3 class="card-title"><strong>{lang key='quotelineitems'}</strong></h3>
                 </div>

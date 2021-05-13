@@ -98,6 +98,18 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="inputLanguage" class="col-form-label">{lang key='clientarealanguage'}</label>
+                        <select name="accountLanguage" id="inputAccountLanguage" class="form-control"
+                            {if in_array('language', $uneditablefields)} disabled="disabled"{/if}>
+                            <option value="">{lang key='default'}</option>
+                            {foreach $languages as $language}
+                                <option value="{$language}"{if $language eq $clientLanguage} selected="selected"{/if}
+                                    >{$language|ucfirst}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+
                     {if $showTaxIdField}
                         <div class="form-group">
                             <label for="inputTaxId" class="col-form-label">{lang key=$taxIdLabel}</label>

@@ -164,14 +164,14 @@
 
                     <div class="card mb-4">
                         <div class="card-body p-4">
-                            <h3 class="card-title">{lang key='orderadditionalrequiredinfo'}</h3>
+                            <h3 class="card-title">{lang key='orderadditionalrequiredinfo'}<br><i><small>{lang key='orderForm.requiredField'}</small></i></h3>
 
                             <div class="row">
                                 {if $customfields}
                                     {foreach $customfields as $customfield}
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="customfield{$customfield.id}">{$customfield.name}</label>
+                                                <label for="customfield{$customfield.id}">{$customfield.name} {$customfield.required}</label>
                                                 <div class="control">
                                                     {$customfield.input}
                                                 {if $customfield.description}

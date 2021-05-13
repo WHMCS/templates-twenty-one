@@ -49,7 +49,7 @@
                         <div class="float-md-right">
                             <span class="label label-danger">
                                 <i class="fas fa-lock fa-fw"></i>
-                                Restricted
+                                {lang key='restricted'}
                             </span>
                         </div>
                     {/if}

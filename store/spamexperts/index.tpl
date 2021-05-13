@@ -13,7 +13,7 @@
       <div class="container">
         <span class="navbar-brand"></span>
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#nav-landing-page" aria-expanded="false">
-          <span class="sr-only">{lang key="store.toggleNav"}</span>
+          <span class="sr-only">{lang key="toggleNav"}</span>
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav-landing-page">
@@ -109,7 +109,7 @@
                 <div class="text-center lead preview-text">Email service products you activate will be displayed here</div>
             {/if}
             <div class="powered-by">
-                Powered by <img src="{$WEB_ROOT}/assets/img/marketconnect/spamexperts/logo_white.png">
+                {lang key='store.poweredBy' service=''}<img src="{$WEB_ROOT}/assets/img/marketconnect/spamexperts/logo_white.png">
             </div>
         </div>
     </div>

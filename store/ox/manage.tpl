@@ -1,83 +1,105 @@
-<p>{lang key='ox.intro'}</p>
-
-<p>
-    <form action="{$upgradeUrl}" method="post">
-        <span id="accountCount">
-            <span id="accountCount">
-                {lang key='ox.accountCount' number='-' limit=$model->qty}
-            </span>
-        </span>
-        <input type="hidden" name="isproduct" value="{$isService}">
-        <input type="hidden" name="serviceid" value="{$model->id}">
-        <button type="submit" class="btn btn-link no-padding">{lang key='upgrade'}</button>
-    </form>
-</p>
-
-<div class="compact-control-bar">
-    <button id="btnRefresh" type="button" class="btn btn-sm btn-default disabled float-right" disabled="disabled">
-        <i class="fas fa-sync-alt fa-spin" aria-hidden="true"></i>
-        {lang key='ox.refresh'}
-    </button>
-    <button id="btnAddAccount" type="button" class="btn btn-default btn-sm">
-        <i class="fal fa-plus"></i>
-        {lang key='ox.createUser'}
-    </button>
-</div>
-
 <div id="oxSuccess" class="alert alert-success w-hidden"></div>
 <div id="oxLoadError" class="alert alert-success w-hidden"></div>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th width="30%">{lang key='ox.emailAddress'}</th>
-            <th width="20%">{lang key='ox.mailboxSize'}</th>
-            <th></th>
-        </tr>
-        <tr class="clone w-hidden" data-account-id="" data-account="" data-first-name="" data-last-name="" data-display-name="">
-            <td><span class="account"></span>@{$domain}</td>
-            <td><span class="limit"></span>GB</td>
-            <td>
-                <button class="btn btn-default btn-sm manage-account">{lang key='ox.manageAccount'}</button>
-                <button class="btn btn-default btn-sm set-ox-password">{lang key='ox.setPassword'}</button>
-                <button class="btn btn-danger btn-sm ox-delete">{lang key='ox.delete'}</button>
-            </td>
-        </tr>
-        <tr class="loading">
-            <td colspan="3">
-                <i class="fas fa-sync-alt fa-spin" aria-hidden="true"></i>
-                {lang key='loading'}
-            </td>
-        </tr>
-        <tr class="no-accounts w-hidden">
-            <td colspan="3">{lang key='ox.noAccounts'}</td>
-        </tr>
-    </thead>
-    <tbody id="tableBodyAccounts">
-    </tbody>
-</table>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <h3 class="card-title">{lang key='store.ox.manage'}</h3>
+        <p>{lang key='ox.intro'}</p>
+
+        <div class="btn-toolbar justify-content-between mb-1" role="toolbar">
+            <div class="btn-group" role="group">
+                <form action="{$upgradeUrl}" method="post">
+                    <input type="hidden" name="isproduct" value="{$isService}">
+                    <input type="hidden" name="serviceid" value="{$model->id}">
+                    <button type="submit" class="btn btn-secondary btn-sm">
+                        <i class="fal fa-arrow-circle-up fa-fw"></i>
+                        {lang key='upgrade'}
+                    </button>
+                </form>
+            </div>
+            <div class="btn-group btn-group-sm" role="group">
+                <button id="btnAddAccount" type="button" class="btn btn-primary btn-sm">
+                    <i class="fal fa-plus"></i>
+                    {lang key='ox.createUser'}
+                </button>
+                <button id="btnRefresh" type="button" class="btn btn-sm btn-default disabled" disabled="disabled">
+                    <i class="fas fa-sync-alt fa-spin" aria-hidden="true"></i>
+                    {lang key='ox.refresh'}
+                </button>
+            </div>
+        </div>
+
+        <div id="accountCount">{lang key='ox.accountCount' number='-' limit=$model->qty}</div>
+
+        <table class="table table-striped" style="display: table">
+            <thead>
+                <tr>
+                    <th>{lang key='ox.emailAddress'}</th>
+                    <th class="w-25">{lang key='ox.mailboxSize'}</th>
+                    <th class="w-50 invisible">
+                        <div class="btn-group" role="group" aria-disabled="true">
+                            <button class="btn btn-default btn-sm" aria-disabled="true">{lang key='ox.manageAccount'}</button>
+                            <button class="btn btn-default btn-sm" aria-disabled="true">{lang key='ox.setPassword'}</button>
+                            <button class="btn btn-danger btn-sm" aria-disabled="true">{lang key='ox.delete'}</button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="tableBodyAccounts">
+                 <tr class="loading">
+                    <td class="text-center" colspan="3">
+                        <i class="fas fa-sync-alt fa-spin" aria-hidden="true"></i>
+                        {lang key='loading'}
+                    </td>
+                </tr>
+                <tr class="no-accounts w-hidden">
+                    <td class="text-center" colspan="3">{lang key='ox.noAccounts'}</td>
+                </tr>
+            </tbody>
+            <tr class="clone w-hidden" data-account-id="" data-account="" data-first-name="" data-last-name="" data-display-name="">
+                <td><span class="account"></span>@{$domain}</td>
+                <td><span class="limit"></span>GB</td>
+                <td class="text-right">
+                    <div class="btn-group" role="group">
+                        <button class="btn btn-default btn-sm manage-account">{lang key='ox.manageAccount'}</button>
+                        <button class="btn btn-default btn-sm set-ox-password">{lang key='ox.setPassword'}</button>
+                        <button class="btn btn-danger btn-sm ox-delete">{lang key='ox.delete'}</button>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
 
 <ul class="nav nav-tabs responsive-tabs-sm">
-    <li class="active">
-        <a href="#retrievalsettings" data-toggle="tab">
+    <li class="nav-item">
+        <a href="#retrievalsettings" class="nav-link active" data-toggle="tab">
             <i class="far fa-envelope fa-fw"></i>
             {lang key='ox.settings.retrieval'}
         </a>
     </li>
-    <li>
-        <a href="#davsettings" data-toggle="tab">
+    <li class="nav-item">
+        <a href="#davsettings" class="nav-link"  data-toggle="tab">
             <i class="far fa-calendar-alt fa-fw"></i>
             {lang key='ox.settings.davSettings'}
         </a>
     </li>
-    <li>
-        <a href="#usage" data-toggle="tab">
+    <li class="nav-item">
+        <a href="#usage" class="nav-link"  data-toggle="tab">
             <i class="far fa-file-alt fa-fw"></i>
             {lang key='ox.settings.usageInstructions'}
         </a>
     </li>
+    <li class="nav-item w-hidden" id="migrationNav">
+        <a href="#migration" class="nav-link"  data-toggle="tab">
+            <i class="far fa-file-alt fa-fw"></i>
+            {lang key='ox.settings.migrationTitle'}
+        </a>
+    </li>
 </ul>
 <div class="responsive-tabs-sm-connector"><div class="channel"></div><div class="bottom-border"></div></div>
-<div class="tab-content product-details-tab-container w-text-09">
+<div class="tab-content product-details-tab-container w-text-09 mb-4">
     <div class="tab-pane fade show active" id="retrievalsettings">
         <p>{lang key='ox.settings.retrievalIntro'}</p>
         <table class="table">
@@ -161,9 +183,14 @@
             </tbody>
         </table>
     </div>
+    <div class="tab-pane fade w-hidden" id="migration">
+        <p>{lang key="ox.settings.migrationIntro"}</p>
+        <div>
+            <a class="migration-url btn btn-info btn-block btn-lg" href="#" target="_blank"
+                >{lang key="ox.settings.migrationLaunch"}</a>
+        </div>
+    </div>
 </div>
-
-<br><br>
 
 <form id="frmOxAddAccount" action="{$addAccountUrl}" method="post">
     <div class="modal fade" id="modalAddAccount">
@@ -394,8 +421,7 @@
 <script src="{$BASE_PATH_JS}/PasswordStrength.js"></script>
 <script>
     function loadAccounts(force) {
-        var tableBody = jQuery('#tableBodyAccounts'),
-            trLoading = jQuery('tr.loading'),
+        var trLoading = jQuery('tr.loading'),
             divError = jQuery('#oxLoadError'),
             trNoAccounts = jQuery('tr.no-accounts');
 
@@ -410,10 +436,11 @@
             .find('i')
             .addClass('fa-spin');
 
+        clearAccounts();
+        trNoAccounts.hide();
         if (trLoading.not(':visible')) {
             trLoading.show();
         }
-        tableBody.html('');
         WHMCS.http.jqClient.jsonPost({
             url: '{$listAccountsUrl}',
             data: {
@@ -431,14 +458,11 @@
                             addAccountToTable(account);
                         });
                     }
-                    jQuery('#accountCount').find('.number').text(data.accounts.length);
                 }
             },
             always: function() {
                 trLoading.hide();
-                if (jQuery('#tableBodyAccounts').find('tr').length === 0) {
-                    trNoAccounts.show();
-                }
+                updateAccountsDisplay();
                 jQuery('#btnRefresh').removeClass('disabled').prop('disabled', false)
                     .find('i').removeClass('fa-spin');
             }
@@ -459,17 +483,40 @@
             .attr('data-last-name', data.last_name)
             .attr('data-display-name', data.display_name)
             .attr('data-account', data.username + '@{$domain}');
-        clone.removeClass('clone').show();
+        clone.addClass('account-entry').removeClass('clone').show();
         tableBody.append(clone);
     }
 
-    function loadConfiguration(force) {
-        var tablePanelUsage = jQuery('#tablePanelUsage'),
-            tablePanelUsageHead = jQuery('#tablePanelUsageHead');
+    function clearAccounts() {
+        jQuery('#tableBodyAccounts .account-entry').remove();
+    }
 
-        if (tablePanelUsageHead.find('tr.loading').not(':visible')) {
-            tablePanelUsageHead.find('tr.loading').show();
+    function updateAccountsDisplay() {
+        var trNoAccounts = jQuery('#tableBodyAccounts tr.no-accounts'),
+            accountsCount = jQuery('#accountCount').find('.number');
+        var count = jQuery('#tableBodyAccounts tr.account-entry').length;
+        if (count == 0) {
+            trNoAccounts.show();
+        } else {
+            trNoAccounts.hide();
         }
+        accountsCount.text(count);
+    }
+
+    function loadConfiguration(force) {
+        var tabNames = ['Usage'];
+        var tabs = [];
+        tabNames.forEach(function(tabName) {
+            var tabSpec = {
+                'panel': jQuery('#tablePanel' + tabName),
+                'header': jQuery('#tablePanel' + tabName + 'Head'),
+            };
+            tabs.push(tabSpec);
+            if (tabSpec.header.find('tr.loading').not(':visible')) {
+                tabSpec.header.find('tr.loading').show();
+            }
+        });
+
         force = force || 0;
         WHMCS.http.jqClient.jsonPost({
             url: '{$configurationUrl}',
@@ -478,6 +525,7 @@
                 token: csrfToken
             },
             success: function(data) {
+                var error = '{lang|addslashes key="unavailable"}';
                 if (data.settings) {
                     jQuery('.incoming-hostname').text(data.settings.incoming.hostname);
                     jQuery('.incoming-port').text(data.settings.incoming.port);
@@ -487,7 +535,6 @@
                     jQuery('.outgoing-port').text(data.settings.outgoing.port);
                     jQuery('.calendar-server').text(data.settings.calendar.hostname);
                 } else {
-                    var error = '{lang key="unavailable"}';
                     jQuery('.incoming-hostname').text(error);
                     jQuery('.incoming-port').text(error);
                     jQuery('.pop-hostname').text(error);
@@ -497,16 +544,23 @@
                     jQuery('.calendar-server').text(error);
                 }
                 if (data.usage) {
-                    tablePanelUsage.find('tr').remove();
-                    jQuery.each(data.usage, function(index, value) {
-                        tablePanelUsage.append(
+                    var tabSpec = tabs[tabNames.indexOf('Usage')];
+                    tabSpec.panel.find('tr').remove();
+                    jQuery.each(data.usage, function (index, value) {
+                        tabSpec.panel.append(
                             '<tr><td>' + value + '</td></tr>'
                         );
                     });
                 }
+                if (data.migration_tool) {
+                    jQuery('.migration-url').attr('href', data.migration_tool.url);
+                    jQuery('#migration, #migrationNav').removeClass('w-hidden');
+                }
             },
             always: function() {
-                tablePanelUsageHead.find('tr.loading').hide();
+                tabs.forEach(function(tabSpec) {
+                    tabSpec.header.find('tr.loading').hide();
+                });
             }
         });
     }
@@ -573,9 +627,6 @@
                     formData = frm.serialize(),
                     oxError = modal.find('.modal-error'),
                     oxSuccess = jQuery('#oxSuccess'),
-                    tableBody = jQuery('#tableBodyAccounts'),
-                    trNoAccounts = jQuery('tr.no-accounts'),
-                    accountCount = jQuery('#accountCount').find('.number'),
                     err = false;
 
                 oxError.hide().text('');
@@ -645,13 +696,7 @@
                             }
                         },
                         always: function() {
-                            var count = tableBody.find('tr').length;
-                            if (count === 0) {
-                                trNoAccounts.show();
-                            } else {
-                                trNoAccounts.hide();
-                            }
-                            accountCount.text(count);
+                            updateAccountsDisplay();
                             modal.find('.loader').hide();
                         }
                     });

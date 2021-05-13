@@ -15,7 +15,7 @@
       <div class="container">
         <span class="navbar-brand"></span>
         <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#nav-landing-page" aria-expanded="false">
-          <span class="sr-only">{lang key="store.toggleNav"}</span>
+          <span class="sr-only">{lang key="toggleNav"}</span>
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="nav-landing-page">
@@ -288,7 +288,7 @@
                 <form method="post" action="{routePath('cart-order')}">
                     <input type="hidden" name="pid" value="{$emergencyPlan->id}">
                     <button type="submit" class="btn btn-default mt-3 mt-lg-0 float-lg-right">
-                        Buy Now
+                        {lang key="store.sitelock.buyNow"}
                     </button>
                 </form>
             </div>

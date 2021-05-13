@@ -2,7 +2,7 @@
 
 <div class="progress mb-3" id="passwordStrengthBar">
     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-        <span class="sr-only">New Password Rating: 0%</span>
+        <span class="sr-only">{lang key='pwstrengthrating'}: 0%</span>
     </div>
 </div>
 
@@ -47,7 +47,7 @@
 
         jQuery(this).removeClass('is-invalid is-warning is-valid');
         progressBar.removeClass("bg-danger bg-warning bg-success").css("width", pwstrength + "%").attr('aria-valuenow', pwstrength);
-        jQuery("#passwordStrengthBar .progress-bar .sr-only").html('New Password Rating: ' + pwstrength + '%');
+        jQuery("#passwordStrengthBar .progress-bar .sr-only").html('{lang|addslashes key='pwstrengthrating'}: ' + pwstrength + '%');
         if (pwstrength < pwStrengthErrorThreshold) {
             jQuery(this).addClass('is-invalid');
             progressBar.addClass("bg-danger");

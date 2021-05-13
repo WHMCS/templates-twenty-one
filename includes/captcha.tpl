@@ -7,7 +7,7 @@
         {if $captcha == "recaptcha"}
             <div id="google-recaptcha-domainchecker" class="form-group recaptcha-container mx-auto"></div>
         {elseif !in_array($captcha, ['invisible', 'recaptcha'])}
-            <div class="col-md-8 offset-md-2 col-10 offset-1">
+            <div class="col-md-8 mx-auto mb-3 mb-sm-0">
                 <div id="default-captcha-domainchecker" class="{if $filename == 'domainchecker'}input-group input-group-box {/if}text-center row pb-3">
                     <p>{lang key="captchaverify"}</p>
 

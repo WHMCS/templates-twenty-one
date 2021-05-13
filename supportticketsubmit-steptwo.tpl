@@ -98,7 +98,7 @@
             </div>
             <div id="fileUploadsContainer"></div>
             <div class="text-muted">
-                <small>{lang key='supportticketsallowedextensions'}: {$allowedfiletypes}</small>
+                <small>{lang key='supportticketsallowedextensions'}: {$allowedfiletypes}  ({lang key="maxFileSize" fileSize="$uploadMaxFileSize"})</small>
             </div>
         </div>
 

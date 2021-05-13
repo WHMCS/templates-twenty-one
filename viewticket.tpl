@@ -16,7 +16,7 @@
             <h3 class="card-title">
                 {lang key='supportticketsviewticket'} #{$tid}
                 <div class="ticket-actions float-sm-right mt-3 mt-sm-0">
-                    <button id="btnTicketReply" type="button" class="btn btn-default btn-sm" onclick="smoothScroll('#ticketReplyContainer')">
+                    <button id="ticketReply" type="button" class="btn btn-default btn-sm" onclick="smoothScroll('#ticketReplyContainer')">
                         <i class="fas fa-pencil-alt fa-fw"></i>
                         {lang key='supportticketsreply'}
                     </button>
@@ -48,6 +48,10 @@
                     </div>
                     <div class="message p-3">
                         {$reply.message}
+                        {if $reply.ipaddress}
+                            <hr>
+                            {lang key='support.ipAddress'}: {$reply.ipaddress}
+                        {/if}
                         {if $reply.id && $reply.admin && $ratingenabled}
                             <div class="clearfix">
                                 {if $reply.rating}
@@ -79,15 +83,27 @@
                             <ul class="attachment-list">
                                 {foreach $reply.attachments as $num => $attachment}
                                     <li>
-                                        <a href="dl.php?type={if $reply.id}ar&id={$reply.id}{else}a&id={$id}{/if}&i={$num}">
-                                            <figure>
-                                                <i class="far fa-file"></i>
-                                            </figure>
-                                            <div class="caption">
-                                                {$attachment}
-                                                {if $reply.attachments_removed}<small>Removed</small>{/if}
-                                            </div>
-                                        </a>
+                                        {if $reply.attachments_removed}
+                                            <span>
+                                                <figure>
+                                                    <i class="far fa-file-minus"></i>
+                                                </figure>
+                                                <div class="caption">
+                                                    {$attachment}
+                                                </div>
+                                            </span>
+                                        {else}
+                                            <a href="dl.php?type={if $reply.id}ar&id={$reply.id}{else}a&id={$id}{/if}&i={$num}">
+                                                <span>
+                                                    <figure>
+                                                        <i class="far fa-file"></i>
+                                                    </figure>
+                                                    <div class="caption">
+                                                        {$attachment}
+                                                    </div>
+                                                </span>
+                                            </a>
+                                        {/if}
                                     </li>
                                 {/foreach}
                             </ul>
@@ -124,7 +140,7 @@
                     <div class="input-group mb-1 attachment-group">
                         <div class="custom-file">
                             <label class="custom-file-label text-truncate" for="inputAttachment1" data-default="Choose file">
-                                Choose file
+                                {lang key='chooseFile'}
                             </label>
                             <input type="file" class="custom-file-input" name="attachments[]" id="inputAttachment1">
                         </div>
@@ -139,7 +155,7 @@
                         <div class="input-group mb-1 attachment-group">
                             <div class="custom-file">
                                 <label class="custom-file-label text-truncate">
-                                    Choose file
+                                    {lang key='chooseFile'}
                                 </label>
                                 <input type="file" class="custom-file-input" name="attachments[]">
                             </div>
@@ -147,7 +163,7 @@
                     </div>
                     <div id="fileUploadsContainer"></div>
                     <div class="text-muted">
-                        <small>{lang key='supportticketsallowedextensions'}: {$allowedfiletypes}</small>
+                        <small>{lang key='supportticketsallowedextensions'}: {$allowedfiletypes} ({lang key="maxFileSize" fileSize="$uploadMaxFileSize"})</small>
                     </div>
                 </div>
 

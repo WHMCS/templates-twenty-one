@@ -10,6 +10,7 @@
     <link href="{assetPath file='theme.min.css'}?v={$versionHash}" rel="stylesheet">
     <link href="{$WEB_ROOT}/assets/css/fontawesome-all.min.css" rel="stylesheet">
     <link href="{assetPath file='invoice.min.css'}?v={$versionHash}" rel="stylesheet">
+    <script>var whmcsBaseUrl = "{$WEB_ROOT}";</script>
     <script src="{assetPath file='scripts.min.js'}?v={$versionHash}"></script>
 
 </head>
@@ -269,7 +270,7 @@
     <div id="fullpage-overlay" class="w-hidden">
         <div class="outer-wrapper">
             <div class="inner-wrapper">
-                <img src="{$WEB_ROOT}/assets/img/overlay-spinner.svg">
+                <img src="{$WEB_ROOT}/assets/img/overlay-spinner.svg" alt="">
                 <br>
                 <span class="msg"></span>
             </div>

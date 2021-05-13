@@ -51,7 +51,7 @@
 
             <div class="products row">
                 {foreach $upgradeProducts as $key => $product}
-                <div class="column col-sm-{if count($upgradeProducts) >= 4}3{elseif count($upgradeProducts) == 3}4{else}6{/if}">
+                <div class="column col-sm-12 col-md-6 col-lg-{if count($upgradeProducts) >= 3}4{else}6{/if}">
                     <div class="product">
                         <div class="header">
                             <h4>
@@ -117,10 +117,6 @@
                         </div>
                     </div>
                 </div>
-                {if count($upgradeProducts) >= 4 && (($key + 1) % 4 == 0)}
-            </div>
-            <div class="products row">
-                {/if}
                 {/foreach}
             </div>
             {/if}

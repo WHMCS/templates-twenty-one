@@ -75,7 +75,7 @@
         });
     </script>
 
-    <div class="table-container clearfix">
+    <div class="table-container clearfix overflow-auto">
         <table class="table table-list hidden" id="tableDomainPricing">
             <thead>
             <tr>

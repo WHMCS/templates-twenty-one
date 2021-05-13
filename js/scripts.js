@@ -21167,10 +21167,19 @@ jQuery(document).ready(function() {
         e.preventDefault();
         WHMCS.http.jqClient.post(jQuery(this).data('uri'),
             {
-                'token': csrfToken,
+                'token': csrfToken
             });
-        jQuery('.email-verification').hide();
+        jQuery('.verification-banner.email-verification').hide();
     });
+    jQuery('#btnUserValidationClose').click(function(e) {
+        e.preventDefault();
+        WHMCS.http.jqClient.post(jQuery(this).data('uri'),
+            {
+                'token': csrfToken
+            });
+        jQuery('.verification-banner.user-validation').hide();
+    });
+
 
     /**
      * Parse the content to populate the markdown editor footer.
@@ -21673,14 +21682,23 @@ function hideNewBillingAddressFields() {
  * Show new credit card input fields.
  */
 function showNewCardInputFields() {
-    var ccDetails = jQuery('.cc-details').parent('div');
-    if (ccDetails.not(':visible')) {
-        ccDetails.slideDown();
-    }
+    var ccDetails = jQuery('.cc-details'),
+        ccNumber = jQuery('#inputCardNumber'),
+        billAddress = jQuery('#billingAddressChoice'),
+        container;
 
-    jQuery("#billingAddressChoice")
-        .parent('div')
-        .slideDown()
+    container = ccDetails.parent('div');
+    if (container.not(':visible')) {
+        container.show();
+    }
+    jQuery('.cc-details').slideDown();
+    ccNumber.focus();
+
+    container = billAddress.parent('div');
+    if (container.not(':visible')) {
+        container.show();
+    }
+    billAddress.slideDown()
         .find('input[name="billingcontact"]')
         .first()
         .iCheck('check');
@@ -21715,6 +21733,7 @@ function hideNewCardInputFields() {
         jQuery('#billingAddressChoice label.billing-contact-' + contactId)
             .iCheck('check');
     }
+    jQuery('#inputCardCvv').focus();
 }
 
 /**
@@ -21832,6 +21851,38 @@ function addTwitterWidgetObserverWhenNodeAvailable() {
         .append("<style>.timeline-Tweet-text { font-size: 18px !important; line-height: 25px !important; margin-bottom: 0px !important; }</style>");
     removeRetweets();
     observerTwitterWidget.observe(targetTimelineTweets, observerConfig);
+}
+
+function openValidationSubmitModal(caller)
+{
+    var validationSubmitModal = jQuery('#validationSubmitModal');
+    validationSubmitModal.find('.modal-body iframe').attr('src', caller.dataset.url);
+    validationSubmitModal.modal('show');
+}
+
+function completeValidationComClientWorkflow()
+{
+    var submitDocsRequestBanner = jQuery('.user-validation'),
+        secondarySidebarStatus = jQuery('.validation-status-label'),
+        submitDiv = jQuery('.validation-submit-div'),
+        redirectUser = true;
+
+    $('#validationSubmitModal').modal('hide');
+    if (submitDocsRequestBanner.length !== 0) {
+        submitDocsRequestBanner.slideUp();
+        redirectUser = false;
+    }
+    if (secondarySidebarStatus.length !== 0) {
+        var submitString = submitDiv.find('a').data('submitted-string');
+        secondarySidebarStatus.text(submitString).removeClass('label-default').addClass('label-warning');
+        submitDiv.hide();
+        redirectUser = false;
+    }
+
+    if (redirectUser) {
+        window.location.href = WHMCS.utils.autoDetermineBaseUrl();
+    }
+    return false;
 }
 
 var autoCollapse = function (menu, maxHeight) {
@@ -22000,6 +22051,13 @@ function openModal(url, postData, modalTitle, modalSize, modalClass, submitLabel
         }
         if (successDataTable) {
             modalForm.data('successDataTable', successDataTable);
+        }
+
+        // Since the content is dynamically fetched, we have to check for the elements we want here too
+        var inputs = jQuery(modalForm).find('input:not(input[type=checkbox],input[type=radio],input[type=hidden])');
+
+        if (inputs.length > 0) {
+            jQuery(inputs).first().focus();
         }
     });
 

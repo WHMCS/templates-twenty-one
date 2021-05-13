@@ -64,4 +64,10 @@
         {/if}
 
     </form>
+
+    <script>
+    jQuery(document).ready(function() {
+        jQuery('#inputCardCvv, #inputCardNumber').filter(':visible').first().focus();
+    });
+    </script>
 {/if}
