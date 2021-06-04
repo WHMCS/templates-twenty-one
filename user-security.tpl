@@ -33,7 +33,7 @@
 
                 <div class="form-group">
                     <label for="inputSecurityQid" class="col-form-label">{lang key='clientareasecurityquestion'}</label>
-                    <select name="securityqid" id="inputSecurityQid" class="form-control">
+                    <select name="securityqid" id="inputSecurityQid" class="form-control custom-select">
                         {foreach $securityQuestions as $question}
                             <option value="{$question->id}">
                                 {$question->question}

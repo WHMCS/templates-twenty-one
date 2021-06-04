@@ -10846,7 +10846,7 @@ fieldset[disabled] .btn-default.focus {
   background-color: #666;
 }
 
-.requestor-type-externaluser {
+.requestor-type-registereduser {
   background-color: #f0ad4e;
 }
 
@@ -11974,6 +11974,10 @@ div.md-editor.active {
 
 .promo-banner.sitebuilder {
   border-top: 3px solid #ff3377;
+}
+
+.promo-banner.sitebuilder a {
+  color: #ff3377;
 }
 
 .promo-banner.sitebuilder .btn {

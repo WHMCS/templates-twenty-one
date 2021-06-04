@@ -286,7 +286,7 @@
 
                             <div class="form-group">
                                 <label class="control-label" for="inputCountry">{lang key='clientareacountry'}</label>
-                                <select class="form-control" name="country" id="inputCountry">
+                                <select class="form-control custom-select" name="country" id="inputCountry">
                                     {foreach $countries as $countryCode => $countryName}
                                         <option value="{$countryCode}"{if ($countryCode == $clientCountry)} selected="selected"{/if}>
                                             {$countryName}

@@ -80,7 +80,7 @@
 
                     <div class="form-group">
                         <label for="inputPaymentMethod" class="col-form-label">{lang key='paymentmethod'}</label>
-                        <select name="paymentmethod" id="inputPaymentMethod" class="form-control">
+                        <select name="paymentmethod" id="inputPaymentMethod" class="form-control custom-select">
                             <option value="none">{lang key='paymentmethoddefault'}</option>
                             {foreach $paymentmethods as $method}
                             <option value="{$method.sysname}"{if $method.sysname eq $defaultpaymentmethod} selected="selected"{/if}>{$method.name}</option>
@@ -90,7 +90,7 @@
 
                     <div class="form-group">
                         <label for="inputBillingContact" class="col-form-label">{lang key='defaultbillingcontact'}</label>
-                        <select name="billingcid" id="inputBillingContact" class="form-control">
+                        <select name="billingcid" id="inputBillingContact" class="form-control custom-select">
                             <option value="0">{lang key='usedefaultcontact'}</option>
                             {foreach $contacts as $contact}
                             <option value="{$contact.id}"{if $contact.id eq $billingcid} selected="selected"{/if}>{$contact.name}</option>
@@ -100,7 +100,7 @@
 
                     <div class="form-group">
                         <label for="inputLanguage" class="col-form-label">{lang key='clientarealanguage'}</label>
-                        <select name="accountLanguage" id="inputAccountLanguage" class="form-control"
+                        <select name="accountLanguage" id="inputAccountLanguage" class="form-control custom-select"
                             {if in_array('language', $uneditablefields)} disabled="disabled"{/if}>
                             <option value="">{lang key='default'}</option>
                             {foreach $languages as $language}
