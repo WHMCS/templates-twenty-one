@@ -4440,7 +4440,7 @@ input[type="button"].btn-block {
   color: #fff;
 }
 
-.card {
+.card, .mc-promo-manage, .mc-promo-login {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4452,40 +4452,42 @@ input[type="button"].btn-block {
   border-radius: 0.25rem;
 }
 
-.card > hr {
+.card > hr, .mc-promo-manage > hr, .mc-promo-login > hr {
   margin-right: 0;
   margin-left: 0;
 }
 
-.card > .list-group {
+.card > .list-group, .mc-promo-manage > .list-group, .mc-promo-login > .list-group {
   border-top: inherit;
   border-bottom: inherit;
 }
 
-.card > .list-group:first-child {
+.card > .list-group:first-child, .mc-promo-manage > .list-group:first-child, .mc-promo-login > .list-group:first-child {
   border-top-width: 0;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
-.card > .list-group:last-child {
+.card > .list-group:last-child, .mc-promo-manage > .list-group:last-child, .mc-promo-login > .list-group:last-child {
   border-bottom-width: 0;
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
-.card > .card-header + .list-group,
-.card > .list-group + .card-footer {
+.card > .card-header + .list-group, .mc-promo-manage > .card-header + .list-group, .mc-promo-login > .card-header + .list-group,
+.card > .list-group + .card-footer,
+.mc-promo-manage > .list-group + .card-footer,
+.mc-promo-login > .list-group + .card-footer {
   border-top: 0;
 }
 
-.card-body {
+.card-body, .mc-promo-manage .content, .mc-promo-login .content {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
 }
 
-.card-title {
+.card-title, .promo-container .header h3, .mc-promo-manage .panel-heading h3, .mc-promo-login .panel-heading h3 {
   margin-bottom: 0.75rem;
 }
 
@@ -4568,7 +4570,7 @@ input[type="button"].btn-block {
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
-.card-deck .card {
+.card-deck .card, .card-deck .mc-promo-manage, .card-deck .mc-promo-login {
   margin-bottom: 15px;
 }
 
@@ -4579,7 +4581,7 @@ input[type="button"].btn-block {
     margin-right: -15px;
     margin-left: -15px;
   }
-  .card-deck .card {
+  .card-deck .card, .card-deck .mc-promo-manage, .card-deck .mc-promo-login {
     flex: 1 0 0%;
     margin-right: 15px;
     margin-bottom: 0;
@@ -4587,7 +4589,7 @@ input[type="button"].btn-block {
   }
 }
 
-.card-group > .card {
+.card-group > .card, .card-group > .mc-promo-manage, .card-group > .mc-promo-login {
   margin-bottom: 15px;
 }
 
@@ -4596,41 +4598,49 @@ input[type="button"].btn-block {
     display: flex;
     flex-flow: row wrap;
   }
-  .card-group > .card {
+  .card-group > .card, .card-group > .mc-promo-manage, .card-group > .mc-promo-login {
     flex: 1 0 0%;
     margin-bottom: 0;
   }
-  .card-group > .card + .card {
+  .card-group > .card + .card, .card-group > .mc-promo-manage + .card, .card-group > .mc-promo-login + .card, .card-group > .card + .mc-promo-manage, .card-group > .mc-promo-manage + .mc-promo-manage, .card-group > .mc-promo-login + .mc-promo-manage, .card-group > .card + .mc-promo-login, .card-group > .mc-promo-manage + .mc-promo-login, .card-group > .mc-promo-login + .mc-promo-login {
     margin-left: 0;
     border-left: 0;
   }
-  .card-group > .card:not(:last-child) {
+  .card-group > .card:not(:last-child), .card-group > .mc-promo-manage:not(:last-child), .card-group > .mc-promo-login:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-top,
-  .card-group > .card:not(:last-child) .card-header {
+  .card-group > .card:not(:last-child) .card-img-top, .card-group > .mc-promo-manage:not(:last-child) .card-img-top, .card-group > .mc-promo-login:not(:last-child) .card-img-top,
+  .card-group > .card:not(:last-child) .card-header,
+  .card-group > .mc-promo-manage:not(:last-child) .card-header,
+  .card-group > .mc-promo-login:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-bottom,
-  .card-group > .card:not(:last-child) .card-footer {
+  .card-group > .card:not(:last-child) .card-img-bottom, .card-group > .mc-promo-manage:not(:last-child) .card-img-bottom, .card-group > .mc-promo-login:not(:last-child) .card-img-bottom,
+  .card-group > .card:not(:last-child) .card-footer,
+  .card-group > .mc-promo-manage:not(:last-child) .card-footer,
+  .card-group > .mc-promo-login:not(:last-child) .card-footer {
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:first-child) {
+  .card-group > .card:not(:first-child), .card-group > .mc-promo-manage:not(:first-child), .card-group > .mc-promo-login:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-top,
-  .card-group > .card:not(:first-child) .card-header {
+  .card-group > .card:not(:first-child) .card-img-top, .card-group > .mc-promo-manage:not(:first-child) .card-img-top, .card-group > .mc-promo-login:not(:first-child) .card-img-top,
+  .card-group > .card:not(:first-child) .card-header,
+  .card-group > .mc-promo-manage:not(:first-child) .card-header,
+  .card-group > .mc-promo-login:not(:first-child) .card-header {
     border-top-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-bottom,
-  .card-group > .card:not(:first-child) .card-footer {
+  .card-group > .card:not(:first-child) .card-img-bottom, .card-group > .mc-promo-manage:not(:first-child) .card-img-bottom, .card-group > .mc-promo-login:not(:first-child) .card-img-bottom,
+  .card-group > .card:not(:first-child) .card-footer,
+  .card-group > .mc-promo-manage:not(:first-child) .card-footer,
+  .card-group > .mc-promo-login:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
 }
 
-.card-columns .card {
+.card-columns .card, .card-columns .mc-promo-manage, .card-columns .mc-promo-login {
   margin-bottom: 0.75rem;
 }
 
@@ -4643,7 +4653,7 @@ input[type="button"].btn-block {
     orphans: 1;
     widows: 1;
   }
-  .card-columns .card {
+  .card-columns .card, .card-columns .mc-promo-manage, .card-columns .mc-promo-login {
     display: inline-block;
     width: 100%;
   }
@@ -4653,22 +4663,22 @@ input[type="button"].btn-block {
   overflow-anchor: none;
 }
 
-.accordion > .card {
+.accordion > .card, .accordion > .mc-promo-manage, .accordion > .mc-promo-login {
   overflow: hidden;
 }
 
-.accordion > .card:not(:last-of-type) {
+.accordion > .card:not(:last-of-type), .accordion > .mc-promo-manage:not(:last-of-type), .accordion > .mc-promo-login:not(:last-of-type) {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
 
-.accordion > .card:not(:first-of-type) {
+.accordion > .card:not(:first-of-type), .accordion > .mc-promo-manage:not(:first-of-type), .accordion > .mc-promo-login:not(:first-of-type) {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
-.accordion > .card > .card-header {
+.accordion > .card > .card-header, .accordion > .mc-promo-manage > .card-header, .accordion > .mc-promo-login > .card-header {
   border-radius: 0;
   margin-bottom: -1px;
 }
@@ -10073,7 +10083,7 @@ span.caret {
   display: none;
 }
 
-.card .bootstrap-switch {
+.card .bootstrap-switch, .mc-promo-manage .bootstrap-switch, .mc-promo-login .bootstrap-switch {
   word-wrap: initial;
 }
 
@@ -10222,40 +10232,40 @@ header.header .dropdown-item.active, header.header .dropdown-item:active {
   font-size: 0.9rem;
 }
 
-.primary-content .card {
+.primary-content .card, .primary-content .mc-promo-manage, .primary-content .mc-promo-login {
   margin-bottom: 10px;
 }
 
-.primary-content .card.mw-540 {
+.primary-content .card.mw-540, .primary-content .mw-540.mc-promo-manage, .primary-content .mw-540.mc-promo-login {
   max-width: 540px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.primary-content .card.mw-750 {
+.primary-content .card.mw-750, .primary-content .mw-750.mc-promo-manage, .primary-content .mw-750.mc-promo-login {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.primary-content .card-body {
+.primary-content .card-body, .primary-content .mc-promo-manage .content, .mc-promo-manage .primary-content .content, .primary-content .mc-promo-login .content, .mc-promo-login .primary-content .content {
   padding: 20px;
   overflow: auto;
 }
 
 @media (min-width: 768px) {
-  .primary-content .card-body.extra-padding {
+  .primary-content .card-body.extra-padding, .primary-content .mc-promo-manage .extra-padding.content, .mc-promo-manage .primary-content .extra-padding.content, .primary-content .mc-promo-login .extra-padding.content, .mc-promo-login .primary-content .extra-padding.content {
     padding: 1.8rem;
   }
 }
 
 @media (min-width: 1200px) {
-  .primary-content .card-body.extra-padding {
+  .primary-content .card-body.extra-padding, .primary-content .mc-promo-manage .extra-padding.content, .mc-promo-manage .primary-content .extra-padding.content, .primary-content .mc-promo-login .extra-padding.content, .mc-promo-login .primary-content .extra-padding.content {
     padding: 3rem;
   }
 }
 
-.primary-content .card-title {
+.primary-content .card-title, .primary-content .promo-container .header h3, .promo-container .header .primary-content h3, .primary-content .mc-promo-manage .panel-heading h3, .mc-promo-manage .panel-heading .primary-content h3, .primary-content .mc-promo-login .panel-heading h3, .mc-promo-login .panel-heading .primary-content h3 {
   margin: 0 0 20px 0;
   padding: 0;
   font-size: 22px;
@@ -10303,12 +10313,12 @@ footer.footer .notices {
   text-align: center;
 }
 
-.card .show-on-card-hover {
+.card .show-on-card-hover, .mc-promo-manage .show-on-card-hover, .mc-promo-login .show-on-card-hover {
   opacity: 0;
   transition: all 0.5s ease;
 }
 
-.card:hover .show-on-card-hover {
+.card:hover .show-on-card-hover, .mc-promo-manage:hover .show-on-card-hover, .mc-promo-login:hover .show-on-card-hover {
   opacity: 1;
 }
 
@@ -10938,11 +10948,11 @@ fieldset[disabled] .btn-default.focus {
   color: white;
 }
 
-.sidebar .card-title {
+.sidebar .card-title, .sidebar .promo-container .header h3, .promo-container .header .sidebar h3, .sidebar .mc-promo-manage .panel-heading h3, .mc-promo-manage .panel-heading .sidebar h3, .sidebar .mc-promo-login .panel-heading h3, .mc-promo-login .panel-heading .sidebar h3 {
   font-size: 16px;
 }
 
-.sidebar .card-title .btn-sm, .sidebar .card-title .btn-group-sm > .btn {
+.sidebar .card-title .btn-sm, .sidebar .promo-container .header h3 .btn-sm, .promo-container .header .sidebar h3 .btn-sm, .sidebar .mc-promo-manage .panel-heading h3 .btn-sm, .mc-promo-manage .panel-heading .sidebar h3 .btn-sm, .sidebar .mc-promo-login .panel-heading h3 .btn-sm, .mc-promo-login .panel-heading .sidebar h3 .btn-sm, .sidebar .card-title .btn-group-sm > .btn, .sidebar .promo-container .header h3 .btn-group-sm > .btn, .promo-container .header .sidebar h3 .btn-group-sm > .btn, .sidebar .mc-promo-manage .panel-heading h3 .btn-group-sm > .btn, .mc-promo-manage .panel-heading .sidebar h3 .btn-group-sm > .btn, .sidebar .mc-promo-login .panel-heading h3 .btn-group-sm > .btn, .mc-promo-login .panel-heading .sidebar h3 .btn-group-sm > .btn {
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
@@ -11112,7 +11122,7 @@ fieldset[disabled] .btn-default.focus {
   font-size: 3.4em;
 }
 
-.client-home-cards .card {
+.client-home-cards .card, .client-home-cards .mc-promo-manage, .client-home-cards .mc-promo-login {
   font-size: 0.9em;
 }
 
@@ -11131,17 +11141,17 @@ fieldset[disabled] .btn-default.focus {
   color: #000;
 }
 
-.client-home-cards .card-title {
+.client-home-cards .card-title, .client-home-cards .promo-container .header h3, .promo-container .header .client-home-cards h3, .client-home-cards .mc-promo-manage .panel-heading h3, .mc-promo-manage .panel-heading .client-home-cards h3, .client-home-cards .mc-promo-login .panel-heading h3, .mc-promo-login .panel-heading .client-home-cards h3 {
   font-size: 16px;
 }
 
-.client-home-cards .card-body {
+.client-home-cards .card-body, .client-home-cards .mc-promo-manage .content, .mc-promo-manage .client-home-cards .content, .client-home-cards .mc-promo-login .content, .mc-promo-login .client-home-cards .content {
   padding: 0;
   max-height: 170px;
   overflow: auto;
 }
 
-.client-home-cards .card-body p {
+.client-home-cards .card-body p, .client-home-cards .mc-promo-manage .content p, .mc-promo-manage .client-home-cards .content p, .client-home-cards .mc-promo-login .content p, .mc-promo-login .client-home-cards .content p {
   padding: 10px 15px;
 }
 
@@ -11752,49 +11762,67 @@ div.md-editor.active {
  * Promotional Content Formatting
  * -------------------------
  */
+.promo-container {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+
+.promo-container .header {
+  padding: 20px;
+}
+
+.promo-container .header h3 {
+  padding: 0;
+  margin: 0 !important;
+}
+
 .promo-banner {
   margin: 0;
   padding: 15px 10px 20px 10px;
   background-color: #fff;
-  border: 1px solid #ddd;
   font-size: 1em;
   overflow: auto;
 }
 
-.promo-banner .icon {
-  float: left;
-  margin: 0 20px 0 0;
+.promo-banner .content {
+  margin-left: 185px;
 }
 
-.promo-banner img {
-  max-width: 300px;
-  max-height: 200px;
+@media (max-width: 767.98px) {
+  .promo-banner .content {
+    margin: 10px 0 0 0;
+  }
 }
 
 .promo-banner .icon-left {
-  margin-bottom: 10px;
   text-align: center;
+  width: 155px;
+  float: left;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 767.98px) {
+  .promo-banner .icon-left {
+    width: 90px;
+    float: none;
+  }
+}
+
+.promo-banner .icon-left img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media (max-width: 767.98px) {
   .promo-banner form {
     text-align: center;
   }
 }
 
-@media (min-width: 768px) {
-  .promo-banner img {
-    max-width: 100%;
-    max-height: 100%;
-  }
-  .promo-banner .icon-left {
-    float: left;
-    margin: 0;
-    width: 155px;
-  }
-  .promo-banner .content {
-    margin-left: 185px;
-  }
+.promo-banner .icon {
+  float: left;
+  margin: 0 20px 0 0;
 }
 
 .promo-banner h3 {
@@ -12397,12 +12425,12 @@ div.tweet span {
   margin-right: 6px;
 }
 
-.view-ticket .card-body {
+.view-ticket .card-body, .view-ticket .mc-promo-manage .content, .mc-promo-manage .view-ticket .content, .view-ticket .mc-promo-login .content, .mc-promo-login .view-ticket .content {
   padding: 0;
   border-bottom: 1px solid #ddd;
 }
 
-.view-ticket .card-body:last-child {
+.view-ticket .card-body:last-child, .view-ticket .mc-promo-manage .content:last-child, .mc-promo-manage .view-ticket .content:last-child, .view-ticket .mc-promo-login .content:last-child, .mc-promo-login .view-ticket .content:last-child {
   border-bottom: 0;
 }
 
@@ -12866,8 +12894,14 @@ div.product-details div.product-icon {
   background-color: #efefef;
   border-radius: 10px;
   padding: 30px;
-  font-size: 60px;
   line-height: 1em;
+  font-size: 60px;
+}
+
+@media (max-width: 767.98px) {
+  div.product-details div.product-icon {
+    font-size: 30px;
+  }
 }
 
 .product-status {
@@ -12917,6 +12951,72 @@ div.product-details-tab-container {
 
 .ssl-inactive {
   cursor: pointer;
+}
+
+#mc-promo-widgets {
+  margin: 10px 0;
+}
+
+@media (min-width: 1200px) {
+  #mc-promo-widgets {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 1%;
+         column-gap: 1%;
+  }
+}
+
+.mc-promo-manage, .mc-promo-login {
+  position: relative;
+}
+
+.mc-promo-manage .logo, .mc-promo-login .logo {
+  width: 130px;
+  height: 130px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 1em;
+}
+
+@media (max-width: 767.98px) {
+  .mc-promo-manage .logo, .mc-promo-login .logo {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.mc-promo-manage .logo img, .mc-promo-login .logo img {
+  max-width: 130px;
+  max-height: 130px;
+  display: block;
+  margin: 0 -50% 0 auto;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767.98px) {
+  .mc-promo-manage .logo img, .mc-promo-login .logo img {
+    max-width: 65px;
+    max-height: 65px;
+  }
+}
+
+.mc-promo-manage .logo + div, .mc-promo-login .logo + div {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+@media (max-width: 767.98px) {
+  .mc-promo-manage .panel-heading h3, .mc-promo-login .panel-heading h3 {
+    margin: 0 0 8px 0 !important;
+    font-size: 18px !important;
+  }
 }
 
 .featured-tlds-container {
