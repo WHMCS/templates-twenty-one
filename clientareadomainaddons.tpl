@@ -18,7 +18,7 @@
 
                     <p>{lang key='domainaddonsdnsmanagementinfo'}</p>
 
-                    <p align="center">
+                    <p class="text-center">
                         <button type="submit" name="enable" class="btn btn-success btn-lg">
                             {lang key='domainaddonsbuynow'} {$addonspricing.dnsmanagement}{lang key='domainaddonsperyear'}
                         </button>
@@ -32,7 +32,7 @@
 
                     <p>{lang key='domainaddonsemailforwardinginfo'}</p>
 
-                    <p align="center">
+                    <p class="text-center">
                         <button type="submit" name="enable" class="btn btn-success btn-lg">
                             {lang key='domainaddonsbuynow'} {$addonspricing.emailforwarding}{lang key='domainaddonsperyear'}
                         </button>
@@ -46,7 +46,7 @@
 
                     <p>{lang key='domainaddonsidprotectioninfo'}</p>
 
-                    <p align="center">
+                    <p class="text-center">
                         <button type="submit" name="enable" class="btn btn-success btn-lg">
                             {lang key='domainaddonsbuynow'} {$addonspricing.idprotection}{lang key='domainaddonsperyear'}
                         </button>

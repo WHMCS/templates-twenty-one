@@ -265,7 +265,7 @@
 
     </div>
 
-    <p class="text-center d-print-none"><a href="clientarea.php?action=invoices">{lang key='invoicesbacktoclientarea'}</a></a></p>
+    <p class="text-center d-print-none"><a href="clientarea.php?action=invoices">{lang key='invoicesbacktoclientarea'}</a></p>
 
     <div id="fullpage-overlay" class="w-hidden">
         <div class="outer-wrapper">

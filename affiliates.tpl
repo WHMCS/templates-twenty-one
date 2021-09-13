@@ -69,7 +69,7 @@
 
     {if !$withdrawrequestsent}
         <p class="text-center">
-            <a href="{$smarty.server.PHP_SELF}?action=withdrawrequest" class="btn btn-lg btn-danger"{if !$withdrawlevel} disabled="true"{/if}>
+            <a href="{$smarty.server.PHP_SELF}?action=withdrawrequest" class="btn btn-lg btn-danger{if !$withdrawlevel} disabled" disabled="disabled{/if}">
                 <i class="fas fa-university"></i> {lang key='affiliatesrequestwithdrawal'}
             </a>
         </p>

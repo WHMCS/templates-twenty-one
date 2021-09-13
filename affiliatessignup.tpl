@@ -16,8 +16,8 @@
 
             <form method="post" action="affiliates.php">
                 <input type="hidden" name="activate" value="true" />
-                <p align="center">
-                    <button type="submit" class="btn btn-success btn-lg px-5 py-2">
+                <p class="text-center">
+                    <button id="activateAffiliate" type="submit" class="btn btn-success btn-lg px-5 py-2">
                         {lang key='affiliatesactivate'}
                     </button>
                 </p>

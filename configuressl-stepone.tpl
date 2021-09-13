@@ -20,12 +20,12 @@
 
                     <h2 class="card-title">{lang key='sslserverinfo'}</h2>
 
-                    <div>{lang key='sslserverinfodetails'}</div>
+                    {include file="$template/includes/alert.tpl" type="info" msg={lang key='sslserverinfodetails'}}
 
                     <div class="form-group pt-3">
                         <label for="inputServerType" class="text-md-right">{lang key='sslservertype'}</label>
                         <select name="servertype" id="inputServerType" class="custom-select">
-                            <option value="" selected>{lang key='pleasechooseone'}</option>
+                            <option value="" selected>{lang key='ssl.selectWebserver' serverType={lang key='sslservertype'}}</option>
                             {foreach $webservertypes as $webservertypeid => $webservertype}
                                 <option value="{$webservertypeid}"{if $servertype eq $webservertypeid} selected{/if}>
                                     {$webservertype}
@@ -60,7 +60,7 @@
 
                     <h2 class="card-title">{lang key='ssladmininfo'}</h2>
 
-                    <div>{lang key='ssladmininfodetails'}</div>
+                    {include file="$template/includes/alert.tpl" type="info" msg={lang key='ssladmininfodetails'}}
 
                     <fieldset class="pt-3">
                         <div class="form-group row">

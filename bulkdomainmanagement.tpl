@@ -67,7 +67,7 @@
 
                 <div class="row">
                     <div class="col-sm-8 offset-sm-4">
-                        <button type="submit" class="btn btn-primary btn-large">
+                        <button type="submit" class="btn btn-primary btn-lg">
                             {lang key='changenameservers'}
                         </button>
                     </div>
@@ -95,10 +95,10 @@
                     {/foreach}
                 </ul>
 
-                <button type="submit" name="enable" class="btn btn-success btn-large">
+                <button type="submit" name="enable" class="btn btn-success btn-lg">
                     {lang key='domainsautorenewenable'}
                 </button>
-                <button type="submit" name="disable" class="btn btn-danger btn-large">
+                <button type="submit" name="disable" class="btn btn-danger btn-lg">
                     {lang key='domainsautorenewdisable'}
                 </button>
 
@@ -137,10 +137,10 @@
                     {/foreach}
                 </ul>
 
-                <button type="submit" name="enable" class="btn btn-success btn-large">
+                <button type="submit" name="enable" class="btn btn-success btn-lg">
                     {lang key='domainreglockenable'}
                 </button>
-                <button type="submit" name="disable" class="btn btn-danger btn-large">
+                <button type="submit" name="disable" class="btn btn-danger btn-lg">
                     {lang key='domainreglockdisable'}
                 </button>
 
