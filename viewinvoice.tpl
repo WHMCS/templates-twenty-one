@@ -142,9 +142,9 @@
             <br />
 
             {if $manualapplycredit}
-                <div class="card bg-success">
-                    <div class="card-header">
-                        <h3 class="card-title"><strong>{lang key='invoiceaddcreditapply'}</strong></h3>
+                <div class="card mb-3">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-subtitle"><strong>{lang key='invoiceaddcreditapply'}</strong></h3>
                     </div>
                     <div class="card-body">
                         <form method="post" action="{$smarty.server.PHP_SELF}?id={$invoiceid}">
