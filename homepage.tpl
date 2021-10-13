@@ -25,7 +25,7 @@
                         {lang key='orderregisterdomain'}
                     </h3>
                     <p>{lang key='secureYourDomain'}</p>
-                    <a href="cart.php?a=add&domain=register" class="btn btn-block btn-outline-primary">
+                    <a href="{$WEB_ROOT}/cart.php?a=add&domain=register" class="btn btn-block btn-outline-primary">
                         {lang key='navdomainsearch'}
                     </a>
                 </div>
@@ -38,7 +38,7 @@
                         {lang key='transferYourDomain'}
                     </h3>
                     <p>{lang key='transferExtend'}</p>
-                    <a href="cart.php?a=add&domain=transfer" class="btn btn-block btn-outline-primary">
+                    <a href="{$WEB_ROOT}/cart.php?a=add&domain=transfer" class="btn btn-block btn-outline-primary">
                         {lang key='transferYourDomain'}
                     </a>
                 </div>
