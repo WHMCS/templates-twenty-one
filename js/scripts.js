@@ -18598,6 +18598,9 @@ jQuery(document).ready(function() {
                 .removeAttr('class')
                 .addClass('fas fa-spinner fa-spin');
         }
+    })
+    .on('click', '#openTicketSubmit.disabled', function () {
+        return false;
     });
 });
 
@@ -22022,11 +22025,6 @@ function openModal(url, postData, modalTitle, modalSize, modalClass, submitLabel
         jQuery('#modalAjax').addClass(modalClass);
     }
 
-    // set the modal class
-    if (modalClass) {
-        jQuery('#modalAjax').addClass(modalClass);
-    }
-
     // set the text of the submit button
     if(!submitLabel){
        jQuery('#modalAjax .modal-submit').hide();
@@ -22053,7 +22051,11 @@ function openModal(url, postData, modalTitle, modalSize, modalClass, submitLabel
     jQuery('#modalAjax .modal-submit').prop('disabled', true);
 
     // show modal
-    jQuery('#modalAjax').modal('show');
+    jQuery('#modalAjax').modal({
+        show: true,
+        keyboard: true,
+        backdrop: jQuery('#modalAjax').hasClass('static') ? 'static' : true
+    });
 
     // fetch modal content
     WHMCS.http.jqClient.post(url, postData, function(data) {

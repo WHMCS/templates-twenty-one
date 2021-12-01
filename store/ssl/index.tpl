@@ -271,7 +271,7 @@
                             {if count($certificates) > 0}
                                 {foreach $certificates as $type => $products}
                                     {foreach $products as $product}
-                                        <li>
+                                        <li{if $product->isFeatured} class="featured"{/if}>
                                             <div class="row">
                                                 <div class="col-md-6">
                                                     <h4>{$product->name}</h4>
@@ -280,6 +280,7 @@
                                                 <div class="col-md-3 offset-lg-1">
                                                     <div class="padded-cell price">
                                                         <strong>{$product->pricing()->best()->price()->toFull()}</strong>
+                                                        {if $product->isFeatured}<br>{{lang key='recommended'}|upper}{/if}
                                                     </div>
                                                 </div>
                                                 <div class="col-md-3 col-lg-2">
@@ -325,7 +326,7 @@
 
                         <p>{lang key="store.ssl.landingPage.faq.a3"}</p>
 
-                        {if count($certificates.wildcard) > 0 || $inPreview}
+                        {if $certTypes.wildcard > 0 || $inPreview}
 
                             <h4>{lang key="store.ssl.landingPage.faq.q4"}</h4>
 
@@ -333,7 +334,7 @@
 
                         {/if}
 
-                        {if count($certificates.ev) > 0 || $inPreview}
+                        {if $certTypes.ev > 0 || $inPreview}
 
                             <h4>{lang key="store.ssl.landingPage.faq.q5"}</h4>
 

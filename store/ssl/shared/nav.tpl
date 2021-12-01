@@ -10,22 +10,22 @@
           <li class="nav-item{if empty($current)} active{/if}">
               <a class="nav-link" href="{routePath('store-product-group', $routePathSlug)}">{lang key='overview'}</a>
           </li>
-          {if count($certificates.dv) > 0 || $inPreview}
+          {if $certTypes.dv > 0 || $inPreview}
               <li class="nav-item{if $current == 'dv'} active{/if}">
                   <a class="nav-link" href="{routePath('store-product-group', $routePathSlug, 'dv')}">{lang key='store.ssl.shared.dvSsl'}</a>
               </li>
           {/if}
-          {if count($certificates.ov) > 0 || $inPreview}
+          {if $certTypes.ov > 0 || $inPreview}
               <li class="nav-item{if $current == 'ov'} active{/if}">
                   <a class="nav-link" href="{routePath('store-product-group', $routePathSlug, 'ov')}">{lang key='store.ssl.shared.ovSsl'}</a>
               </li>
           {/if}
-          {if count($certificates.ev) > 0 || $inPreview}
+          {if $certTypes.ev > 0 || $inPreview}
               <li class="nav-item{if $current == 'ev'} active{/if}">
                   <a class="nav-link" href="{routePath('store-product-group', $routePathSlug, 'ev')}">{lang key='store.ssl.shared.evSsl'}</a>
               </li>
           {/if}
-          {if count($certificates.wildcard) > 0 || $inPreview}
+          {if $certTypes.wildcard > 0 || $inPreview}
             <li class="nav-item{if $current == 'wildcard'} active{/if}">
                 <a class="nav-link" href="{routePath('store-product-group', $routePathSlug, 'wildcard')}">{lang key='store.ssl.shared.wildcardSsl'}</a>
             </li>

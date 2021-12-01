@@ -15,6 +15,7 @@
                     <div class="col-md-{if count($certificates.$type) == 1}6{elseif count($certificates.$type) == 2}4{else}3{/if} sidebar d-none d-md-block">
                         <div class="header"></div>
                         <ul>
+                            {if $hasFeatured}<li>&nbsp;</li>{/if}
                             <li>{lang key='store.ssl.shared.encryption256'}</li>
                             <li>{lang key='store.ssl.shared.issuanceTime'}</li>
                             <li>{lang key='store.ssl.shared.greatFor'}</li>
@@ -32,6 +33,15 @@
                                     <h4>{$certificateFeatures.{$product->configoption1}.displayName}</h4>
                                 </div>
                                 <ul>
+                                    {if $hasFeatured}
+                                        <div class="popular-plan">
+                                            {if $product->isFeatured}
+                                                <div class="plan-container">
+                                                    <div class="txt-container">{{lang key='recommended'}|upper}</div>
+                                                </div>
+                                            {/if}
+                                        </div>
+                                    {/if}
                                     <li><i class="fas fa-check"></i></li>
                                     <li>{$certificateFeatures.{$product->configoption1}.issuance}</li>
                                     <li>{$certificateFeatures.{$product->configoption1}.for}</li>

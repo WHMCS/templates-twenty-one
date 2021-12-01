@@ -13353,3 +13353,48 @@ table.dtr-inline .dtr-title:empty {
 table.table-solid-bottom-border-light-gray {
   border-bottom: 1px solid #dee2e6;
 }
+
+table.tableAccounts .dropdown-hamburger::after {
+  display: none;
+}
+
+table.tableAccounts ul.dropdown-menu button.btn-sm, table.tableAccounts ul.dropdown-menu .btn-group-sm > button.btn {
+  border-radius: 0;
+}
+
+table.tableAccounts tbody.account-entry > tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+table.tableAccounts tbody.account-entry {
+  cursor: pointer;
+}
+
+table.tableAccounts tbody.aliases-body {
+  border-top: 0;
+}
+
+table.tableAccounts tbody.aliases-body > tr > td {
+  border-top: 0;
+}
+
+table.tableAccounts tr.alias-entry td:first-child {
+  font-size: .9em;
+}
+
+table.tableAccounts tr.create-alias td:first-child {
+  font-size: .9em;
+}
+
+table.tableAccounts tr.create-alias input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: thin solid #6c757d;
+  width: 8em;
+}
+
+table.tableAccounts span.email-aliases {
+  font-size: .9em;
+  font-weight: bold;
+}
