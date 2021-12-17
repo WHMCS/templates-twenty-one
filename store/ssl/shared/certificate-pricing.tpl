@@ -13,9 +13,17 @@
             <div class="{if count($certificates.$type) == 1}col-lg-6 offset-lg-3 col-md-10 offset-md-1{elseif count($certificates.$type) == 2}col-md-10 offset-md-1{else}col-sm-12{/if}">
                 <div class="row row-pricing-table">
                     <div class="col-md-{if count($certificates.$type) == 1}6{elseif count($certificates.$type) == 2}4{else}3{/if} sidebar d-none d-md-block">
-                        <div class="header"></div>
+                        {capture name="heading_spacer" assign="headingSpacer"}
+                            <div class="header"></div>
+                        {/capture}
+                        {if $hasFeatured.$type}
+                            <div class="popular-plan-wrapper">
+                                {$headingSpacer}
+                            </div>
+                        {else}
+                            {$headingSpacer}
+                        {/if}
                         <ul>
-                            {if $hasFeatured}<li>&nbsp;</li>{/if}
                             <li>{lang key='store.ssl.shared.encryption256'}</li>
                             <li>{lang key='store.ssl.shared.issuanceTime'}</li>
                             <li>{lang key='store.ssl.shared.greatFor'}</li>
@@ -29,19 +37,26 @@
                     {if count($certificates.$type) > 0}
                         {foreach $certificates.$type as $product}
                             <div class="col-md-{if count($certificates.$type) == 1}6{elseif count($certificates.$type) == 2}4{else}3{/if}">
-                                <div class="header">
-                                    <h4>{$certificateFeatures.{$product->configoption1}.displayName}</h4>
-                                </div>
-                                <ul>
-                                    {if $hasFeatured}
-                                        <div class="popular-plan">
-                                            {if $product->isFeatured}
+                                {capture name="heading_title" assign="headingTitle"}
+                                    <div class="header">
+                                        <h4>{$certificateFeatures.{$product->configoption1}.displayName}</h4>
+                                    </div>
+                                {/capture}
+                                {if $hasFeatured.$type}
+                                    <div class="popular-plan-wrapper">
+                                        {if $product->isFeatured}
+                                            <div class="popular-plan">
                                                 <div class="plan-container">
                                                     <div class="txt-container">{{lang key='recommended'}|upper}</div>
                                                 </div>
-                                            {/if}
-                                        </div>
-                                    {/if}
+                                            </div>
+                                        {/if}
+                                        {$headingTitle}
+                                    </div>
+                                {else}
+                                    {$headingTitle}
+                                {/if}
+                                <ul>
                                     <li><i class="fas fa-check"></i></li>
                                     <li>{$certificateFeatures.{$product->configoption1}.issuance}</li>
                                     <li>{$certificateFeatures.{$product->configoption1}.for}</li>

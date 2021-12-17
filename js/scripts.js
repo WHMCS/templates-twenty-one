@@ -20731,7 +20731,7 @@ jQuery(document).ready(function() {
     if (!internalSelectionDisabled) {
         if (jQuery(location).attr('hash').substr(1) !== "") {
             var activeTab = jQuery(location).attr('hash');
-            jQuery(".tab-pane").removeClass('active');
+            jQuery(".primary-content > .tab-content > .tab-pane").removeClass('active');
             jQuery(activeTab).removeClass('fade').addClass('active');
             jQuery(".list-group-tab-nav a").removeClass('active');
             jQuery('a[href="' + activeTab + '"]').addClass('active');

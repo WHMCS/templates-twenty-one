@@ -2,10 +2,8 @@
 
                     </div>
                     {if !$inShoppingCart && $secondarySidebar->hasChildren()}
-                        <div class="row">
-                            <div class="d-lg-none col-lg-3 sidebar sidebar-secondary">
-                                {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
-                            </div>
+                        <div class="d-lg-none sidebar sidebar-secondary">
+                            {include file="$template/includes/sidebar.tpl" sidebar=$secondarySidebar}
                         </div>
                     {/if}
                 <div class="clearfix"></div>
