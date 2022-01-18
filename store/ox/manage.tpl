@@ -37,7 +37,7 @@
         </div>
 
         <div id="accountCount">{lang key='ox.accountCount' number='-' limit=$model->qty}</div>
-        <table class="tableAccounts table" style="display: table">
+        <table class="ox-table-accounts table" style="display: table">
             <thead>
             <tr>
                 <th>{lang key='ox.emailAddress'}</th>
@@ -66,7 +66,7 @@
             <tr>
                 <td>
                     <span class="account"></span>@{$domain}<br/>
-                    <i class="fas fa-chevron-right fa-xs"></i>
+                    <i class="fas fa-chevron-right fa-xs fa-fw"></i>
                     <span class="email-aliases">
                         {lang key='ox.alias.emailAliases'}: <span class="alias-count"></span>
                     </span>
@@ -110,21 +110,25 @@
                <td colspan="3">
                    <table class="table">
                        <tr class="create-alias" data-alias="">
-                           <td colspan="2">
-                               <input type="text" name="alias">&nbsp;@{$domain}
-                           </td>
-                           <td class="text-right">
-                               <div class="btn-group" role="group">
-                                   <button class="btn btn-primary btn-xs ox-create-alias">
+                           <td>
+                               <div class="input-group input-group-xs">
+                                   <input type="text" name="alias" class="form-control">
+                                   <div class="input-group-append">
+                                       <span class="input-group-text">
+                                           @{$domain}
+                                       </span>
+                                       <button class="btn btn-primary btn-xs ox-create-alias">
                                        <span class="loader w-hidden">
                                            <i class="far fa-sync-alt fa-spin" aria-hidden="true"></i>
                                        </span>
-                                       <span class="create-string">
+                                           <span class="create-string">
                                            {lang key='ox.alias.createButton'}
                                        </span>
-                                   </button>
+                                       </button>
+                                   </div>
                                </div>
                            </td>
+                           <td colspan="2">&nbsp;</td>
                        </tr>
                    </table>
                </td>
@@ -596,7 +600,7 @@
     }
 
     function addAccountToTable(data) {
-        var table = jQuery('table.tableAccounts'),
+        var table = jQuery('table.ox-table-accounts'),
             clone = jQuery('tbody.cloneAccountsBody').clone();
 
         clone.attr('id', '');
@@ -616,7 +620,7 @@
     }
 
     function addAliasesToTable(data) {
-        var table = jQuery('table.tableAccounts'),
+        var table = jQuery('table.ox-table-accounts'),
             cloneTbody = jQuery('tbody.cloneAliasesBody').clone();
 
         if (typeof data.aliases !== 'undefined' && data.aliases.length > 0) {
@@ -648,17 +652,17 @@
     }
 
     function clearAccounts() {
-        jQuery('.tableAccounts tbody.account-entry').remove();
+        jQuery('.ox-table-accounts tbody.account-entry').remove();
     }
 
     function clearAliases() {
-        jQuery('.tableAccounts tbody.aliases-body').remove();
+        jQuery('.ox-table-accounts tbody.aliases-body').remove();
     }
 
     function updateAccountsDisplay() {
-        var trNoAccounts = jQuery('table.tableAccounts tbody tr.no-accounts'),
+        var trNoAccounts = jQuery('table.ox-table-accounts tbody tr.no-accounts'),
             accountsCount = jQuery('#accountCount').find('.number');
-        var count = jQuery('table.tableAccounts tbody.account-entry').length;
+        var count = jQuery('table.ox-table-accounts tbody.account-entry').length;
         if (count == 0) {
             trNoAccounts.show();
         } else {

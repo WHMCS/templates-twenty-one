@@ -10505,6 +10505,37 @@ h6:hover .show-on-hover {
   }
 }
 
+.input-group-xs > .form-control:not(textarea),
+.input-group-xs > .custom-select {
+  height: calc(1.25em + 0.5rem + 2px);
+}
+
+.input-group-xs > .form-control,
+.input-group-xs > .custom-select,
+.input-group-xs > .input-group-prepend > .input-group-text,
+.input-group-xs > .input-group-append > .input-group-text,
+.input-group-xs > .input-group-prepend > .btn,
+.input-group-xs > .input-group-append > .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 0.2rem;
+}
+
+.input-group-xs > .custom-select {
+  padding-right: 1.75rem;
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .btn-default {
   color: #333;
   background-color: #fff;
@@ -13354,47 +13385,48 @@ table.table-solid-bottom-border-light-gray {
   border-bottom: 1px solid #dee2e6;
 }
 
-table.tableAccounts .dropdown-hamburger::after {
+table.ox-table-accounts td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+table.ox-table-accounts .dropdown-hamburger::after {
   display: none;
 }
 
-table.tableAccounts ul.dropdown-menu button.btn-sm, table.tableAccounts ul.dropdown-menu .btn-group-sm > button.btn {
+table.ox-table-accounts ul.dropdown-menu button.btn-sm, table.ox-table-accounts ul.dropdown-menu .btn-group-sm > button.btn {
   border-radius: 0;
 }
 
-table.tableAccounts tbody.account-entry > tr:hover {
+table.ox-table-accounts tbody.account-entry > tr:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-table.tableAccounts tbody.account-entry {
+table.ox-table-accounts tbody.account-entry {
   cursor: pointer;
 }
 
-table.tableAccounts tbody.aliases-body {
+table.ox-table-accounts tbody.aliases-body {
   border-top: 0;
 }
 
-table.tableAccounts tbody.aliases-body > tr > td {
+table.ox-table-accounts tbody.aliases-body > tr > td {
   border-top: 0;
 }
 
-table.tableAccounts tr.alias-entry td:first-child {
+table.ox-table-accounts tr.alias-entry td:first-child {
   font-size: .9em;
 }
 
-table.tableAccounts tr.create-alias td:first-child {
+table.ox-table-accounts tr.create-alias td:first-child {
   font-size: .9em;
 }
 
-table.tableAccounts tr.create-alias input {
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: thin solid #6c757d;
-  width: 8em;
-}
-
-table.tableAccounts span.email-aliases {
+table.ox-table-accounts span.email-aliases {
   font-size: .9em;
   font-weight: bold;
+}
+
+table.ox-table-accounts .input-group {
+  width: 65%;
 }
