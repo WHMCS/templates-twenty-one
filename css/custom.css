@@ -195,7 +195,7 @@ a {
     z-index: -1;
 }
 
-.section-main {
+.section#main-body {
     background: url(/templates/plox-twenty-one/img/particles-left.svg) top 76px left 0px/250px 430px no-repeat,url(/templates/plox-twenty-one/img/particles-right.svg) bottom right 0px/270px 265px no-repeat;
     min-height: 70vh;
 }
@@ -225,7 +225,7 @@ a {
     color: #444!important;
 }
 
-.navbar a {
+.navbar-text a {
     color: #fff;
 }
 
@@ -379,3 +379,4 @@ a {
     border: 1px solid #eaeaea;
     box-shadow: 1px 1px 15px 1px rgb(0 0 0 / 10%);
 }
+
