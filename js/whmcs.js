@@ -333,15 +333,16 @@ jQuery(document).ready(function() {
         }
 
         button.attr('disabled', 'disabled').addClass('disabled');
-        button.find('.loading').show().end();
+        jQuery('.loading', button).show().end();
+        jQuery('.login-feedback', form).slideUp();
         WHMCS.http.jqClient.post(
             url,
             form.serialize(),
             function (data) {
-                button.find('.loading').hide().end().removeAttr('disabled');
-                form.find('.login-feedback').html('');
+                jQuery('.loading', button).hide().end().removeAttr('disabled');
+                jQuery('.login-feedback', form).html('');
                 if (data.error) {
-                    form.find('.login-feedback').html(data.error).slideDown();
+                    jQuery('.login-feedback', form).hide().html(data.error).slideDown();
                 }
                 if (data.redirect !== undefined && data.redirect.substr(0, 7) === 'window|') {
                     window.open(data.redirect.substr(7), '_blank');
@@ -877,6 +878,28 @@ jQuery(document).ready(function() {
             dnsMethod.hide();
             emailMethod.show();
         }
+    });
+
+    (function () {
+        jQuery('.div-service-status').css(
+            'width',
+            (jQuery('.div-service-status .label-placeholder').outerWidth() + 5)
+        );
+    }());
+    jQuery('.div-service-item').on('click', function (event) {
+        var element = jQuery(event.target);
+        if (element.is('.dropdown-toggle, .fa-external-link, .dropdown-menu')) {
+            return true;
+        }
+        if (element.hasClass('btn-service-sso')) {
+            if (!element.data('active')) {
+                return false;
+            }
+            window.open(element.data('href'));
+            return true;
+        }
+        window.location.href = element.closest('.div-service-item').data('href');
+        return false;
     });
 });
 
