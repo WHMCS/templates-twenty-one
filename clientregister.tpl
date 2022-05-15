@@ -34,7 +34,7 @@
                 {include file="$template/includes/linkedaccounts.tpl" linkContext="registration"}
 
                 <div class="card mb-4">
-                    <div class="card-body p-4">
+                    <div class="card-body p-4" id="personalInformation">
                         <h3 class="card-title">{lang key='orderForm.personalInformation'}</h3>
 
                         <div class="row">

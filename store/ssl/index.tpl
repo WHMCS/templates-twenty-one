@@ -188,7 +188,7 @@
             <div class="card">
                 <div class="card-header" id="sslHeadingOne" role="button" data-toggle="collapse" data-target="#collapseHelpMeChoose" aria-expanded="true" aria-controls="collapseHelpMeChoose">
                     <h4>
-                        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
+                        <span class="arrow"><i class="fas fa-chevron-down"></i></span>
                         {lang key="store.ssl.landingPage.help.title"}
                     </h4>
                 </div>
@@ -259,7 +259,7 @@
             <div class="card">
                 <div class="card-header" id="sslHeadingTwo" role="button" data-toggle="collapse" data-target="#collapseAllCerts" aria-expanded="false" aria-controls="collapseHelpMeChoose">
                     <h4>
-                        <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
                         {lang key="store.ssl.landingPage.viewAll"}
                     </h4>
                 </div>
@@ -279,7 +279,8 @@
                                                 </div>
                                                 <div class="col-md-3 offset-lg-1">
                                                     <div class="padded-cell price">
-                                                        <strong>{$product->pricing()->best()->price()->toFull()}</strong>
+                                                        {lang key='from'}<br>
+                                                        <strong>{$product->pricing()->best()->yearlyPrice()}</strong>
                                                         {if $product->isFeatured}<br>{{lang key='recommended'}|upper}{/if}
                                                     </div>
                                                 </div>
@@ -306,9 +307,35 @@
                 </div>
             </div>
             <div class="card">
-                <div class="card-header" id="sslHeadingThree" role="button" data-toggle="collapse" data-target="#collapseFaq" aria-expanded="false" aria-controls="collapseHelpMeChoose">
+                <div class="card-header" id="sslHeaderMultiYear" role="button" data-toggle="collapse" data-target="#collapseMultiYear" aria-expanded="false" aria-controls="collapseHelpMeChoose">
                     <h4>
                         <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                        {lang key='store.ssl.landingPage.multiYear.title'}
+                    </h4>
+                </div>
+                <div id="collapseMultiYear" class="collapse" aria-labelledby="sslHeaderMultiYear" data-parent="#sslAccordion">
+                    <div class="card-body">
+                        <p>{lang key='store.ssl.landingPage.multiYear.p1'}</p>
+                        <p>{lang key='store.ssl.landingPage.multiYear.p2'}</p>
+                        <p>{lang key='store.ssl.landingPage.multiYear.p3'}</p>
+                        <p>
+                            {lang key='store.ssl.landingPage.multiYear.p4'}
+                            <img class="img-fluid mx-auto d-block py-3" alt="SSL certificate lifecycle" src="{$WEB_ROOT}/assets/img/marketconnect/symantec/multi-year-flow.png">
+                        </p>
+                        <p>{lang key='store.ssl.landingPage.multiYear.p5'}</p>
+                        <h3>{lang key='store.ssl.landingPage.multiYear.benefits.title'}</h3>
+                        <ul>
+                            <li>{lang key='store.ssl.landingPage.multiYear.benefits.b1'}</li>
+                            <li>{lang key='store.ssl.landingPage.multiYear.benefits.b2'}</li>
+                            <li>{lang key='store.ssl.landingPage.multiYear.benefits.b3'}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="sslHeadingThree" role="button" data-toggle="collapse" data-target="#collapseFaq" aria-expanded="false" aria-controls="collapseHelpMeChoose">
+                    <h4>
+                        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
                         {lang key="store.ssl.landingPage.faq.title"}
                     </h4>
                 </div>
@@ -355,11 +382,16 @@
 jQuery(document).ready(function() {
     var collapseHeader = jQuery(".card-header[data-toggle='collapse']");
     collapseHeader.on("click", function() {
-        var expand = jQuery(this).find("span.arrow:first-child");
-        if(expand.html() == '<i class="fas fa-chevron-right"></i>') {
-            expand.html('<i class="fas fa-chevron-down"></i>');
+        var expand = jQuery(this).find('span.arrow:first-child i');
+        if(expand.hasClass('fa-chevron-right')) {
+            expand.removeClass('fa-chevron-right').addClass('fa-chevron-down');
+            jQuery(this).closest('.card')
+                .siblings()
+                .find('span.arrow:first-child i')
+                .removeClass('fa-chevron-down')
+                .addClass('fa-chevron-right');
         } else {
-            expand.html('<i class="fas fa-chevron-right"></i>');
+            expand.removeClass('fa-chevron-down').addClass('fa-chevron-right');
         }
     });
     jQuery('p.help-me-choose').click(function(e) {
