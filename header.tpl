@@ -76,75 +76,36 @@
                 </div>
             </div>
         {/if}
-
-        <div class="navbar navbar-light">
-            <div class="container">
-                <a class="navbar-brand mr-3" href="{$WEB_ROOT}/index.php">
-                    {if $assetLogoPath}
-                        <img src="{$assetLogoPath}" alt="{$companyname}" class="logo-img">
-                    {else}
-                        {$companyname}
-                    {/if}
-                </a>
-
-                <form method="post" action="{routePath('knowledgebase-search')}" class="form-inline ml-auto">
-                    <div class="input-group search d-none d-xl-flex">
-                        <div class="input-group-prepend">
-                            <button class="btn btn-default" type="submit">
-                                <i class="fas fa-search"></i>
-                            </button>
-                        </div>
-                        <input class="form-control appended-form-control font-weight-light" type="text" name="search" placeholder="{lang key="searchOurKnowledgebase"}...">
-                    </div>
-                </form>
-
-                <ul class="navbar-nav toolbar">
-                    <li class="nav-item ml-3">
-                        <a class="btn nav-link cart-btn" href="{$WEB_ROOT}/cart.php?a=view">
-                            <i class="far fa-shopping-cart fa-fw"></i>
-                            <span class="badge badge-info">{$cartitemcount}</span>
-                            <span class="sr-only">{lang key="carttitle"}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ml-3 d-xl-none">
-                        <button class="btn nav-link" type="button" data-toggle="collapse" data-target="#mainNavbar">
+        <ul class="navbar-nav toolbar">
+        <li class="nav-item ml-3 d-xl-none">
+                        <button class="btn nav-link" type="button" data-toggle="collapse" data-target="#xn-navbar">
                             <span class="fas fa-bars fa-fw"></span>
                         </button>
                     </li>
                 </ul>
-            </div>
-        </div>
+</div>
         <div class="navbar navbar-expand-xl main-navbar-wrapper">
-            <div class="container">
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <form method="post" action="{routePath('knowledgebase-search')}" class="d-xl-none">
-                        <div class="input-group search w-100 mb-2">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                            <input class="form-control prepended-form-control" type="text" name="search" placeholder="{lang key="searchOurKnowledgebase"}...">
-                        </div>
-                    </form>
+            <div class="navbar-in">
+                <div class="collapse navbar-collapse" id="xn-navbar">
                     <ul id="nav" class="navbar-nav mr-auto">
                         {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                        {include file="$template/includes/navbar.tpl" navbar=$secondaryNavbar rightDrop=true}
+                      <li class="navbar-icbtn list-inline-item">
+                          <button type="button" class="btn" data-toggle="modal" data-target="#modalChooseLanguage"><i class="fas fa-globe"></i></button>
+                      </li>
+                      <li class="navbar-icbtn ">
+                        <a class="btn nav-link cart-btn" href="{$WEB_ROOT}/cart.php?a=view"><i class="far fa-shopping-cart fa-fw"></i></a>
+                      </li>
+                      {include file="$template/includes/navbar.tpl" navbar=$secondaryNavbar rightDrop=true}
                     </ul>
                 </div>
             </div>
+            
         </div>
     </header>
 
     {include file="$template/includes/network-issues-notifications.tpl"}
-
-    <nav class="master-breadcrumb" aria-label="breadcrumb">
-        <div class="container">
-            {include file="$template/includes/breadcrumb.tpl"}
-        </div>
-    </nav>
 
     {include file="$template/includes/validateuser.tpl"}
     {include file="$template/includes/verifyemail.tpl"}
