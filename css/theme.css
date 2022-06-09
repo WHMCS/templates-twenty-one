@@ -11222,6 +11222,10 @@ fieldset[disabled] .btn-default.focus {
   border-bottom: 0;
 }
 
+.client-home-cards #servicesPanel.card > .list-group, .client-home-cards #servicesPanel.mc-promo-manage > .list-group, .client-home-cards #servicesPanel.mc-promo-login > .list-group {
+  overflow: unset;
+}
+
 .client-home-cards small {
   color: #888;
 }

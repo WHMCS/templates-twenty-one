@@ -65,7 +65,7 @@
                             >
                                 <span class="caret"></span>
                             </button>
-                            <ul class="dropdown-menu">
+                            <ul class="dropdown-menu dropdown-menu-right">
                                 {foreach $secondaryButtons as $secondaryButton}
                                     <li class="dropdown-item btn-custom-action{if !$secondaryButton['active']} disabled{/if}"
                                         data-serviceid="{$secondaryButton['serviceid']}"
