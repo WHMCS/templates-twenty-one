@@ -122,7 +122,7 @@ jQuery(document).ready(function() {
     if (!internalSelectionDisabled) {
         if (jQuery(location).attr('hash').substr(1) !== "") {
             var activeTab = jQuery(location).attr('hash');
-            jQuery(".tab-pane").removeClass('active');
+            jQuery(".primary-content > .tab-content > .tab-pane").removeClass('active');
             jQuery(activeTab).removeClass('fade').addClass('active');
             jQuery(".list-group-tab-nav a").removeClass('active');
             jQuery('a[href="' + activeTab + '"]').addClass('active');
@@ -333,15 +333,16 @@ jQuery(document).ready(function() {
         }
 
         button.attr('disabled', 'disabled').addClass('disabled');
-        button.find('.loading').show().end();
+        jQuery('.loading', button).show().end();
+        jQuery('.login-feedback', form).slideUp();
         WHMCS.http.jqClient.post(
             url,
             form.serialize(),
             function (data) {
-                button.find('.loading').hide().end().removeAttr('disabled');
-                form.find('.login-feedback').html('');
+                jQuery('.loading', button).hide().end().removeAttr('disabled');
+                jQuery('.login-feedback', form).html('');
                 if (data.error) {
-                    form.find('.login-feedback').html(data.error).slideDown();
+                    jQuery('.login-feedback', form).hide().html(data.error).slideDown();
                 }
                 if (data.redirect !== undefined && data.redirect.substr(0, 7) === 'window|') {
                     window.open(data.redirect.substr(7), '_blank');
@@ -571,6 +572,11 @@ jQuery(document).ready(function() {
             });
         jQuery('.verification-banner.user-validation').hide();
     });
+
+    var ssoDropdown = jQuery('#servicesPanel').find('.list-group');
+    if (parseInt(ssoDropdown.css('height'), 10) < parseInt(ssoDropdown.css('max-height'), 10)) {
+        ssoDropdown.css('overflow', 'unset');
+    }
 
 
     /**
@@ -877,6 +883,27 @@ jQuery(document).ready(function() {
             dnsMethod.hide();
             emailMethod.show();
         }
+    });
+
+    (function () {
+        jQuery('.div-service-status').css(
+            'width',
+            (jQuery('.div-service-status .label-placeholder').outerWidth() + 5)
+        );
+    }());
+    jQuery('div[menuitemname="Service Details Actions"] a[data-identifier][data-serviceid][data-active="1"]').on('click', function(event) {
+        return customActionAjaxCall(event, jQuery(event.target))
+    });
+    jQuery('.div-service-item').on('click', function (event) {
+        var element = jQuery(event.target);
+        if (element.is('.dropdown-toggle, .dropdown-menu')) {
+            return true;
+        }
+        if (element.hasClass('btn-custom-action')) {
+            return customActionAjaxCall(event, element);
+        }
+        window.location.href = element.closest('.div-service-item').data('href');
+        return false;
     });
 });
 
@@ -1343,4 +1370,46 @@ var autoCollapse = function (menu, maxHeight) {
             autoCollapse(menu, maxHeight);
         }
     }
+}
+
+/**
+ * Perform the AjaxCall for a CustomAction.
+ *
+ * @param event
+ * @param element
+ * @returns {boolean}
+ */
+function customActionAjaxCall(event, element) {
+    event.stopPropagation();
+    if (!element.data('active')) {
+        return false;
+    }
+    element.attr('disabled', 'disabled').addClass('disabled');
+    jQuery('.loading', element).show();
+    WHMCS.http.jqClient.jsonPost({
+        url: WHMCS.utils.getRouteUrl(
+            '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
+        ),
+        data: {
+            'token': csrfToken
+        },
+        success: function(data) {
+            if (data.success) {
+                window.open(data.redirectTo);
+            } else {
+                window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
+            }
+        },
+        fail: function () {
+            window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
+        },
+        always: function() {
+            jQuery('.loading', element).hide();
+            element.removeAttr('disabled').removeClass('disabled');
+            if (element.hasClass('dropdown-item')) {
+                element.closest('.dropdown-menu').removeClass('show');
+            }
+        },
+    });
+    return true;
 }

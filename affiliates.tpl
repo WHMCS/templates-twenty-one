@@ -3,7 +3,7 @@
     {include file="$template/includes/alert.tpl" type="danger" msg="{lang key='affiliatesdisabled'}" textcenter=true}
 
 {else}
-
+    {include file="$template/includes/flashmessage.tpl"}
     {if $withdrawrequestsent}
         <div class="alert alert-success">
             <i class="fas fa-check fa-fw"></i>

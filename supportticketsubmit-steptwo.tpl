@@ -113,7 +113,7 @@
         </div>
 
         <p class="text-center">
-            <button type="submit" id="openTicketSubmit" class="btn btn-primary{$captcha->getButtonClass($captchaForm)}">
+            <button type="submit" id="openTicketSubmit" class="btn btn-primary disable-on-click{$captcha->getButtonClass($captchaForm)}">
                 {lang key='supportticketsticketsubmit'}
             </button>
             <a href="supporttickets.php" class="btn btn-default">{lang key='cancel'}</a>

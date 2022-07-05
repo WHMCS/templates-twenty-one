@@ -10093,6 +10093,10 @@ span.caret {
   line-height: 0.8;
 }
 
+#personalInformation {
+  overflow: inherit;
+}
+
 .iradio_square-blue {
   margin-right: 6px;
 }
@@ -10390,6 +10394,10 @@ h6:hover .show-on-hover {
   box-shadow: none;
 }
 
+.pw-input {
+  height: initial;
+}
+
 .input-group .btn-reveal-pw {
   border-left: 0;
 }
@@ -10503,6 +10511,37 @@ h6:hover .show-on-hover {
     display: block;
     padding-top: 0.5em;
   }
+}
+
+.input-group-xs > .form-control:not(textarea),
+.input-group-xs > .custom-select {
+  height: calc(1.25em + 0.5rem + 2px);
+}
+
+.input-group-xs > .form-control,
+.input-group-xs > .custom-select,
+.input-group-xs > .input-group-prepend > .input-group-text,
+.input-group-xs > .input-group-append > .input-group-text,
+.input-group-xs > .input-group-prepend > .btn,
+.input-group-xs > .input-group-append > .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 0.2rem;
+}
+
+.input-group-xs > .custom-select {
+  padding-right: 1.75rem;
+}
+
+.input-group > .input-group-append > .btn,
+.input-group > .input-group-append > .input-group-text,
+.input-group > .input-group-prepend:not(:first-child) > .btn,
+.input-group > .input-group-prepend:not(:first-child) > .input-group-text,
+.input-group > .input-group-prepend:first-child > .btn:not(:first-child),
+.input-group > .input-group-prepend:first-child > .input-group-text:not(:first-child) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .btn-default {
@@ -10654,6 +10693,10 @@ fieldset[disabled] .btn-default.focus {
 
 .card-accent-asbestos {
   border-top: 3px solid #7f8c8d;
+}
+
+.card-accent-brand-cpanel-orange {
+  border-top: 3px solid #ff6c2c;
 }
 
 .bg-color-gold {
@@ -11265,6 +11308,87 @@ fieldset[disabled] .btn-default.focus {
 
 .carousel-inner .carousel-item.item {
   float: left;
+}
+
+.div-service-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.div-service-status {
+  text-align: center;
+}
+
+.div-service-status .label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: white;
+  display: inline-block;
+  line-height: initial;
+  margin: 0;
+}
+
+.div-service-status .label-placeholder {
+  position: absolute;
+  visibility: hidden;
+}
+
+.div-service-status .label:not(.label-placeholder) {
+  width: 3rem;
+}
+
+.div-service-name {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.div-service-name > span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.div-service-buttons {
+  margin-left: auto;
+}
+
+.div-service-buttons .disabled {
+  cursor: default;
+}
+
+.div-service-buttons .dropdown-item {
+  font-size: 0.875rem;
+}
+
+.div-service-buttons .btn-group-secondary,
+.div-service-buttons .btn-view-details span:not(.sr-only) {
+  display: none;
+}
+
+.div-service-buttons .dropdown-toggle::after {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  .div-service-status .label {
+    width: initial !important;
+  }
+  .div-service-buttons .btn-view-details i,
+  .div-service-buttons .btn-group-primary {
+    display: none;
+  }
+  .div-service-buttons .btn-group-secondary {
+    display: inline-flex;
+  }
+  .div-service-buttons .btn-view-details span:not(.sr-only):not(.caret) {
+    display: initial !important;
+  }
 }
 
 .twofa-setup .modal-body {
@@ -12012,6 +12136,18 @@ div.md-editor.active {
 
 .promo-banner.sitebuilder .btn {
   background-color: #ff3377;
+}
+
+.promo-banner.cpanelseo {
+  border-top: 3px solid #ff6c2c;
+}
+
+.promo-banner.cpanelseo a {
+  color: #ff6c2c;
+}
+
+.promo-banner.cpanelseo .btn {
+  background-color: #ff6c2c;
 }
 
 .mc-panel-promo {
@@ -13352,4 +13488,50 @@ table.dtr-inline .dtr-title:empty {
 
 table.table-solid-bottom-border-light-gray {
   border-bottom: 1px solid #dee2e6;
+}
+
+table.ox-table-accounts td {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+table.ox-table-accounts .dropdown-hamburger::after {
+  display: none;
+}
+
+table.ox-table-accounts ul.dropdown-menu button.btn-sm, table.ox-table-accounts ul.dropdown-menu .btn-group-sm > button.btn {
+  border-radius: 0;
+}
+
+table.ox-table-accounts tbody.account-entry > tr:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+table.ox-table-accounts tbody.account-entry {
+  cursor: pointer;
+}
+
+table.ox-table-accounts tbody.aliases-body {
+  border-top: 0;
+}
+
+table.ox-table-accounts tbody.aliases-body > tr > td {
+  border-top: 0;
+}
+
+table.ox-table-accounts tr.alias-entry td:first-child {
+  font-size: .9em;
+}
+
+table.ox-table-accounts tr.create-alias td:first-child {
+  font-size: .9em;
+}
+
+table.ox-table-accounts span.email-aliases {
+  font-size: .9em;
+  font-weight: bold;
+}
+
+table.ox-table-accounts .input-group {
+  width: 65%;
 }

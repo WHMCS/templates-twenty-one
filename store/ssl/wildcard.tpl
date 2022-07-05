@@ -1,6 +1,6 @@
 <link href="{assetPath file='store.css'}" rel="stylesheet">
 
-<div class="landing-page ssl">
+<div class="landing-page bg-white ssl">
 
     <div class="hero">
         <div class="container">
