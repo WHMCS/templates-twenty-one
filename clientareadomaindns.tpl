@@ -62,7 +62,7 @@
                                     <option value="TXT">{lang key="domainDns.txt"}</option>
                                     <option value="URL">{lang key="domainDns.url"}</option>
                                     <option value="FRAME">{lang key="domainDns.frame"}</option>
-                                    <option value="SRV">{lang key="domainDns.srv}</option>
+                                    <option value="SRV">SRV</option>
                                 </select>
                             </td>
                             <td><input type="text" name="dnsrecordaddress[]" size="40" class="form-control" /></td>
