@@ -151,7 +151,7 @@
                             <input type="hidden" name="email_preferences[{$emailType}]" value="0">
                             <input type="checkbox" class="form-check-input" name="email_preferences[{$emailType}]" id="{$emailType}Emails" value="1"{if $value} checked="checked"{/if} />
                             {lang key="emailPreferences."|cat:$emailType}
-                        </label>{if !($emailType@last)}<br />{/if}
+                        </label>{if !($value@last)}<br />{/if}
                     {/foreach}
                 </div>
             </div>
