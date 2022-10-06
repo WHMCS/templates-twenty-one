@@ -20622,8 +20622,9 @@ jQuery(document).ready(function() {
     // when the page loads
     autoCollapse('#nav', 30);
 
-    // Init Lightbox2
-    lightbox.init();
+    if (jQuery('#lightbox').length === 0) {
+        lightbox.init();
+    }
 
     // when the window is resized
     jQuery(window).on('resize', function () {
