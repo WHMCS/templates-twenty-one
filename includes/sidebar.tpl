@@ -24,8 +24,8 @@
                                {if $childItem->getAttribute('dataToggleTab')}
                                    data-toggle="list" role="tab"
                                {/if}
-                               {if $childItem->getAttribute('dataCustomAction')}
-                                   {assign "customActionData" $childItem->getAttribute('dataCustomAction')}
+                               {assign "customActionData" $childItem->getAttribute('dataCustomAction')}
+                               {if is_array($customActionData)}
                                    data-active="{$customActionData['active']}"
                                    data-identifier="{$customActionData['identifier']}"
                                    data-serviceid="{$customActionData['serviceid']}"
@@ -35,7 +35,7 @@
                                {/if}
                                id="{$childItem->getId()}"
                             >
-                                {if isset($customActionData)}<span class="loading hidden w-hidden" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>{/if}
+                                {if is_array($customActionData)}<span class="loading hidden w-hidden" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>{/if}
                                 {if $childItem->hasBadge()}<span class="badge float-right">{$childItem->getBadge()}</span>{/if}
                                 {if $childItem->hasIcon()}<i class="{$childItem->getIcon()}"></i>&nbsp;{/if}
                                 {$childItem->getLabel()}

@@ -102,7 +102,7 @@
                     <li class="nav-item ml-3">
                         <a class="btn nav-link cart-btn" href="{$WEB_ROOT}/cart.php?a=view">
                             <i class="far fa-shopping-cart fa-fw"></i>
-                            <span class="badge badge-info">{$cartitemcount}</span>
+                            <span id="cartItemCount" class="badge badge-info">{$cartitemcount}</span>
                             <span class="sr-only">{lang key="carttitle"}</span>
                         </a>
                     </li>
