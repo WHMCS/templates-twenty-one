@@ -11665,6 +11665,10 @@ div[menuitemname='Active Products/Services'] .btn-view-more.disabled {
   background-color: #fff !important;
 }
 
+.md-editor > .btn-toolbar .hidden {
+  display: none !important;
+}
+
 .md-editor > textarea.markdown-editor,
 .md-editor > .md-preview {
   padding: 15px !important;
