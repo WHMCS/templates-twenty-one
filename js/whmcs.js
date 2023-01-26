@@ -387,6 +387,13 @@ jQuery(document).ready(function() {
     // Activate copy to clipboard functionality
     jQuery('.copy-to-clipboard').click(WHMCS.ui.clipboard.copy);
 
+    // Handle Language Chooser modal
+    jQuery('#modalChooseLanguage button[type=submit]').click(function(e) {
+        e.preventDefault();
+        var form = jQuery(this).closest('form');
+        window.location.replace(form.attr('action') + "language=" + form.find('input').val());
+    });
+
     // Password Generator
     jQuery('.generate-password').click(function(e) {
         jQuery('#frmGeneratePassword').submit();

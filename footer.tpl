@@ -101,7 +101,7 @@
                         {if $languagechangeenabled && count($locales) > 1}
                             <h5 class="h5 pt-5 pb-3">{lang key='chooselanguage'}</h5>
                             <div class="row item-selector">
-                            <input type="hidden" name="language" value="">
+                                <input type="hidden" name="language" value="{$language}" />
                                 {foreach $locales as $locale}
                                     <div class="col-4">
                                         <a href="#" class="item{if $language == $locale.language} active{/if}" data-value="{$locale.language}">

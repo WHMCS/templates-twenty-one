@@ -42,7 +42,7 @@
                     <select name="relatedservice" id="inputRelatedService" class="form-control">
                         <option value="">{lang key='none'}</option>
                         {foreach $relatedservices as $relatedservice}
-                            <option value="{$relatedservice.id}">
+                            <option value="{$relatedservice.id}"{if $relatedservice.id eq $selectedservice} selected="selected"{/if}>
                                 {$relatedservice.name} ({$relatedservice.status})
                             </option>
                         {/foreach}
