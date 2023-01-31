@@ -1,3 +1,5 @@
+{include file="$template/includes/flashmessage.tpl"}
+
 <div class="card">
     <div class="card-body">
         <h3 class="card-title">{lang key='userManagement.managePermissions'}</h3>
