@@ -10,6 +10,7 @@
         <br>
 
         <div class="row">
+            {if is_array($certificates.$type)}
             <div class="{if count($certificates.$type) == 1}col-lg-6 offset-lg-3 col-md-10 offset-md-1{elseif count($certificates.$type) == 2}col-md-10 offset-md-1{else}col-sm-12{/if}">
                 <div class="row row-pricing-table">
                     <div class="col-md-{if count($certificates.$type) == 1}6{elseif count($certificates.$type) == 2}4{else}3{/if} sidebar d-none d-md-block">
@@ -108,6 +109,7 @@
                     </div>
                 </div>
             </div>
+            {/if}
         </div>
     </div>
 </div>
