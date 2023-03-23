@@ -540,7 +540,7 @@
                                     {elseif $plan->isFree()}
                                         {lang key="orderpaymenttermfree"}
                                     {else}
-                                        {$plan->pricing()->first()->price()->toPrefixed()}
+                                        {$plan->pricing()->first()->toPrefixedString()}
                                     {/if}
                                 </div>
                                 <div class="div-feature-order">
@@ -1183,7 +1183,7 @@
                                         {elseif $plan->isFree()}
                                             {lang key="orderpaymenttermfree"}
                                         {else}
-                                            {$plan->pricing()->first()->price()->toPrefixed()}
+                                            {$plan->pricing()->first()->toPrefixedString()}
                                         {/if}
                                     </div>
                                     <div class="div-feature-order">
