@@ -575,7 +575,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q1"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqOne" aria-expanded="false" aria-controls="websiteFaqOne"></i>
                                             </div>
                                             <div id="websiteFaqOne" class="collapse" aria-labelledby="websiteFaqHeadingOne" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -592,7 +592,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q3"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqThree" aria-expanded="false" aria-controls="websiteFaqThree"></i>
                                             </div>
                                             <div id="websiteFaqThree" class="collapse" aria-labelledby="websiteFaqHeadingThree" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -609,7 +609,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q5"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqFive" aria-expanded="false" aria-controls="websiteFaqFive"></i>
                                             </div>
                                             <div id="websiteFaqFive" class="collapse" aria-labelledby="websiteFaqHeadingFive" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -626,7 +626,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q7"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqSeven" aria-expanded="false" aria-controls="websiteFaqSeven"></i>
                                             </div>
                                             <div id="websiteFaqSeven" class="collapse" aria-labelledby="websiteFaqHeadingSeven" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -643,7 +643,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q9"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqNine" aria-expanded="false" aria-controls="websiteFaqNine"></i>
                                             </div>
                                             <div id="websiteFaqNine" class="collapse" aria-labelledby="websiteFaqHeadingNine" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -664,7 +664,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q2"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqTwo" aria-expanded="false" aria-controls="websiteFaqTwo"></i>
                                             </div>
                                             <div id="websiteFaqTwo" class="collapse" aria-labelledby="websiteFaqHeadingTwo" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -681,7 +681,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q4"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqFour" aria-expanded="false" aria-controls="websiteFaqFour"></i>
                                             </div>
                                             <div id="websiteFaqFour" class="collapse" aria-labelledby="websiteFaqHeadingFour" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -698,7 +698,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q6"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqSix" aria-expanded="false" aria-controls="websiteFaqSix"></i>
                                             </div>
                                             <div id="websiteFaqSix" class="collapse" aria-labelledby="websiteFaqHeadingSix" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -715,7 +715,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q8"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#websiteFaqEight" aria-expanded="false" aria-controls="websiteFaqEight"></i>
                                             </div>
                                             <div id="websiteFaqEight" class="collapse" aria-labelledby="websiteFaqHeadingEight" data-parent="#websiteFaqAccordion">
                                                 <div class="card-body">
@@ -1218,7 +1218,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q1"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqOne" aria-expanded="false" aria-controls="serverFaqOne"></i>
                                             </div>
                                             <div id="serverFaqOne" class="collapse" aria-labelledby="serverFaqHeadingOne" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1235,7 +1235,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q3"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqThree" aria-expanded="false" aria-controls="serverFaqThree"></i>
                                             </div>
                                             <div id="serverFaqThree" class="collapse" aria-labelledby="serverFaqHeadingThree" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1252,7 +1252,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q5"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqFive" aria-expanded="false" aria-controls="serverFaqFive"></i>
                                             </div>
                                             <div id="serverFaqFive" class="collapse" aria-labelledby="serverFaqHeadingFive" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1269,7 +1269,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q7"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqSeven" aria-expanded="false" aria-controls="serverFaqSeven"></i>
                                             </div>
                                             <div id="serverFaqSeven" class="collapse" aria-labelledby="serverFaqHeadingSeven" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1286,7 +1286,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q9"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqNine" aria-expanded="false" aria-controls="serverFaqNine"></i>
                                             </div>
                                             <div id="serverFaqNine" class="collapse" aria-labelledby="serverFaqHeadingNine" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1303,7 +1303,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q11"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqEleven" aria-expanded="false" aria-controls="serverFaqEleven"></i>
                                             </div>
                                             <div id="serverFaqEleven" class="collapse" aria-labelledby="serverFaqHeadingEleven" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1324,7 +1324,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q2"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqTwo" aria-expanded="false" aria-controls="serverFaqTwo"></i>
                                             </div>
                                             <div id="serverFaqTwo" class="collapse" aria-labelledby="serverFaqHeadingTwo" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1341,7 +1341,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q4"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqFour" aria-expanded="false" aria-controls="serverFaqFour"></i>
                                             </div>
                                             <div id="serverFaqFour" class="collapse" aria-labelledby="serverFaqHeadingFour" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1358,7 +1358,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q6"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqSix" aria-expanded="false" aria-controls="serverFaqSix"></i>
                                             </div>
                                             <div id="serverFaqSix" class="collapse" aria-labelledby="serverFaqHeadingSix" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1375,7 +1375,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q8"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqEight" aria-expanded="false" aria-controls="serverFaqEight"></i>
                                             </div>
                                             <div id="serverFaqEight" class="collapse" aria-labelledby="serverFaqHeadingEight" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1392,7 +1392,7 @@
                                                         {lang key="store.threesixtymonitoring.faq.q10"}
                                                     </button>
                                                 </h5>
-                                                <i class="fal fa-plus"></i>
+                                                <i class="fal fa-plus" data-toggle="collapse" data-target="#serverFaqTen" aria-expanded="false" aria-controls="serverFaqTen"></i>
                                             </div>
                                             <div id="serverFaqTen" class="collapse" aria-labelledby="serverFaqHeadingTen" data-parent="#serverFaqAccordion">
                                                 <div class="card-body">
@@ -1548,7 +1548,7 @@
 
                         if (metricData && isHostUp) {
                             if (dataType === 'time') {
-                                metricData.value = metricData.value + ' S';
+                                metricData.value = metricData.value + ' {lang key="dateTime.symbol.second"}';
                             }
                         } else if (!isHostUp && dataType === 'time') {
                             metricData = {
@@ -1576,7 +1576,7 @@
 
             return false;
         });
-        jQuery('.btn-link').on('click', function() {
+        jQuery('.section-faq .btn-link, .section-faq i').on('click', function() {
             var isExpanded = jQuery(this).attr('aria-expanded');
             var toggleIcon = jQuery(this).closest('div').find('i');
             var allCards = jQuery(this).closest('section').find('i');
@@ -1606,10 +1606,16 @@
             var element = jQuery(this);
 
             event.preventDefault();
-            if (element.attr('id') == 'pills-website-tab') {
+            if (
+                element.attr('id') == 'pills-website-tab'
+                && jQuery('.section-header .tab-website').is(':hidden')
+            ) {
                 jQuery('.section-header .tab-server').hide();
                 jQuery('.section-header .tab-website').fadeToggle();
-            } else {
+            } else if (
+                element.attr('id') == 'pills-server-tab'
+                && jQuery('.section-header .tab-server').is(':hidden')
+            ) {
                 jQuery('.section-header .tab-website').hide();
                 jQuery('.section-header .tab-server').fadeToggle();
             }

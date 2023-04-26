@@ -92,8 +92,8 @@
                                     {/if}
                                 </small>
                             </td>
-                            <td><span class="w-hidden">{$domain.normalisedRegistrationDate}</span>{$domain.normalisedRegistrationDate}</td>
-                            <td><span class="w-hidden">{$domain.normalisedNextDueDate}</span>{$domain.normalisedNextDueDate}</td>
+                            <td><span class="w-hidden">{$domain.normalisedRegistrationDate}</span>{$domain.registrationdate}</td>
+                            <td><span class="w-hidden">{$domain.normalisedNextDueDate}</span>{$domain.nextduedate}</td>
                             <td>
                                 <span class="label status status-{$domain.statusClass}">{$domain.statustext}</span>
                                 <span class="w-hidden">

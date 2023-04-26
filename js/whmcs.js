@@ -391,7 +391,18 @@ jQuery(document).ready(function() {
     jQuery('#modalChooseLanguage button[type=submit]').click(function(e) {
         e.preventDefault();
         var form = jQuery(this).closest('form');
-        window.location.replace(form.attr('action') + "language=" + form.find('input').val());
+        var currency = form.find('input[name="currency"]');
+        var language = form.find('input[name="language"]');
+        var fields = [];
+
+        if (language.data('current') != language.val()) {
+            fields.push('language=' + language.val());
+        }
+        if (currency.data('current') != currency.val() && currency.val() != "") {
+            fields.push('currency=' + currency.val());
+        }
+
+        window.location.replace(form.attr('action') + fields.join('&'));
     });
 
     // Password Generator
