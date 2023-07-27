@@ -5630,7 +5630,8 @@ a.close.disabled {
   float: left;
   width: 100%;
   margin-right: -100%;
-  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
   transition: transform 0.6s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -10451,6 +10452,16 @@ fieldset[disabled] .btn-default.focus {
 .sidebar .validation-status-container {
   text-align: center;
 }
+.sidebar .sidebar-menu-item-wrapper {
+  display: flex;
+  flex-flow: row;
+}
+.sidebar .sidebar-menu-item-icon-wrapper {
+  margin-right: 0.25rem;
+}
+.sidebar .sidebar-menu-item-badge {
+  margin-left: auto;
+}
 
 .home-domain-search h2 {
   margin: 0;
@@ -12441,6 +12452,10 @@ div.product-details div.product-icon {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
+}
+
+.product-actions-wrapper > div:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 
 div.product-details-tab-container {

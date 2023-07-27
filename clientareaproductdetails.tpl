@@ -49,16 +49,34 @@
                                 </div>
                             </div>
 
-                            {if $showcancelbutton || $packagesupgrade}
-                                <div class="row">
+                            {if $showRenewServiceButton === true || $showcancelbutton === true || $packagesupgrade === true}
+                                <div class="row product-actions-wrapper">
                                     {if $packagesupgrade}
-                                        <div class="col-{if $showcancelbutton}6{else}12{/if}">
-                                            <a href="upgrade.php?type=package&amp;id={$id}" class="btn btn-block btn-success">{lang key='upgrade'}</a>
+                                        <div class="col-12">
+                                            <a href="upgrade.php?type=package&amp;id={$id}" class="btn btn-block btn-success">
+                                                <i class="fas fa-level-up"></i>
+                                                {lang key='upgrade'}
+                                            </a>
+                                        </div>
+                                    {/if}
+                                    {if $showRenewServiceButton === true}
+                                        <div class="col-12">
+                                            <a href="{routePath('service-renewals-service', $id)}" class="btn btn-block btn-primary">
+                                                <i class="fas fa-sync"></i>
+                                                {lang key='renewService.titleSingular'}
+                                            </a>
                                         </div>
                                     {/if}
                                     {if $showcancelbutton}
-                                        <div class="col-{if $packagesupgrade}6{else}12{/if}">
-                                            <a href="clientarea.php?action=cancel&amp;id={$id}" class="btn btn-block btn-danger {if $pendingcancellation}disabled{/if}">{if $pendingcancellation}{lang key='cancellationrequested'}{else}{lang key='clientareacancelrequestbutton'}{/if}</a>
+                                        <div class="col-12">
+                                            <a href="clientarea.php?action=cancel&amp;id={$id}" class="btn btn-block btn-danger {if $pendingcancellation}disabled{/if}">
+                                                <i class="fas fa-ban"></i>
+                                                {if $pendingcancellation}
+                                                    {lang key='cancellationrequested'}
+                                                {else}
+                                                    {lang key='clientareacancelrequestbutton'}
+                                                {/if}
+                                            </a>
                                         </div>
                                     {/if}
                                 </div>

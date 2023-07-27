@@ -35,10 +35,26 @@
                                {/if}
                                id="{$childItem->getId()}"
                             >
-                                {if is_array($customActionData)}<span class="loading hidden w-hidden" style="display: none;"><i class="fas fa-spinner fa-spin"></i></span>{/if}
-                                {if $childItem->hasBadge()}<span class="badge float-right">{$childItem->getBadge()}</span>{/if}
-                                {if $childItem->hasIcon()}<i class="{$childItem->getIcon()}"></i>&nbsp;{/if}
-                                {$childItem->getLabel()}
+                                <div class="sidebar-menu-item-wrapper">
+                                    {if $childItem->hasIcon()}
+                                        <div class="sidebar-menu-item-icon-wrapper">
+                                            {if is_array($customActionData)}
+                                                <span class="loading" style="display: none;">
+                                                    <i class="fas fa-spinner fa-spin fa-fw"></i>
+                                                </span>
+                                            {/if}
+                                            <i class="{$childItem->getIcon()} sidebar-menu-item-icon"></i>
+                                        </div>
+                                    {/if}
+                                    <div class="sidebar-menu-item-label">
+                                        {$childItem->getLabel()}
+                                    </div>
+                                    {if $childItem->hasBadge()}
+                                        <div class="sidebar-menu-item-badge">
+                                            <span class="badge">{$childItem->getBadge()}</span>
+                                        </div>
+                                    {/if}
+                                </div>
                             </a>
                         {else}
                             <div menuItemName="{$childItem->getName()}" class="list-group-item list-group-item-action{if $childItem->getClass()} {$childItem->getClass()}{/if}" id="{$childItem->getId()}">

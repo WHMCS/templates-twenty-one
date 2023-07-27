@@ -927,7 +927,7 @@ jQuery(document).ready(function() {
             .css('border-bottom', '1px solid #ddd');
     })
     jQuery('div[menuitemname="Service Details Actions"] a[data-identifier][data-serviceid][data-active="1"]').on('click', function(event) {
-        return customActionAjaxCall(event, jQuery(event.target))
+        return customActionAjaxCall(event, jQuery(event.target).closest('a'));
     });
     jQuery('.div-service-item').on('click', function (event) {
         var element = jQuery(event.target);
@@ -1415,12 +1415,16 @@ var autoCollapse = function (menu, maxHeight) {
  * @returns {boolean}
  */
 function customActionAjaxCall(event, element) {
+    var loadingIcon = jQuery('.loading', element);
+    var standardIcon = jQuery('.sidebar-menu-item-icon', element);
+
     event.stopPropagation();
     if (!element.data('active')) {
         return false;
     }
     element.attr('disabled', 'disabled').addClass('disabled');
-    jQuery('.loading', element).show();
+    loadingIcon.show();
+    standardIcon.hide();
     WHMCS.http.jqClient.jsonPost({
         url: WHMCS.utils.getRouteUrl(
             '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
@@ -1439,7 +1443,8 @@ function customActionAjaxCall(event, element) {
             window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
         },
         always: function() {
-            jQuery('.loading', element).hide();
+            loadingIcon.hide();
+            standardIcon.show();
             element.removeAttr('disabled').removeClass('disabled');
             if (element.hasClass('dropdown-item')) {
                 element.closest('.dropdown-menu').removeClass('show');
