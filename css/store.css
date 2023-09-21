@@ -3380,6 +3380,7 @@ section#main-body {
 }
 .landing-page.threesixtymonitoring .row-features img {
     margin: 2rem 0;
+    width: 7.5rem;
 }
 .landing-page.threesixtymonitoring .row-features p {
     margin-bottom: 2rem;
