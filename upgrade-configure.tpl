@@ -95,8 +95,15 @@
                                 {/if}
                                 <select name="billingcycle" class="form-control custom-select">
                                     {foreach $product->pricing()->allAvailableCycles() as $cycle}
-                                        {if is_null($permittedBillingCycles) || in_array($cycle->cycle(), $permittedBillingCycles)}
-                                            <option value="{$cycle->cycle()}">
+                                        {if $permittedBillingCycles->showCycleForProduct($cycle->cycle())}
+                                            <option value="{$cycle->cycle()}"
+                                                    {if $permittedBillingCycles->isCycleDisabledForProduct(
+                                                            $product->id,
+                                                            $cycle->cycle()
+                                                    )}
+                                                        disabled
+                                                    {/if}
+                                            >
                                                 {if $cycle->isRecurring()}
                                                     {if $cycle->isYearly()}
                                                         {$cycle->cycleInYears()}
