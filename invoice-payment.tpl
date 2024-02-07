@@ -13,7 +13,7 @@
     <form id="frmPayment" method="post" action="{$submitLocation}" role="form">
         <input type="hidden" name="invoiceid" value="{$invoiceid}" />
 
-        <div class="row cc-payment-form">
+        <div class="row">
             <div class="col-md-7">
 
                 {if $errormessage}
@@ -24,21 +24,25 @@
 
                 <div class="card">
                     <div class="card-body">
-
                         <h3 class="card-title">{lang key="makepayment"}</h3>
 
-                        <div class="form-group row">
-                            <label class="col-sm-4 text-md-right control-label">
-                                {lang key='paymentmethod'}
-                            </label>
-                            <div class="col-sm-8">
-                                {include file="$template/payment/$cardOrBank/select.tpl"}
+                        <div id="paymentGatewayInput">
+                            <div class="cc-payment-form">
+                                <div class="form-group row">
+                                    <label class="col-sm-4 text-md-right control-label">
+                                        {lang key='paymentmethod'}
+                                    </label>
+                                    <div class="col-sm-8">
+                                        {include file="$template/payment/$cardOrBank/select.tpl"}
+                                    </div>
+                                </div>
+
+                                {if !$hasRemoteInput}
+                                    {include file="$template/payment/$cardOrBank/inputs.tpl"}
+                                {/if}
                             </div>
                         </div>
 
-                        {if !$hasRemoteInput}
-                            {include file="$template/payment/$cardOrBank/inputs.tpl"}
-                        {/if}
                         <div id="btnSubmitContainer" class="form-group submit-container">
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary" id="btnSubmit" value="{lang key='submitpayment'}">
@@ -47,7 +51,6 @@
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
@@ -68,6 +71,18 @@
     <script>
     jQuery(document).ready(function() {
         jQuery('#inputCardCvv, #inputCardNumber').filter(':visible').first().focus();
+        WHMCS.payment.event.gatewayInit({
+            _source: 'invoice-pay',
+        }, '{$gateway|addslashes}');
+        jQuery('#frmPayment').on('submit', function() {
+            WHMCS.payment.event.checkoutFormSubmit(
+                {
+                    _source: 'invoice-pay',
+                },
+                '{$gateway|addslashes}',
+                jQuery(this)
+            );
+        });
     });
     </script>
 {/if}
