@@ -313,6 +313,7 @@
 
 <script src="{$BASE_PATH_JS}/jquery.payment.js"></script>
 <script>
+    var paymentInitSingleton = new Map;
     jQuery(document).ready(function() {
         var ccNumberFieldEnabled = '{$creditCardNumberFieldEnabled}',
             ccExpiryFieldEnabled = '{$creditCardExpiryFieldEnabled}',
@@ -337,6 +338,9 @@
                     jQuery('#billingContactsContainer').html(response);
                 }
             });
+        };
+        var whmcsPaymentModuleMetadata = {
+            _source: 'payment-method-add',
         };
 
         jQuery(document).on('click', '.frm-credit-card-input button[type="submit"]', function(e) {
@@ -391,16 +395,18 @@
                     e.preventDefault();
                 }
             }
+            WHMCS.payment.event.addPayMethodFormSubmit(
+                {literal}{...whmcsPaymentModuleMetadata, ...{event: e}}{/literal},
+                WHMCS.payment.event.previouslySelected?.module,
+                jQuery(this)
+            );
         });
 
-        var whmcsPaymentModuleMetadata = {
-            _source: 'payment-method-add',
-        };
-        var paymentInitSingleton = new Map;
         jQuery('input[name="type"]').on('ifChecked', function(e) {
             var element = jQuery(this);
             var module = element.data('gateway');
             WHMCS.payment.event.gatewayUnselected(whmcsPaymentModuleMetadata);
+            WHMCS.payment.display.errorClear();
             jQuery('.fieldgroup-creditcard').hide();
             jQuery('.fieldgroup-bankaccount').hide();
             jQuery('.fieldgroup-remoteinput').hide();
