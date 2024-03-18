@@ -66,7 +66,6 @@
 <div class="client-home-cards">
     <div class="row">
         <div class="col-12">
-
             {function name=outputHomePanels}
                 <div menuItemName="{$item->getName()}" class="card card-accent-{$item->getExtra('color')}{if $item->getClass()} {$item->getClass()}{/if}"{if $item->getAttribute('id')} id="{$item->getAttribute('id')}"{/if}>
                     <div class="card-header">

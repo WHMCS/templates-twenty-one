@@ -22478,6 +22478,11 @@ function customActionAjaxCall(event, element) {
     element.attr('disabled', 'disabled').addClass('disabled');
     loadingIcon.show();
     standardIcon.hide();
+
+    const redirectFn = ((jQuery(element).data('ca-target') === '_self') || (jQuery(element).attr('target') === '_self'))
+        ? function(url) { window.location.href = url; }
+        : window.open;
+
     WHMCS.http.jqClient.jsonPost({
         url: WHMCS.utils.getRouteUrl(
             '/clientarea/service/' + element.data('serviceid') + '/custom-action/' + element.data('identifier')
@@ -22487,13 +22492,16 @@ function customActionAjaxCall(event, element) {
         },
         success: function(data) {
             if (data.success) {
-                window.open(data.redirectTo);
+                redirectFn(data.redirectTo);
             } else {
-                window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
+                redirectFn('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_error=1');
             }
         },
         fail: function () {
-            window.open('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
+            redirectFn('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
+        },
+        error: function () {
+            redirectFn('clientarea.php?action=productdetails&id=' + element.data('serviceid') + '&customaction_ajax_error=1');
         },
         always: function() {
             loadingIcon.hide();
