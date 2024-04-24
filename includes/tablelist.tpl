@@ -108,8 +108,8 @@
             // This should only run on the first "ready" event.
             jQuery(".view-filter-btns a span").each(function (index) {
                 if (buildFilterRegex(jQuery(this).text().trim()) == rememberedFilterTerm) {
-                    jQuery(this).parent('a').addClass('active');
-                    jQuery(this).parent('a').find('i').removeClass('fa-circle').addClass('fa-dot-circle');
+                    jQuery(this).closest('a').addClass('active');
+                    jQuery(this).closest('a').find('i').removeClass('fa-circle').addClass('fa-dot-circle');
                 }
             });
         }
