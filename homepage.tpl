@@ -1,4 +1,4 @@
-{if !empty($productGroups) || $registerdomainenabled || $transferdomainenabled}
+{if !$productGroups->isEmpty() || $registerdomainenabled || $transferdomainenabled}
     <h2 class="text-center m-4">{lang key='clientHomePanels.productsAndServices'}</h2>
 
     <div class="card-columns home">
