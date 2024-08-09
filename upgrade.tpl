@@ -122,7 +122,11 @@
                                         {if $configoption.optiontype eq 1 || $configoption.optiontype eq 2}
                                             <select name="configoption[{$configoption.id}]" class="form-control custom-select">
                                                 {foreach $configoption.options as $option}
-                                                    {if $option.selected}<option value="{$option.id}" selected>{lang key='upgradenochange'}</option>{else}<option value="{$option.id}">{$option.nameonly} {$option.price}{/if}</option>
+                                                    {if !empty($option.selected)}
+                                                        <option value="{$option.id}" selected>{lang key='upgradenochange'}</option>
+                                                    {else}
+                                                        <option value="{$option.id}">{$option.nameonly} {$option.price}</option>
+                                                    {/if}
                                                 {/foreach}
                                             </select>
                                         {elseif $configoption.optiontype eq 3}

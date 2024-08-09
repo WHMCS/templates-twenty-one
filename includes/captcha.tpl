@@ -4,9 +4,9 @@
             <div class="domainchecker-homepage-captcha">
         {/if}
 
-        {if $captcha == "recaptcha"}
-            <div id="google-recaptcha-domainchecker" class="form-group recaptcha-container mx-auto"></div>
-        {elseif !in_array($captcha, ['invisible', 'recaptcha'])}
+        {if $captcha->recaptcha->isEnabled() && !$captcha->recaptcha->isInvisible()}
+            <div id="google-recaptcha-domainchecker" class="form-group recaptcha-container mx-auto" data-action="{$captchaForm}"></div>
+        {elseif !$captcha->recaptcha->isEnabled()}
             <div class="col-md-8 mx-auto mb-3 mb-sm-0">
                 <div id="default-captcha-domainchecker" class="{if $filename == 'domainchecker'}input-group input-group-box {/if}text-center row pb-3">
                     <p>{lang key="captchaverify"}</p>

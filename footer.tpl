@@ -20,7 +20,7 @@
                     <li class="list-inline-item">
                         <button type="button" class="btn" data-toggle="modal" data-target="#modalChooseLanguage">
                             <div class="d-inline-block align-middle">
-                                <div class="iti-flag {if $activeLocale.countryCode === 'GB'}us{else}{$activeLocale.countryCode|lower}{/if}"></div>
+                                <div class="iti-flag {if $activeLocale.countryCode === '001'}us{else}{$activeLocale.countryCode|lower}{/if}"></div>
                             </div>
                             {$activeLocale.localisedName}
                             /
