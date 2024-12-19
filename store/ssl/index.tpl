@@ -194,7 +194,7 @@
     <div class="content-block detailed-info" id="sslDetail">
         <div class="container accordion" id="sslAccordion">
             <div class="card">
-                <div class="card-header" id="sslHeadingOne" role="button" data-toggle="collapse" data-target="#collapseHelpMeChoose" aria-expanded="true" aria-controls="collapseHelpMeChoose">
+                <div class="card-header" id="sslHeadingOne" role="button" data-toggle="collapse" data-target="#collapseHelpMeChoose" aria-expanded="false" aria-controls="collapseHelpMeChoose">
                     <h4>
                         <span class="arrow"><i class="fas fa-chevron-down"></i></span>
                         {lang key="store.ssl.landingPage.help.title"}
@@ -317,7 +317,7 @@
             <div class="card">
                 <div class="card-header" id="sslHeaderMultiYear" role="button" data-toggle="collapse" data-target="#collapseMultiYear" aria-expanded="false" aria-controls="collapseHelpMeChoose">
                     <h4>
-                        <span class="arrow"><i class="fas fa-chevron-down"></i></span>
+                        <span class="arrow"><i class="fas fa-chevron-right"></i></span>
                         {lang key='store.ssl.landingPage.multiYear.title'}
                     </h4>
                 </div>
