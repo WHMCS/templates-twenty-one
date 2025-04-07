@@ -12405,6 +12405,10 @@ div.three-column-grid > div > label {
   background-image: url(../../../assets/img/payment/dankort.png);
 }
 
+.cc-number-field.troy {
+  background-image: url(../../../assets/img/payment/troy.png);
+}
+
 /**
  * -------------------------
  * Mass Pay

@@ -45,7 +45,7 @@
 {if $allowClientsToRemoveCards}
     <div{if !$addingNewCard} class="w-hidden"{/if}>
         <div class="form-group cc-details row">
-            <div class="offset-sm-4 col-sm-8 text-md-right">
+            <div class="offset-sm-4 col-sm-8">
                 <input type="hidden" name="nostore" value="1">
                 <input type="checkbox" class="toggle-switch-success" data-size="mini" checked="checked" name="nostore" id="inputNoStore" value="0" data-on-text="{lang key='yes'}" data-off-text="{lang key='no'}">
                 <label class="form-check form-check-inline no-padding" for="inputNoStore">

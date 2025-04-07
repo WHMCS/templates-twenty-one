@@ -37,7 +37,7 @@
                     </div>
                 </div>
             </div>
-            <input class="btn btn-primary" type="submit" name="save" value="{lang key='clientareasavechanges'}" />
+            <input class="btn btn-primary" id="btnSaveNameChanges" type="submit" name="save" value="{lang key='clientareasavechanges'}" />
             <input class="btn btn-default" type="reset" value="{lang key='cancel'}" />
         </form>
 
@@ -72,9 +72,23 @@
                             {if in_array('email', $uneditableFields)}disabled="disabled"{/if}
                         >
                     </div>
+
+                    {if !in_array('email', $uneditableFields)}
+                        <div class="form-group">
+                            <label for="emailChangePasswordConfirmation" class="col-form-label">
+                                {lang key='existingpassword'}
+                            </label>
+                            <input
+                                type="password"
+                                name="existing_password"
+                                id="emailChangePasswordConfirmation"
+                                class="form-control"
+                            >
+                        </div>
+                    {/if}
                 </div>
             </div>
-            <input class="btn btn-primary" type="submit" name="save" value="{lang key='clientareasavechanges'}" />
+            <input class="btn btn-primary" id="btnSaveEmailChanges" type="submit" name="save" value="{lang key='clientareasavechanges'}" />
             <input class="btn btn-default" type="reset" value="{lang key='cancel'}" />
         </form>
 
