@@ -10572,7 +10572,8 @@ fieldset[disabled] .btn-default.focus {
 }
 .client-home-cards .card-body, .client-home-cards .mc-promo-manage .content, .mc-promo-manage .client-home-cards .content, .client-home-cards .mc-promo-login .content, .mc-promo-login .client-home-cards .content {
   padding: 0;
-  max-height: 170px;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
   overflow: auto;
 }
 .client-home-cards .card-body p, .client-home-cards .mc-promo-manage .content p, .mc-promo-manage .client-home-cards .content p, .client-home-cards .mc-promo-login .content p, .mc-promo-login .client-home-cards .content p {
@@ -10766,6 +10767,23 @@ div[menuitemname="Active Products/Services"] .btn-view-more.disabled {
   }
   .div-service-buttons .btn-view-details span:not(.sr-only):not(.caret) {
     display: initial !important;
+  }
+}
+.recaptcha-content-domain-checker {
+  padding-right: 15px;
+  margin-left: -15px;
+}
+
+.google-recaptcha-align {
+  padding-top: 20px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+@media (max-width: 768px) {
+  .google-recaptcha-align {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 .twofa-setup .modal-body {

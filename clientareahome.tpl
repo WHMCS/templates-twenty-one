@@ -63,6 +63,12 @@
     </div>
 {/foreach}
 
+{if $captchaError}
+    <div class="alert alert-danger">
+        {$captchaError}
+    </div>
+{/if}
+
 <div class="client-home-cards">
     <div class="row">
         <div class="col-12">
