@@ -940,6 +940,14 @@ jQuery(document).ready(function() {
         window.location.href = element.closest('.div-service-item').data('href');
         return false;
     });
+
+    try {
+        if (typeof WHMCS.client.tokenProcessor === 'object') {
+            WHMCS.client.tokenProcessor.processTokenSubmitters();
+        }
+    } catch (e) {
+        // do nothing
+    }
 });
 
 /**
@@ -1052,6 +1060,15 @@ function popupWindow(addr, popname, w, h, features) {
  * @param {Element} select The dropdown triggering the event
  */
 function selectChangeNavigate(select) {
+    const url = $(select).val();
+
+    if (typeof WHMCS.client.tokenProcessor === 'object') {
+        if (WHMCS.client.tokenProcessor.isUrlEligibleForToken(url)) {
+            WHMCS.client.tokenProcessor.submitUrlViaPost(url);
+            return;
+        }
+    }
+
     window.location.href = $(select).val();
 }
 
