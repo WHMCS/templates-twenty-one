@@ -156,6 +156,16 @@ section#main-body {
     text-align: center;
     border-bottom: 1px solid #eee;
 }
+
+.landing-page .navbar .navbar-collapse {
+    display: flex;
+    justify-content: center;
+}
+
+.landing-page .navbar .navbar-nav {
+   flex-direction: column;
+}
+
 @media (min-width: 768px) {
     .landing-page .navbar.navbar-expand-md .navbar-nav > li {
         width: 25%;
@@ -166,18 +176,24 @@ section#main-body {
     .landing-page .navbar.navbar-expand-md .navbar-nav > li:last-child > a {
         border-right: 1px solid #ccc;
     }
-}
-@media (min-width: 992px) {
-    .landing-page .navbar.navbar-expand-lg .navbar-nav > li {
+
+    .landing-page .navbar .navbar-nav {
+       flex-direction: row;
+    }
+
+    .landing-page .navbar.navbar-expand .navbar-nav > li {
         width: 25%;
     }
-    .landing-page .navbar.navbar-expand-lg .navbar-nav > li > a {
+
+    .landing-page .navbar.navbar-expand .navbar-nav > li > a {
         border-left: 1px solid #ccc;
     }
-    .landing-page .navbar.navbar-expand-lg .navbar-nav > li:last-child > a {
+
+    .landing-page .navbar.navbar-expand .navbar-nav > li:last-child > a {
         border-right: 1px solid #ccc;
     }
 }
+
 
 .landing-page .navbar .navbar-nav > li.active > a {
     background: #fff;
@@ -1855,6 +1871,14 @@ section#main-body {
     .landing-page.marketgoo .plan.labels {
         display: block;
         width: 60%;
+    }
+
+    .landing-page.marketgoo .embed-responsive {
+        padding-bottom: 60%;
+    }
+
+    .landing-page.marketgoo .video-banner {
+        min-height: auto;
     }
 }
 

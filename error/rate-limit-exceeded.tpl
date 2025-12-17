@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="text-center p-5">
+
+        <i class="fas fa-exclamation-circle display-1 font-weight-bold text-primary"></i>
+        <h1 class="display-1 font-weight-bold text-primary line-height-reduced mb-5">
+            {lang key="errorPage.rateLimitExceeded.title"}
+        </h1>
+        <h3>{lang key="errorPage.rateLimitExceeded.subtitle"}</h3>
+        <p>{lang key="errorPage.rateLimitExceeded.description"}</p>
+
+        <div class="buttons">
+            <a href="{$systemurl}" class="btn btn-primary px-4">
+                {lang key="errorPage.rateLimitExceeded.home"}
+            </a>
+        </div>
+
+    </div>
+</div>

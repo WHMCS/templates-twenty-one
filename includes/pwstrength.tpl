@@ -7,9 +7,9 @@
 </div>
 
 {if file_exists("templates/$template/includes/alert.tpl")}
-    {include file="$template/includes/alert.tpl" type="info" msg="<small><i class='fa fa-info-circle fa-fw'></i> {lang key='passwordtips'}</small>"}
+    {include file="$template/includes/alert.tpl" type="info" msg="<small><i class='fa fa-info-circle fa-fw'></i> {lang key='passwordtips' maximum_length=$maximumPasswordLength}</small>"}
 {elseif file_exists("templates/six/includes/alert.tpl")}
-    {include file="six/includes/alert.tpl" type="info" msg="<small><i class='fa fa-info-circle fa-fw'></i> {lang key='passwordtips'}</small>"}
+    {include file="six/includes/alert.tpl" type="info" msg="<small><i class='fa fa-info-circle fa-fw'></i> {lang key='passwordtips' maximum_length=$maximumPasswordLength}</small>"}
 {/if}
 
 <script>
@@ -18,7 +18,8 @@
             pwStrengthWarningThreshold = {if isset($pwStrengthWarningThreshold)}{$pwStrengthWarningThreshold}{else}75{/if},
             progressBar = jQuery("#passwordStrengthBar .progress-bar"),
             pw = jQuery("#inputNewPassword1").val(),
-            pwlength = (pw.length);
+            pwlength = (pw.length),
+            maximumPasswordLength = {$maximumPasswordLength};
         if (pwlength > 5) {
             pwlength = 5;
         }
@@ -48,7 +49,7 @@
         jQuery(this).removeClass('is-invalid is-warning is-valid');
         progressBar.removeClass("bg-danger bg-warning bg-success").css("width", pwstrength + "%").attr('aria-valuenow', pwstrength);
         jQuery("#passwordStrengthBar .progress-bar .sr-only").html('{lang|addslashes key='pwstrengthrating'}: ' + pwstrength + '%');
-        if (pwstrength < pwStrengthErrorThreshold) {
+        if ((pwstrength < pwStrengthErrorThreshold) || pw.length > maximumPasswordLength) {
             jQuery(this).addClass('is-invalid');
             progressBar.addClass("bg-danger");
         } else if (pwstrength < pwStrengthWarningThreshold) {
@@ -64,8 +65,8 @@
 function validatePassword2() {
     var password1 = jQuery("#inputNewPassword1").val(),
         password2Input = jQuery("#inputNewPassword2"),
-        password2 = password2Input.val();
-
+        password2 = password2Input.val(),
+        maximumPasswordLength = {$maximumPasswordLength};
     if (password2 && password1 !== password2) {
         password2Input.removeClass('is-valid')
             .addClass('is-invalid');
@@ -76,7 +77,7 @@ function validatePassword2() {
             jQuery('input[type="submit"]').attr('disabled', 'disabled');
         {/if}
     } else {
-        if (password2) {
+        if (password2 && password1.length <= maximumPasswordLength) {
             password2Input.removeClass('is-invalid')
                 .addClass('is-valid');
             {if !isset($noDisable)}jQuery('.primary-content input[type="submit"]').removeAttr('disabled');{/if}

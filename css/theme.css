@@ -10471,7 +10471,7 @@ fieldset[disabled] .btn-default.focus {
   padding: 0;
   list-style: none;
   font-size: 1.4em;
-  color: #888;
+  color: #757575;
   font-weight: 300;
 }
 .home-domain-search .tld-logos li {
@@ -10497,6 +10497,40 @@ fieldset[disabled] .btn-default.focus {
 .home-domain-search .input-group-wrapper .btn {
   margin: 0 2px !important;
   border-radius: 0.25rem !important;
+}
+.home-domain-search .input-group-wrapper .advanced-input .btn-success {
+  background-color: #218739;
+  border-color: #218739;
+}
+.home-domain-search .input-group-wrapper .advanced-input .multiselect {
+  font-size: 12px;
+  padding: 0 3px;
+  border: 0;
+}
+.home-domain-search .input-group-wrapper .advanced-input .multiselect-item.filter {
+  width: 90%;
+}
+.home-domain-search .input-group-wrapper .advanced-input .multiselect-container label {
+  padding: 0 0 0 5px;
+}
+.home-domain-search .input-group-wrapper .advanced-input .input-group-append {
+  position: absolute;
+  right: 20px;
+  top: 74px;
+}
+.home-domain-search .input-group-wrapper .advanced-input textarea {
+  width: 100%;
+  height: 120px;
+  resize: none;
+  margin-bottom: 5px;
+}
+.home-domain-search .input-group-wrapper .advanced-input label {
+  font-size: 12px;
+  margin: 5px 5px;
+  color: #333;
+}
+.home-domain-search .input-group-wrapper .advanced-input input[type=checkbox] {
+  margin-right: 5px;
 }
 
 @media (min-width: 576px) and (max-width: 767.98px) {
@@ -11941,7 +11975,7 @@ div.tweet span {
 
 .ticket-reply .rating span.star,
 .ticket-reply .rating-done span.star {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 6 Pro";
   font-weight: normal;
   font-style: normal;
   display: inline-block;
@@ -12758,15 +12792,15 @@ div.product-details-tab-container {
 }
 
 .tld-sale-group-hot {
-  background-color: #f9615a;
+  background-color: #E71408;
 }
 
 .tld-sale-group-sale {
-  background-color: #f7d458;
+  background-color: #8E7106;
 }
 
 .tld-sale-group-new {
-  background-color: #2ad588;
+  background-color: #1A8454;
 }
 
 .dataTables_wrapper table.table-list {

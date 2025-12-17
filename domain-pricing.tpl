@@ -7,7 +7,7 @@
                     <div class="col-md-3 col-sm-4 col-6">
                         <div class="featured-tld">
                             <div class="img-container">
-                                <img src="{$BASE_PATH_IMG}/tld_logos/{$tldinfo.tldNoDots}.png">
+                                <img src="{$BASE_PATH_IMG}/tld_logos/{$tldinfo.tldNoDots}.png" alt="{$tldinfo.tld}">
                             </div>
                             <div class="price {$tldinfo.tldNoDots}">
                                 {if is_object($tldinfo.register)}

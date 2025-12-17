@@ -140,6 +140,27 @@
         </div>
     </div>
 
+    {if $accountDetailsExtraFields}
+        <div class="card mt-4">
+            <div class="card-body">
+                <h3 class="card-title">{lang key='orderForm.additionalInformation'}</h3>
+
+                <div class="row">
+                    {foreach $accountDetailsExtraFields as $field}
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-form-label" for="{$field.name}">{$field.label|escape}{if $field.required} <span class="text-danger">*</span>{/if}</label>
+                                <div class="control">
+                                    {$field.input}
+                                </div>
+                            </div>
+                        </div>
+                    {/foreach}
+                </div>
+            </div>
+        </div>
+    {/if}
+
     {if $emailPreferencesEnabled}
         <div class="card">
             <div class="card-body">

@@ -27,7 +27,7 @@
                                 {lang key='supportticketsstatusclosed'}
                             </button>
                         {else}
-                            <button class="btn btn-danger btn-sm" onclick="window.location='?tid={$tid}&amp;c={$c}&amp;closeticket=true'">
+                            <button class="btn btn-danger btn-sm" onclick="window.location='?tid={$tid}&amp;c={$c}&amp;closeticket=true&amp;token={$token}'">
                                 <i class="fas fa-times fa-fw"></i>
                                 {lang key='supportticketsclose'}
                             </button>

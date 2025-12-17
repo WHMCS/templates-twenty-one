@@ -8,7 +8,12 @@
 
     <link href="{assetPath file='all.min.css'}?v={$versionHash}" rel="stylesheet">
     <link href="{assetPath file='theme.min.css'}?v={$versionHash}" rel="stylesheet">
-    <link href="{$WEB_ROOT}/assets/css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="{$WEB_ROOT}/assets/fonts/css/fontawesome.min.css" rel="stylesheet">
+    <link href="{$WEB_ROOT}/assets/fonts/css/fontawesome-solid.min.css" rel="stylesheet">
+    <link href="{$WEB_ROOT}/assets/fonts/css/fontawesome-regular.min.css" rel="stylesheet">
+    <link href="{$WEB_ROOT}/assets/fonts/css/fontawesome-light.min.css" rel="stylesheet">
+    <link href="{$WEB_ROOT}/assets/fonts/css/fontawesome-brands.min.css" rel="stylesheet">
+    <link href="{$WEB_ROOT}/assets/fonts/css/fontawesome-duotone.min.css" rel="stylesheet">
     <link href="{assetPath file='invoice.min.css'}?v={$versionHash}" rel="stylesheet">
     <script src="{assetPath file='scripts.min.js'}?v={$versionHash}"></script>
 </head>

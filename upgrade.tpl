@@ -6,6 +6,8 @@
             {include file="$template/includes/alert.tpl" type="warning" msg="{lang key='upgradeexistingupgradeinvoice'}"}
         {elseif $upgradenotavailable}
             {include file="$template/includes/alert.tpl" type="warning" msg="{lang key='upgradeNotPossible'}" textcenter=true}
+        {elseif $upgradeinvalid}
+            {include file="$template/includes/alert.tpl" type="warning" msg=$upgradeinvaliderror}
         {/if}
 
         {if $overdueinvoice}
@@ -26,6 +28,12 @@
             <p>
                 <a href="clientarea.php?action=productdetails&id={$id}" class="btn btn-default btn-lg">{lang key='clientareabacklink'}</a>
                 <a href="submitticket.php" class="btn btn-default btn-lg">{lang key='submitticketdescription'}</a>
+            </p>
+
+        {elseif $upgradeinvalid}
+
+            <p>
+                <a href="clientarea.php?action=productdetails&id={$id}" class="btn btn-default btn-lg">{lang key='clientareabacklink'}</a>
             </p>
 
         {else}

@@ -19,13 +19,9 @@
         </div>
     </div>
 
-    <nav class="navbar navbar-light navbar-light bg-light navbar-expand-lg p-0">
+    <nav class="navbar navbar-light navbar-light bg-light navbar-expand p-0">
         <div class="container">
-            <span class="navbar-brand"></span>
-            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#nav-landing-page" aria-expanded="false">
-                <span class="sr-only">{lang key="toggleNav"}</span>
-                <span class="navbar-toggler-icon"></span>
-            </button>
+
             <div class="collapse navbar-collapse" id="nav-landing-page">
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#" onclick="smoothScroll('#how');return false">{lang key="store.marketgoo.tab.how"}</a></li>
@@ -42,20 +38,23 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="block">
-                        <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/1-signup.svg">
-                        <span>1. {lang key="store.marketgoo.features.1"}</span>
+                        <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/1-get-seo-plan.svg">
+                        <span>{lang key="store.marketgoo.features.1"}</span>
+                        <p>{lang key="store.marketgoo.featuresdetail.1"}</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="block">
-                        <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/2-get-seo-plan.svg">
-                        <span>2. {lang key="store.marketgoo.features.2"}</span>
+                        <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/2-follow-instructions.svg">
+                        <span>{lang key="store.marketgoo.features.2"}</span>
+                        <p>{lang key="store.marketgoo.featuresdetail.2"}</p>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="block">
-                        <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/3-follow-instructions.svg">
-                        <span>3. {lang key="store.marketgoo.features.3"}</span>
+                        <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/3-monthly-report.svg">
+                        <span>{lang key="store.marketgoo.features.3"}</span>
+                        <p>{lang key="store.marketgoo.featuresdetail.3"}</p>
                     </div>
                 </div>
             </div>
@@ -66,17 +65,24 @@
         <div class="container">
             <div class="feature-wrapper">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-md-4">
                         <div class="block">
-                            <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/4-start-improving.svg">
-                            <span>4. {lang key="store.marketgoo.features.4"}</span>
+                            <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/4-track-monitor.svg">
+                            <span>{lang key="store.marketgoo.features.4"}</span>
                             <p>{lang key="store.marketgoo.featuresdetail.4"}</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-md-4">
                         <div class="block">
-                            <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/5-track-monitor.svg">
-                            <span>5. {lang key="store.marketgoo.features.5"}</span>
+                            <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/5-individual-optimization.svg">
+                            <span>{lang key="store.marketgoo.features.5"}</span>
+                            <p>{lang key="store.marketgoo.featuresdetail.5"}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="block">
+                            <img src="{$WEB_ROOT}/assets/img/marketconnect/marketgoo/6-easy-keyword.svg">
+                            <span>{lang key="store.marketgoo.features.5"}</span>
                             <p>{lang key="store.marketgoo.featuresdetail.5"}</p>
                         </div>
                     </div>
@@ -88,7 +94,7 @@
     <div class="clearfix content-block" id="features">
         <div class="container">
             {if count($plans) > 0}
-                <div class="d-block d-sm-none">
+                <div class="d-block d-none">
                     <form method="post" action="">
                         <select name="currency" class="form-control" onchange="submit()">
                             <option>{lang key="changeCurrency"} ({$activeCurrency.prefix} {$activeCurrency.code})</option>
@@ -236,7 +242,7 @@
         <div class="container">
             <h3 class="text-center mb-4">{lang key="store.marketgoo.faqs.title"}</h3>
             <div class="row">
-                <div class="col-xl-4 col-lg-6">
+                <div class="col-xl-3 col-lg-6">
                     <div class="faq">
                         <h4>{lang key="store.marketgoo.faqs.q1"}</h4>
                         <p>{lang key="store.marketgoo.faqs.a1"}</p>
@@ -245,16 +251,22 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6">
+                <div class="col-xl-3 col-lg-6">
                     <div class="faq">
                         <h4>{lang key="store.marketgoo.faqs.q2"}</h4>
                         <p>{lang key="store.marketgoo.faqs.a2"}</p>
                     </div>
                 </div>
-                <div class="col-xl-4">
+                <div class="col-xl-3 col-lg-6">
                     <div class="faq">
                         <h4>{lang key="store.marketgoo.faqs.q3"}</h4>
                         <p>{lang key="store.marketgoo.faqs.a3"}</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-6">
+                    <div class="faq">
+                        <h4>{lang key="store.marketgoo.faqs.q4"}</h4>
+                        <p>{lang key="store.marketgoo.faqs.a4"}</p>
                     </div>
                 </div>
             </div>

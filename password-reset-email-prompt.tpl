@@ -3,10 +3,6 @@
     <p class="text-muted mb-0">{lang key='pwresetemailneeded'}</p>
 </div>
 
-{if $errorMessage}
-    {include file="$template/includes/alert.tpl" type="error" msg=$errorMessage textcenter=true}
-{/if}
-
 <form method="post" action="{routePath('password-reset-validate-email')}" role="form">
     <input type="hidden" name="action" value="reset" />
 
@@ -20,14 +16,14 @@
           </div>
     </div>
 
-    {if $captcha->isEnabled()}
+    {if $captcha && $captcha->isEnabled() && $showCaptchaAfterLimit}
         <div class="text-center margin-bottom">
             {include file="$template/includes/captcha.tpl"}
         </div>
     {/if}
 
     <div class="form-group text-center">
-        <button type="submit" class="btn btn-primary{$captcha->getButtonClass($captchaForm)}">
+        <button type="submit" id="resetPasswordButton" {if $showCaptchaAfterLimit}data-captcha-required="true"{/if} class="btn btn-primary{$captcha->getButtonClass($captchaForm)}">
             {lang key='pwresetsubmit'}
         </button>
     </div>
