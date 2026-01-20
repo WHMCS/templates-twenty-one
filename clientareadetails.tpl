@@ -140,7 +140,7 @@
         </div>
     </div>
 
-    {if $accountDetailsExtraFields}
+    {if !empty($accountDetailsExtraFields)}
         <div class="card mt-4">
             <div class="card-body">
                 <h3 class="card-title">{lang key='orderForm.additionalInformation'}</h3>

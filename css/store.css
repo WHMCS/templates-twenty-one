@@ -2877,7 +2877,11 @@ section#main-body {
     display: block;
     margin: 0 auto 20px;
 }
-
+.landing-page.nordvpn {
+    background-color: white;
+    color: black;
+    font-family: sans-serif;
+}
 .landing-page.nordvpn p {
     font-size: 1.1rem;
     font-weight: lighter;
@@ -2890,12 +2894,11 @@ section#main-body {
     font-size: 1.4rem;
     font-weight: bold;
 }
+.landing-page.nordvpn .hero {
+    color: black;
+}
 .landing-page.nordvpn strong {
     font-weight: bold;
-}
-.landing-page.nordvpn {
-    color:#043855;
-    font-family: sans-serif;
 }
 .landing-page.nordvpn .blue {
     color:#4580ff;
@@ -2910,53 +2913,61 @@ section#main-body {
     font-weight: 500;
     font-size: 1.4rem;
     padding: .8rem 4rem;
-    background: #4580ff;
+    background: #404040;
     color: white;
     border: 0;
+    border-radius: 99px;
 }
+.landing-page.nordvpn .btn-get-nord,
 .landing-page.nordvpn .btn-get-deal {
-    padding: .8rem 1.5rem;
-    background: #f55368;
+    background: #ea0101;
+    font-size: 1rem;
+    padding: .8rem 2rem;
 }
 .landing-page.nordvpn .btn-get-monthly {
-    background: #1b325a;
+    background: #444;
     margin-bottom: 2.5rem;
 }
 .landing-page.nordvpn .btn-get-annually {
-    background:#4580ff;
+    background: #6c757d;
 }
 .landing-page.nordvpn .hero {
-    font-size: 1.25rem;
+    text-align: left;
 }
 .landing-page.nordvpn .hero .hero-bg {
     margin: 1.25rem 0;
 }
-.landing-page.nordvpn .hero h1 {
-    font-size: 2.125rem;
-    font-weight: bold;
-}
-.landing-page.nordvpn .hero h2 {
-    font-size: 1.75rem;
-}
 .landing-page.nordvpn .hero .guarantee {
     margin: 1rem 0;
-    font-weight: bold;
-    font-size: 1.7rem;
-    color:#4580ff;
-    text-transform:uppercase;
     padding-bottom: 25px;
+    font-size: .9rem;
 }
-.landing-page.nordvpn .hero,
-.landing-page.nordvpn .feature.world {
-    background:#0e1b33;
-    color:white;
-}
-.landing-page.nordvpn .feature {
-    padding:60px 0;
+.landing-page.nordvpn .hero .available {
     text-align: center;
 }
-.landing-page.nordvpn .feature.icon img,
-.landing-page.nordvpn .feature.threat img {
+.landing-page.nordvpn .hero .available .divider {
+    align-items: center;
+    margin: 4rem 0 2rem;
+}
+.landing-page.nordvpn .hero .available .divider .line {
+    flex-grow: 1;
+    height: 2px;
+    background: #e1e1e1;
+}
+.landing-page.nordvpn .hero .available .divider p {
+    font-size: .9rem;
+    flex-grow: 1;
+    margin: 0;
+}
+.landing-page.nordvpn .hero .available img {
+    filter: invert(1);
+}
+.landing-page.nordvpn .feature {
+    padding:60px 0 0 0;
+    text-align: center;
+    padding:60px 0;
+}
+.landing-page.nordvpn .feature.icon img {
     margin: 2rem 0;
 }
 .landing-page.nordvpn .feature.icon h1,
@@ -2965,12 +2976,16 @@ section#main-body {
 .landing-page.nordvpn .feature.use h1 {
     margin: 2.5rem 0;
 }
+.landing-page.nordvpn .feature.icon h1{
+    text-align: center;
+}
 .landing-page.nordvpn .feature.pricing h1 {
     margin: 4rem 0;
 }
 .landing-page.nordvpn .feature.icon h3,
 .landing-page.nordvpn .feature.use h3 {
     margin-bottom: 1.4rem;
+    font-size: 1.1rem;
 }
 .landing-page.nordvpn .feature.icon .col-3 {
     padding: 0 3rem;
@@ -2992,11 +3007,8 @@ section#main-body {
     font-size: 1.1rem;
 }
 .landing-page.nordvpn .feature.comparison .comparison-note {
-    font-size: 0.75rem;
+    font-size: .9rem;
     text-align: center;
-}
-.landing-page.nordvpn .feature.comparison .comparison-note a {
-    text-decoration: underline;
 }
 .landing-page.nordvpn .feature.world {
     text-align: center;
@@ -3004,17 +3016,13 @@ section#main-body {
 .landing-page.nordvpn .feature.world h1 {
     margin: 0 0 2.5rem;
 }
+.landing-page.nordvpn .feature.world .row {
+    align-items: center;
+}
 .landing-page.nordvpn .feature.world .world-image {
-    max-width: initial;
-    margin: auto;
-    opacity: 33%;
+    margin-bottom: 4rem;
+    width: 70%;
 }
-.landing-page.nordvpn .feature.world .world-desc {
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-.landing-page.nordvpn .feature.world .world-image,
 .landing-page.nordvpn .feature.world .world-tagline,
 .landing-page.nordvpn .feature.world .world-data .col-6 {
     margin-bottom: 2rem;
@@ -3031,6 +3039,9 @@ section#main-body {
 .landing-page.nordvpn .feature.world > p {
     margin-bottom: 2.5rem
 }
+.landing-page.nordvpn .feature.world .world-data img {
+    height: 80px;
+}
 .landing-page.nordvpn .feature.logo {
     background:#f2f2f2;
 }
@@ -3042,6 +3053,19 @@ section#main-body {
 }
 .landing-page.nordvpn .feature.security .row.h-100 p {
     font-size: 1.4rem;
+}
+
+.landing-page.nordvpn .feature.icon .container .row.keep-data-safe-container {
+    gap: 1.5rem;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+}
+.keep-data-safe-card{
+    border: 2px solid #f4f4f4;
+    border-radius: 12px;
+    padding: 1rem;
+    flex: 0 0 calc((100% - 3rem) / 3);
 }
 .landing-page.nordvpn .feature.use .row div {
     padding-top: 0;
@@ -3060,6 +3084,29 @@ section#main-body {
 .landing-page.nordvpn .feature.threat .col-4 {
     padding: 0 2rem;
 }
+.landing-page.nordvpn .feature.threat .title-div {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.landing-page.nordvpn .feature.threat .threats-div {
+    gap: 1.5rem;
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+}
+.landing-page.nordvpn .feature.threat .threats-div .col-10 {
+    border: 2px solid #f4f4f4;
+    border-radius: 12px;
+    padding: 1rem;
+    flex: 0 0 calc((100% - 3rem) / 3);
+    max-width: 100%;
+}
+.landing-page.nordvpn .feature.threat img {
+    margin: 0 0 1rem 0;
+}
+.landing-page.nordvpn .feature.threat p {
+    margin: 0;
+}
 .landing-page.nordvpn .feature.pricing .billing-cycle {
     font-size: 2.5rem;
     font-weight: lighter;
@@ -3076,18 +3123,20 @@ section#main-body {
 .landing-page.nordvpn .feature.faq .card {
     margin-bottom: 1.5rem;
     border:0;
-    border-radius:0;
+    border-radius: 1rem;
 }
 .landing-page.nordvpn .feature.faq .card-header {
     padding: 0;
-    background:#1b325a;
+    background: #444;
+    border-radius: 1rem;
 }
 .landing-page.nordvpn .feature.faq .card-header .btn {
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
     color:white;
     display: flex;
     justify-content: space-between;
     text-decoration: none;
+    border-radius: 1rem;
 }
 .landing-page.nordvpn .feature.faq .card-header .btn i {
     align-self: center;
@@ -3101,47 +3150,20 @@ section#main-body {
 .landing-page.nordvpn .comparison .col-2 {
     min-height: 4rem;
     padding: 0 1rem;
-    border: 1px solid #e7e7e8;
     border-bottom: none;
+}
+.landing-page.nordvpn .comparison .col-12:nth-child(odd):not(:first-child):not(:last-child) {
+    background-color: #f1f2f3;
+    border-radius: 12px;
 }
 .landing-page.nordvpn .comparison .col-12:first-of-type .col-2 {
     min-height: 1.5rem;
 }
-.landing-page.nordvpn .comparison .col-12:nth-of-type(7) .col-2:not(:nth-of-type(2)),
-.landing-page.nordvpn .comparison .col-12:last-of-type .col-2:nth-of-type(2){
-    border-bottom: 1px solid #e7e7e8;
-}
-.landing-page.nordvpn .comparison .col-12:first-of-type .col-2:not(:nth-of-type(2)),
-.landing-page.nordvpn .comparison .col-12:last-of-type .col-2:not(:nth-of-type(2)) {
-    border: none;
-}
-.landing-page.nordvpn .comparison .col-12:nth-of-type(2) .col-2:nth-of-type(2),
-.landing-page.nordvpn .comparison .col-12:last-of-type .col-2:nth-of-type(2) {
-    border-top: none;
-}
-.landing-page.nordvpn .comparison .col-2:first-of-type {
-    border-right: none;
-}
-.landing-page.nordvpn .comparison .col-2:not(:first-of-type):not(:nth-of-type(2)) {
-    border-left: none;
-}
-.landing-page.nordvpn .comparison .col-12:nth-of-type(2) .col-2:first-of-type {
-    border-top-left-radius: 4px;
-}
-.landing-page.nordvpn .comparison .col-12:nth-of-type(7) .col-2:first-of-type {
-    border-bottom-left-radius: 4px;
-}
-.landing-page.nordvpn .comparison .col-12:nth-of-type(2) .col-2:last-of-type {
-    border-top-right-radius: 4px;
-}
-.landing-page.nordvpn .comparison .col-12:nth-of-type(7) .col-2:last-of-type {
-    border-bottom-right-radius: 4px;
-}
 .landing-page.nordvpn .comparison .col-12:first-of-type .col-2:nth-of-type(2) {
-    border-radius: 4px 4px 0 0;
+    border-radius: 12px 12px 0 0;
 }
 .landing-page.nordvpn .comparison .col-12:last-of-type .col-2:nth-of-type(2) {
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 12px 12px;
 }
 .landing-page.nordvpn .comparison .col-2 {
     display: flex;
@@ -3149,15 +3171,15 @@ section#main-body {
     flex-wrap: wrap;
 }
 .landing-page.nordvpn .comparison .col-12 .col-2:nth-of-type(2) {
-    border-left-color: #bed4fe;
-    border-right-color: #bed4fe;
+    border-left: 1px solid #4e86ff;
+    border-right: 1px solid #4e86ff;
     background: #ecf3ff;
 }
 .landing-page.nordvpn .comparison .col-12:first-of-type .col-2:nth-of-type(2) {
-    border-top-color: #bed4fe;
+    border-top: 1px solid #4e86ff;
 }
 .landing-page.nordvpn .comparison .col-12:last-of-type .col-2:nth-of-type(2) {
-    border-bottom-color: #bed4fe;
+    border-bottom: 1px solid #4e86ff;
 }
 .landing-page.nordvpn .comparison .col-2 span {
     width: 100%;
@@ -3174,21 +3196,22 @@ section#main-body {
     min-width: 1110px;
 }
 @media (max-width: 575px) {
-    .landing-page.nordvpn .feature.pricing h1 {
-        margin: 3.5rem 0;
+    .landing-page.nordvpn h1 {
+        font-size: 1.9rem;
     }
-    .landing-page.nordvpn .hero h2 {
-        font-size: 1.5rem;
-    }
-    .landing-page.nordvpn .hero .guarantee {
-        font-size: 1.4rem;
+    .landing-page.nordvpn h3 {
+        font-size: 1.2rem;
     }
     .landing-page.nordvpn p {
         font-size: 1rem;
     }
-    .landing-page.nordvpn .feature.world .world-data p:nth-of-type(2) {
-        font-size: 3.75rem;
-        line-height: 3rem;
+    .landing-page.nordvpn .hero .guarantee,
+    .landing-page.nordvpn .hero .available .divider p,
+    .landing-page.nordvpn .feature.comparison .comparison-note {
+        font-size: .8rem;
+    }
+    .landing-page.nordvpn .feature.pricing h1 {
+        margin: 3.5rem 0;
     }
     .landing-page.nordvpn .feature.security .row.h-100 p {
         font-size: 1.25rem;
@@ -3227,10 +3250,14 @@ section#main-body {
     .landing-page.nordvpn .br-md-space:after {
         content: " ";
     }
+    .landing-page.nordvpn .feature.threat .threats-div,
+     .landing-page.nordvpn .feature.icon .container .row.keep-data-safe-container {
+         flex-direction: row;
+         align-items: stretch;
+     }
 }
 @media (min-width: 992px) {
-    .landing-page.nordvpn .feature.logo img,
-    .landing-page.nordvpn .feature.world .world-image {
+    .landing-page.nordvpn .feature.logo img {
         margin: 0;
     }
     .landing-page.nordvpn .br-lg-reg {
@@ -3242,20 +3269,22 @@ section#main-body {
     .landing-page.nordvpn .br-lg-space:after {
         content: " ";
     }
-}
-@media (min-width: 1200px) {
+    .big-screen-text-left {
+        text-align: left;
+    }
     .landing-page.nordvpn .feature.world {
         text-align: left;
     }
-    .landing-page.nordvpn .feature.world .world-desc {
-        position: initial;
+    .landing-page.nordvpn .feature.world .centered-row-responsive {
+        flex-direction: row-reverse;
+        width: 100%;
     }
     .landing-page.nordvpn .feature.world .world-image {
-        position: absolute;
-        top: 0;
-        right: 2rem;
-        opacity: 100%;
+        margin: 0;
+        width: 45%;
     }
+}
+@media (min-width: 1200px) {
     .landing-page.nordvpn .br-xl-reg {
         content: initial;
     }
@@ -3264,6 +3293,19 @@ section#main-body {
     }
     .landing-page.nordvpn .br-xl-space:after {
         content: " ";
+    }
+}
+.centered-row-responsive {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+@media (min-width: 992px) {
+    .centered-row-responsive {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -3710,6 +3752,10 @@ section#main-body {
     .landing-page.threesixtymonitoring .div-pricing-container > .div-feature-labels.feature-count-4:not(:first-child) {
         display: none;
     }
+}
+
+.landing-page.nordvpn .custom-margin {
+    margin-bottom: 60px;
 }
 
 .landing-page.ssl .secure-wildcard p {

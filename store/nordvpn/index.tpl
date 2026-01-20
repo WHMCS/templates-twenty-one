@@ -7,20 +7,23 @@
             <div class="hero-bg">
                 <div class="row h-100">
                     <div class="col-12 col-lg-6 my-auto">
-                        <img class="hero-image" src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/header-logo.png">
-                        <h1>{lang key="store.nordvpn.hero.title" tagOpen="<span class=\"blue\">" tagClose="</span>" tagBreak="<br class=\"br-md-space br-lg-reg br-xl-space\">"}</h1>
-                        <h2>{lang key="store.nordvpn.hero.tagline" tagBreak="<br class=\"br-xs-space br-sm-space br-md-reg br-lg-space\">"}</h2>
+                        <h1>{lang key="store.nordvpn.hero.title" tagOpen="<span>" tagClose="</span>" tagBreak="<br class=\"br-md-space br-lg-reg br-xl-space\">"}</h1>
+                        <p>{lang key="store.nordvpn.hero.tagline" tagBreak="<br class=\"br-xs-space br-sm-space br-md-reg br-lg-space\">"}</p>
+                        <button class="btn btn-default btn-get-nord" onclick="smoothScroll('#nordPricing')">
+                            {lang key="store.nordvpn.shared.get"}
+                        </button>
+                        <p class="guarantee">{lang key="store.nordvpn.hero.guarantee"}</p>
                     </div>
                     <div class="col-6 d-none d-lg-block my-auto">
                         <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/header-image.png">
                     </div>
-                    <div class="col-12">
-                        <p>{lang key="store.nordvpn.hero.available"}</p>
+                    <div class="col-12 available">
+                        <div class="row divider">
+                            <span class="line"></span>
+                            <p>{lang key="store.nordvpn.hero.available"}</p>
+                            <span class="line"></span>
+                        </div>
                         <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/header-icons.png">
-                        <p class="guarantee">{lang key="store.nordvpn.hero.guarantee"}</p>
-                        <button class="btn btn-default btn-get-nord" onclick="smoothScroll('#nordPricing')">
-                            {lang key="store.nordvpn.shared.get"}
-                        </button>
                     </div>
                 </div>
             </div>
@@ -33,20 +36,20 @@
                 <div class="col-12">
                     <h1>{lang key="store.nordvpn.features.icon.title1"}</h1>
                 </div>
-                <div class="col-6 col-lg-3">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-video.png">
-                    <p>{lang key="store.nordvpn.features.icon.video"}</p>
-                </div>
-                <div class="col-6 col-lg-3">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-global.png">
+                <div class="col-6 col-lg-3 big-screen-text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-global.svg">
                     <p>{lang key="store.nordvpn.features.icon.global"}</p>
                 </div>
-                <div class="col-6 col-lg-3">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-hacker.png">
+                <div class="col-6 col-lg-3 big-screen-text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-video.svg">
+                    <p>{lang key="store.nordvpn.features.icon.video"}</p>
+                </div>
+                <div class="col-6 col-lg-3 big-screen-text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-hacker.svg">
                     <p>{lang key="store.nordvpn.features.icon.hacker"}</p>
                 </div>
-                <div class="col-6 col-lg-3">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-property.png">
+                <div class="col-6 col-lg-3 big-screen-text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-property.svg">
                     <p>{lang key="store.nordvpn.features.icon.property"}</p>
                 </div>
             </div>
@@ -113,28 +116,6 @@
                     <div class="col-12">
                         <div class="row no-gutters">
                             <div class="col-2">
-                                <span>{lang key="store.nordvpn.features.comparison.wireguard"}</span>
-                            </div>
-                            <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
-                            </div>
-                            <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
-                            </div>
-                            <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
-                            </div>
-                            <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
-                            </div>
-                            <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="row no-gutters">
-                            <div class="col-2">
                                 <span>{lang key="store.nordvpn.features.comparison.vpn1"}</span>
                             </div>
                             <div class="col-2">
@@ -163,16 +144,16 @@
                                 <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
                             </div>
                             <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
                             </div>
                             <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
                             </div>
                             <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
                             </div>
                             <div class="col-2">
-                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
                             </div>
                         </div>
                     </div>
@@ -188,7 +169,29 @@
                                 <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
                             </div>
                             <div class="col-2">
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
+                            </div>
+                            <div class="col-2">
                                 <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                            </div>
+                            <div class="col-2">
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="row no-gutters">
+                            <div class="col-2">
+                                <span>{lang key="store.nordvpn.features.comparison.wireguard"}</span>
+                            </div>
+                            <div class="col-2">
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                            </div>
+                            <div class="col-2">
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
+                            </div>
+                            <div class="col-2">
+                                <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-no.png"></span>
                             </div>
                             <div class="col-2">
                                 <span><img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/tick-yes.png"></span>
@@ -214,51 +217,46 @@
                     </div>
                 </div>
             </div>
-            <p class="comparison-note">{lang key="store.nordvpn.features.comparison.asterisk" tagOpen="<a href=\"https://go.whmcs.com/1745/av-test-report\" target=\"_blank\">" tagClose="</a>"}</p>
+            <p class="comparison-note">{lang key="store.nordvpn.features.comparison.asterisk" tagOpen="<a class=\"blue\" href=\"https://www.av-comparatives.org/wp-content/uploads/2025/02/phishing_comp_Q1-2025.pdf\" target=\"_blank\">" tagClose="</a>" tagBreak="<br class=\"br-xs-space\">"}</p>
         </div>
     </div>
 
-    <div class="container line-break"></div>
-
     <div class="feature threat">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center title-div">
                 <div class="col-10 col-sm-8">
                     <h1>{lang key="store.nordvpn.features.threat.title"}</h1>
                     <p>{lang key="store.nordvpn.features.threat.tagline" tagOpen="<strong>" tagClose="</strong>"}</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-10 offset-1 col-md-4 offset-md-0">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-protection.png">
+            <div class="row threats-div">
+                <div class="col-10 col-md-4 text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-protection.svg">
                     <p>{lang key="store.nordvpn.features.threat.protection" tagOpen="<strong>" tagClose="</strong>"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-4 offset-md-0">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-malware.png">
+                <div class="col-10 col-md-4 text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-malware.svg">
                     <p>{lang key="store.nordvpn.features.threat.malware" tagOpen="<strong>" tagClose="</strong>"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-4 offset-md-0">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-safe.png">
+                <div class="col-10 col-md-4 text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-safe.svg">
                     <p>{lang key="store.nordvpn.features.threat.safe" tagOpen="<strong>" tagClose="</strong>"}</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="container line-break"></div>
-
     <div class="feature device">
         <div class="container">
             <div class="row h-100">
                 <div class="col-10 offset-1 col-lg-6 offset-lg-0 my-auto">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-girl.png">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-man-phone.png">
                 </div>
                 <div class="col-10 offset-1 col-lg-6 offset-lg-0 my-auto">
                     <h3>{lang key="store.nordvpn.features.device.title1"}</h3>
                     <p>{lang key="store.nordvpn.features.device.tagline1"}</p>
                     <h3>{lang key="store.nordvpn.features.device.title2"}</h3>
                     <p>{lang key="store.nordvpn.features.device.tagline2"}</p>
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icons-available-black.png">
                 </div>
             </div>
         </div>
@@ -267,11 +265,8 @@
     <div class="feature world">
         <div class="container">
             <div class="row">
-                <div class="col-6 d-none d-xl-block">
-                    <img class="world-image" src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-world.png">
-                </div>
-                <div class="col-12 col-xl-6">
-                    <img class="d-xl-none world-image" src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-world.png">
+                <div class="centered-row-responsive">
+                    <img class="world-image" src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-world.svg">
                     <div class="world-desc">
                         <h1>{lang key="store.nordvpn.features.world.title"}</h1>
                         <p class="world-tagline">{lang key="store.nordvpn.features.world.tagline" tagBreak="<br class=\"br-xs-space br-lg-space br-xl-reg\">"}</p>
@@ -286,11 +281,11 @@
                             </div>
                             <div class="col-6">
                                 <p>{lang key="store.nordvpn.features.world.bullet3"}</p>
-                                <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-speed.png">
+                                <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-speed.svg">
                             </div>
                             <div class="col-6">
                                 <p>{lang key="store.nordvpn.features.world.bullet4"}</p>
-                                <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-infinity.png">
+                                <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-infinity.svg">
                             </div>
                         </div>
                         <button class="btn btn-default btn-get-nord btn-get-deal" onclick="smoothScroll('#nordPricing')">
@@ -302,76 +297,60 @@
         </div>
     </div>
 
-    <div class="feature logo">
-        <div class="container">
-            <div class="row h-100">
-                <div class="col-6 col-sm-4 col-lg-2 my-auto">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/logomarks-wired.png">
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2 my-auto">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/logomarks-huffpost.png">
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2 my-auto">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/logomarks-buzzfeed.png">
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2 my-auto">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/logomarks-forbes.png">
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2 my-auto">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/logomarks-tedx.png">
-                </div>
-                <div class="col-6 col-sm-4 col-lg-2 my-auto">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/logomarks-bbc.png">
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="feature security">
         <div class="container">
-            <div class="row h-100">
-                <div class="col-10 offset-1 col-lg-6 offset-lg-0 my-auto">
-                    <h1>{lang key="store.nordvpn.features.security.title1"}</h1>
-                    <p>{lang key="store.nordvpn.features.security.tagline1"}</p>
-                    <p>{lang key="store.nordvpn.features.security.tagline2" tagOpen="<strong>" tagClose="</strong>"}</p>
-                </div>
-                <div class="col-12 col-lg-6 my-auto text-center">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/img-app.png">
-                </div>
-            </div>
             <div class="row">
-                <div class="col-10 offset-1 col-sm-6 offset-sm-0">
-                    <h3>{lang key="store.nordvpn.features.security.title2"}</h3>
-                    <p>{lang key="store.nordvpn.features.security.tagline3"}</p>
-                    <h3>{lang key="store.nordvpn.features.security.title3"}</h3>
-                    <p>{lang key="store.nordvpn.features.security.tagline4"}</p>
+                <div class="col-12 col-lg-6 my-auto text-center">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/privacy-no-logs-man-laptop-blue-md.png">
                 </div>
-                <div class="col-10 offset-1 col-sm-6 offset-sm-0">
-                    <h3>{lang key="store.nordvpn.features.security.title4"}</h3>
-                    <p>{lang key="store.nordvpn.features.security.tagline5" tagOpen="<strong>" tagClose="</strong>"}</p>
+                <div class="col-10 offset-1 col-lg-6 offset-lg-0 my-auto">
+                    <h3>{lang key="store.nordvpn.features.security.title1"}</h3>
+                    <p>{lang key="store.nordvpn.features.security.tagline1"}</p>
+                    <p>{lang key="store.nordvpn.features.security.tagline2"}</p>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container line-break"></div>
 
     <div class="feature icon">
         <div class="container">
-            <h1>{lang key="store.nordvpn.features.icon.title2"}</h1>
             <div class="row">
-                <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-4">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-check.png">
+                <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-4 big-screen-text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/extra-privacy.svg">
+                    <h3>{lang key="store.nordvpn.features.security.title2"}</h3>
+                    <p>{lang key="store.nordvpn.features.security.tagline3"}</p>
+                </div>
+                <div class="col-10 offset-1 col-md-12 offset-md-0  col-lg-4 big-screen-text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/no-logs.svg">
+                    <h3>{lang key="store.nordvpn.features.security.title3"}</h3>
+                    <p>{lang key="store.nordvpn.features.security.tagline4"}</p>
+                </div>
+                <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-4 big-screen-text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/online-security.svg">
+                    <h3>{lang key="store.nordvpn.features.security.title4"}</h3>
+                    <p>{lang key="store.nordvpn.features.security.tagline5"}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="feature icon">
+        <div class="container">
+            <h1 class="text-center">{lang key="store.nordvpn.features.icon.title2"}</h1>
+            <div class="row keep-data-safe-container">
+                <div class="keep-data-safe-card text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/fast-vpn-planet-girl-rocket-md.svg">
                     <h3>{lang key="store.nordvpn.features.icon.check1"}</h3>
                     <p>{lang key="store.nordvpn.features.icon.check2"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-4">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-bug.png">
+                <div class="keep-data-safe-card text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/vulnerability-detection-person-magnifying-search-md.svg">
                     <h3>{lang key="store.nordvpn.features.icon.bug1"}</h3>
                     <p>{lang key="store.nordvpn.features.icon.bug2"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-4">
-                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/icon-shield.png">
+                <div class="keep-data-safe-card text-left">
+                    <img src="{$WEB_ROOT}/assets/img/marketconnect/nordvpn/ad-blocker-malware-scanner-protection-md.svg">
                     <h3>{lang key="store.nordvpn.features.icon.shield1"}</h3>
                     <p>{lang key="store.nordvpn.features.icon.shield2"}</p>
                 </div>
@@ -379,92 +358,40 @@
         </div>
     </div>
 
-    <div class="container line-break"></div>
-
     <div class="feature use">
         <div class="container">
             <h1>{lang key="store.nordvpn.features.use.title1"}</h1>
             <div class="row">
                 <div class="col-10 offset-1">
-                    <p>{lang key="store.nordvpn.features.use.tagline1" tagOpen="<strong>" tagClose="</strong>" tagBreak="<br class=\"br-sm-space br-lg-reg\">"}</p>
+                    <p>{lang key="store.nordvpn.features.use.tagline1" tagBreak="<br class=\"br-sm-space br-lg-reg\">"}</p>
                 </div>
             </div>
-            <div class="d-none d-lg-block">
-                <div class="row headers">
-                    <div class="col-4">
-                        <h3>{lang key="store.nordvpn.features.use.title2"}</h3>
-                    </div>
-                    <div class="col-4">
-                        <h3>{lang key="store.nordvpn.features.use.title3"}</h3>
-                    </div>
-                    <div class="col-4">
-                        <h3>{lang key="store.nordvpn.features.use.title4"}</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-                        <p>{lang key="store.nordvpn.features.use.tagline2"}</p>
-                    </div>
-                    <div class="col-4">
-                        <p>{lang key="store.nordvpn.features.use.tagline3"}</p>
-                    </div>
-                    <div class="col-4">
-                        <p>{lang key="store.nordvpn.features.use.tagline4"}</p>
-                    </div>
-                </div>
-                <div class="row headers">
-                    <div class="col-4">
-                        <h3>{lang key="store.nordvpn.features.use.title5"}</h3>
-                    </div>
-                    <div class="col-4">
-                        <h3>{lang key="store.nordvpn.features.use.title6"}</h3>
-                    </div>
-                    <div class="col-4">
-                        <h3>{lang key="store.nordvpn.features.use.title7"}</h3>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-4">
-                        <p>{lang key="store.nordvpn.features.use.tagline5"}</p>
-                    </div>
-                    <div class="col-4">
-                        <p>{lang key="store.nordvpn.features.use.tagline6"}</p>
-                    </div>
-                    <div class="col-4">
-                        <p>{lang key="store.nordvpn.features.use.tagline7"}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="d-lg-none row">
-                <div class="col-10 offset-1 col-md-6 offset-md-0">
+            <div class="row">
+                <div class="col-10 offset-1 offset-md-0 col-lg-4 text-left">
                     <h3>{lang key="store.nordvpn.features.use.title2"}</h3>
                     <p>{lang key="store.nordvpn.features.use.tagline2"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-6 offset-md-0">
+                <div class="col-10 offset-1 offset-md-0 col-lg-4 text-left">
                     <h3>{lang key="store.nordvpn.features.use.title3"}</h3>
                     <p>{lang key="store.nordvpn.features.use.tagline3"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-6 offset-md-0">
+                <div class="col-10 offset-1 offset-md-0 col-lg-4 text-left">
                     <h3>{lang key="store.nordvpn.features.use.title4"}</h3>
                     <p>{lang key="store.nordvpn.features.use.tagline4"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-6 offset-md-0">
+            </div>
+            <div class="row">
+                <div class="col-10 offset-1 offset-md-0 col-lg-6 text-left">
                     <h3>{lang key="store.nordvpn.features.use.title5"}</h3>
                     <p>{lang key="store.nordvpn.features.use.tagline5"}</p>
                 </div>
-                <div class="col-10 offset-1 col-md-6 offset-md-0">
+                <div class="col-10 offset-1 offset-md-0 col-lg-6 text-left">
                     <h3>{lang key="store.nordvpn.features.use.title6"}</h3>
                     <p>{lang key="store.nordvpn.features.use.tagline6"}</p>
-                </div>
-                <div class="col-10 offset-1 col-md-6 offset-md-0">
-                    <h3>{lang key="store.nordvpn.features.use.title7"}</h3>
-                    <p>{lang key="store.nordvpn.features.use.tagline7"}</p>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="container line-break"></div>
 
     <div class="feature pricing" id="nordPricing">
         <div class="container">
@@ -515,8 +442,6 @@
         </div>
     </div>
 
-    <div class="container line-break"></div>
-
     <div class="feature faq">
         <div class="container">
             <h1 class="text-center">{lang key="store.nordvpn.features.faq.title"}</h1>
@@ -528,7 +453,7 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                                         {lang key="store.nordvpn.features.faq.question1"}
-                                        <i class="fal fa-minus fa-lg"></i>
+                                        <i class="fal fa-chevron-up fa-lg"></i>
                                     </button>
                                 </h2>
                             </div>
@@ -543,7 +468,7 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
                                         {lang key="store.nordvpn.features.faq.question2"}
-                                        <i class="fal fa-plus fa-lg"></i>
+                                        <i class="fal fa-chevron-down fa-lg"></i>
                                     </button>
                                 </h2>
                             </div>
@@ -558,7 +483,7 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
                                         {lang key="store.nordvpn.features.faq.question3"}
-                                        <i class="fal fa-plus fa-lg"></i>
+                                        <i class="fal fa-chevron-down fa-lg"></i>
                                     </button>
                                 </h2>
                             </div>
@@ -573,7 +498,7 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
                                         {lang key="store.nordvpn.features.faq.question4"}
-                                        <i class="fal fa-plus fa-lg"></i>
+                                        <i class="fal fa-chevron-down fa-lg"></i>
                                     </button>
                                 </h2>
                             </div>
@@ -588,7 +513,7 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
                                         {lang key="store.nordvpn.features.faq.question5"}
-                                        <i class="fal fa-plus fa-lg"></i>
+                                        <i class="fal fa-chevron-down fa-lg"></i>
                                     </button>
                                 </h2>
                             </div>
@@ -610,11 +535,11 @@
     jQuery(document).ready(function() {
         jQuery('.accordion .card-header .btn').on('click', function() {
             var icon = jQuery(this).find('i');
-            if (icon.hasClass('fa-plus')) {
-                jQuery('.accordion .card-header .btn i.fa-minus').removeClass('fa-minus').addClass('fa-plus');
-                icon.removeClass('fa-plus').addClass('fa-minus');
+            if (icon.hasClass('fa-chevron-up')) {
+                jQuery('.accordion .card-header .btn i.fa-chevron-down').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+                icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
             } else {
-                icon.removeClass('fa-minus').addClass('fa-plus');
+                icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
             }
         });
     });
