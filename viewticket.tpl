@@ -22,12 +22,12 @@
                     </button>
                     {if $showCloseButton}
                         {if $closedticket}
-                            <button class="btn btn-danger btn-sm" disabled="disabled">
+                            <button id="closedTicket" class="btn btn-danger btn-sm" disabled="disabled">
                                 <i class="fas fa-times fa-fw"></i>
                                 {lang key='supportticketsstatusclosed'}
                             </button>
                         {else}
-                            <button class="btn btn-danger btn-sm" onclick="window.location='?tid={$tid}&amp;c={$c}&amp;closeticket=true&amp;token={$token}'">
+                            <button id="closeTicket" class="btn btn-danger btn-sm" onclick="window.location='?tid={$tid}&amp;c={$c}&amp;closeticket=true&amp;token={$token}'">
                                 <i class="fas fa-times fa-fw"></i>
                                 {lang key='supportticketsclose'}
                             </button>
