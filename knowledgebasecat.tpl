@@ -1,6 +1,6 @@
 <form role="form" method="post" action="{routePath('knowledgebase-search')}" class="mb-4">
     <div class="input-group input-group-lg kb-search">
-        <input type="text"  id="inputKnowledgebaseSearch" name="search" class="form-control font-weight-light" placeholder="{lang key='clientHomeSearchKb'}" value="{$searchterm}" />
+        <input type="text"  id="inputKnowledgebaseSearch" name="search" class="form-control font-weight-light" placeholder="{lang key='clientHomeSearchKb'}" value="{$searchterm|escape}" />
         <div class="input-group-append">
             <button type="submit" id="btnKnowledgebaseSearch" class="btn btn-primary btn-input-padded-responsive">
                 {lang key='search'}
