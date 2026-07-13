@@ -1,5 +1,12 @@
 <div class="providerLinkingFeedback"></div>
 
+{if $remote_auth_prelinked}
+<div class="alert alert-warning mw-540 mb-3 mt-md-4 mx-auto" role="alert">
+    <i class="fas fa-exclamation-triangle mr-2"></i>
+    {lang key='remoteAuthn.oneTimeAuthRequired'}
+</div>
+{/if}
+
 <form method="post" action="{routePath('login-validate')}" class="login-form" role="form">
     <div class="card mw-540 mb-md-4 mt-md-4">
         <div class="card-body px-sm-5 py-5">
