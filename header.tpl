@@ -138,8 +138,10 @@
         </div>
     </header>
 
-    {include file="$template/includes/network-issues-notifications.tpl"}
-
+    {if !$inShoppingCart}
+        {include file="$template/includes/network-issues-notifications.tpl"}
+    {/if}
+    
     <nav class="master-breadcrumb" aria-label="breadcrumb">
         <div class="container">
             {include file="$template/includes/breadcrumb.tpl"}
