@@ -33,6 +33,11 @@
             <h3>{$pagetitle}</h3>
 
         </div>
+        <div class="col-12 col-sm-6 invoice-col text-center">
+            <div class="invoice-status">
+                <span class="{$billingNote->billingNote->status->value}">{$billingNote->billingNote->status->trans()}</span>
+            </div>
+        </div>
     </div>
     <hr>
     <div class="row justify-content-sm-between">
@@ -159,6 +164,7 @@
 
     <div class="float-right btn-group btn-group-sm d-print-none">
         <a href="javascript:window.print()" class="btn btn-default"><i class="fas fa-print"></i> {lang key='print'}</a>
+        <a href="{$billingNote->downloadLink}" class="btn btn-default"><i class="fas fa-download"></i> {lang key='invoicesdownload'}</a>
     </div>
 
 </div>

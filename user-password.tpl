@@ -16,7 +16,7 @@
                 <label for="inputNewPassword1" class="col-xl-4 col-form-label">{lang key='newpassword'}</label>
                 <div class="col-xl-5">
                     <input type="password" class="form-control" name="newpw" id="inputNewPassword1" autocomplete="off" />
-                    {include file="$template/includes/pwstrength.tpl" maximumPasswordLength=$maximumPasswordLength}
+                    {include file="$template/includes/pwstrength.tpl" maximumPasswordLength=$maximumPasswordLength minimumPasswordLength=$minimumPasswordLength passwordRequiresNumeric=$passwordRequiresNumeric passwordRequiresAlphabetic=$passwordRequiresAlphabetic}
                 </div>
                 <div class="col-xl-3">
                     <button type="button" class="btn btn-default btn-block generate-password" data-targetfields="inputNewPassword1,inputNewPassword2">

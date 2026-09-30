@@ -1,4 +1,4 @@
-{include file="$template/includes/tablelist.tpl" tableName="InvoicesList" filterColumn="4"}
+{include file="$template/includes/tablelist.tpl" tableName="InvoicesList" filterColumn="5"}
 
 <script>
     jQuery(document).ready(function() {
@@ -15,7 +15,7 @@
         {elseif $orderby == 'total'}
             table.order(3, '{$sort}');
         {elseif $orderby == 'status'}
-            table.order(4, '{$sort}');
+            table.order(5, '{$sort}');
         {/if}
         table.draw();
         jQuery('#tableLoading').hide();
@@ -30,6 +30,7 @@
                 <th>{lang key='invoicesdatecreated'}</th>
                 <th>{lang key='invoicesdatedue'}</th>
                 <th>{lang key='invoicestotal'}</th>
+                <th>{lang key='invoicesbalance'}</th>
                 <th>{lang key='invoicesstatus'}</th>
             </tr>
         </thead>
@@ -40,6 +41,7 @@
                     <td><span class="w-hidden">{$invoice.normalisedDateCreated}</span>{$invoice.datecreated}</td>
                     <td><span class="w-hidden">{$invoice.normalisedDateDue}</span>{$invoice.datedue}</td>
                     <td data-order="{$invoice.totalnum}">{$invoice.total}</td>
+                    <td data-order="{$invoice.balanceNumber}">{$invoice.balance}</td>
                     <td><span class="label status status-{$invoice.statusClass}">{$invoice.status}</span></td>
                 </tr>
             {/foreach}

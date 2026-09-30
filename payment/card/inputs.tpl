@@ -61,7 +61,7 @@
     <div id="inputDescriptionContainer" class="form-group cc-details row">
         <label for="inputDescription" class="col-sm-4 text-md-right col-form-label">{lang key='paymentMethods.cardDescription'}</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="inputDescription" name="ccdescription" autocomplete="off" value="" placeholder="{lang key='paymentMethods.descriptionInput'} {lang key='paymentMethodsManage.optional'}" />
+            <input type="text" class="form-control" id="inputDescription" name="ccdescription" autocomplete="off" value="" placeholder="{lang key='paymentMethodsManage.optional'}" />
         </div>
     </div>
 </div>

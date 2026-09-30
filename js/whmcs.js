@@ -417,7 +417,7 @@ jQuery(document).ready(function() {
         var length = parseInt(jQuery('#inputGeneratePasswordLength').val(), 10);
 
         // Check length
-        if (length < 8 || length > 64) {
+        if (length < 12 || length > 64) {
             jQuery('#generatePwLengthError').show();
             return;
         }
